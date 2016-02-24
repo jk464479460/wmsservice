@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:49806/Services/ServiceForWCS.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel" />
+  <xs:element name="GetTaskList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel" minOccurs="0" name="GetTaskListResult" nillable="true" type="q1:ArrayOfWCSTaskServiceModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendStockInApply">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel" minOccurs="0" name="stockInApply" nillable="true" type="q2:WCSStockInApplyServiceModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendStockInApplyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendStockInApplyResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkTaskAsSend">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="commandNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkTaskAsSendResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarkTaskAsSendResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkTaskAsDone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkTaskAsDoneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarkTaskAsDoneResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel" minOccurs="0" name="GetTaskDetailResult" nillable="true" type="q3:WCSTaskDetailServiceModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetZoneList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetZoneListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel" minOccurs="0" name="GetZoneListResult" nillable="true" type="q4:ArrayOfWCSZoneServiceModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLaneList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="wcsClientID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zoneCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLaneListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel" minOccurs="0" name="GetLaneListResult" nillable="true" type="q5:ArrayOfWCSLaneServiceModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRickerList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="wcsClientID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zoneCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRickerListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel" minOccurs="0" name="GetRickerListResult" nillable="true" type="q6:ArrayOfWCSRickerServiceModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConveyorList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="wcsClientID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SQID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConveyorListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel" minOccurs="0" name="GetConveyorListResult" nillable="true" type="q7:ArrayOfWCSConveyorServiceModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFoldDownDevList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="wcsClientID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SQID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFoldDownDevListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel" minOccurs="0" name="GetFoldDownDevListResult" nillable="true" type="q8:ArrayOfWCSFoldDownDevServiceModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShuttleCarList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="wcsClientID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SQID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShuttleCarListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel" minOccurs="0" name="GetShuttleCarListResult" nillable="true" type="q9:ArrayOfWCSShuttleCarServiceModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLEDList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="wcsClientID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LEDSQID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLEDListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel" minOccurs="0" name="GetLEDListResult" nillable="true" type="q10:ArrayOfWCSLEDServiceModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCOMList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="wcsClientID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCOMListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel" minOccurs="0" name="GetCOMListResult" nillable="true" type="q11:ArrayOfWCSCOMServiceModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountPostAreaList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="wcsClientID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="commandNum" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountPostAreaListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel" minOccurs="0" name="GetAccountPostAreaListResult" nillable="true" type="q12:ArrayOfWCSAccountPostAreaServiceModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPositionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="zoneCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPositionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel" minOccurs="0" name="GetPositionListResult" nillable="true" type="q13:ArrayOfWCSPoistionServiceModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,31 @@
+﻿{
+
+    " infoType": 21,
+
+    " infoDesc": "库区定义",
+
+    "source": "wms",
+
+    " destination": "wcs",
+
+    "serial": 1234,
+
+    "content": {
+
+        "PID": 1234,
+
+        "Zone_ID": 1,
+
+        "Zone_Name": "一号库",
+
+        "IFDis": 0,
+
+        "Structure": 1,
+
+        "SubAreas": 88,
+
+        "ShowColor": 1234
+
+    }
+
+}

@@ -1,0 +1,47 @@
+﻿{
+
+    " infoType": 31,
+
+    " infoDesc": "下发任务",
+
+    "source": "wcs",
+
+    " destination": "wms",
+
+    "serial": 1235,
+
+    "content": {
+
+        "equiNum": "1112",
+
+        "commandNum": "12345678",
+
+           "deviceS": "1112",
+
+           " laneS ": 1,
+
+           "rowS": 1,
+
+           "colS": 1,
+
+           "layerS": 1,
+
+            "deviceE": "1112", --堆垛机
+
+            " laneE ": 1,
+
+           "rowE": 1,
+
+           "colE": 1,
+
+            "layerE": 1,
+
+            "ItemSize": 1,
+
+            "ItemWeight": 1,
+
+        "verifyBit": 8877 --除了equiNum抑或运算
+
+    }
+
+}

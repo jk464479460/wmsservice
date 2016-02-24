@@ -1,0 +1,24 @@
+﻿{
+
+    " infoType": 40,
+
+    " infoDesc": "申请入库指令",
+
+    "source": "wcs",
+
+    " destination": "wms",
+
+    "serial": 1235,
+
+    "content": {
+
+        "barCode":  "14258369",
+
+"deviceS":  1112
+
+
+ 
+
+    }
+
+}

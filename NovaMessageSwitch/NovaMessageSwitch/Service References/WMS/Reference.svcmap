@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c9839d94-fe60-4fcf-b642-0b55c3b9ea97" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49806/Services/ServiceForWCS.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceForWCS.disco" MetadataType="Disco" ID="8bb0b8b5-eaf2-4763-b888-2b16cfb2eee6" SourceId="1" SourceUrl="http://localhost:49806/Services/ServiceForWCS.svc?disco" />
+    <MetadataFile FileName="ServiceForWCS.xsd" MetadataType="Schema" ID="d772250b-d656-46cf-bb34-6ead437aecde" SourceId="1" SourceUrl="http://localhost:49806/Services/ServiceForWCS.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceForWCS1.xsd" MetadataType="Schema" ID="9ecd4da0-be9c-4d5a-a384-41b259b9f980" SourceId="1" SourceUrl="http://localhost:49806/Services/ServiceForWCS.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceForWCS2.xsd" MetadataType="Schema" ID="83bdcb2d-437b-4e92-a064-163baa972d0c" SourceId="1" SourceUrl="http://localhost:49806/Services/ServiceForWCS.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceForWCS.wsdl" MetadataType="Wsdl" ID="46b82ceb-3aa8-455a-bedb-12e80de75a56" SourceId="1" SourceUrl="http://localhost:49806/Services/ServiceForWCS.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

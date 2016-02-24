@@ -1,0 +1,193 @@
+﻿{
+
+    " infoNum": 41,
+
+    " infoDesc": "设备状态",
+
+    "source": "wcs",
+
+    "destination": "wms",
+
+    "serial": 1234,
+
+    "content": {
+
+        "crane": [
+
+            {
+
+                "equiNum": "1112",
+
+                "commandNum": "12345678",
+
+                "deviceStatus": 1,
+
+                " curLane ": 1,
+
+                "curRow": 1,
+
+                "curCol": 1,
+
+                "curLayer": 1,
+
+                "controlMod": 1,
+
+                "preCommand": 1,
+
+                "preStatus": 1,
+
+                "runStatus": 1
+
+            },
+
+            {
+
+                "equiNum": "2112",
+
+                "commandNum": "12345678",
+
+                "deviceStatus": 1,
+
+                " curLane ": 1,
+
+                "curRow": 1,
+
+                "curCol": 1,
+
+                "curLayer": 1,
+
+                "controlMod": 1,
+
+                "preCommand": 1,
+
+                "preStatus": 1,
+
+                "runStatus": 1
+
+            }
+
+        ],
+
+        "shuttleCar": [
+
+            {
+
+                "equiNum": "1112",
+
+                "commandNum": "12345678",
+
+                "deviceStatus": 1,
+
+                "curCol": 1,
+
+                "controlMod": 1
+
+            },
+
+            {
+
+                "equiNum": "2113",
+
+                "commandNum": "12345678",
+
+                "deviceStatus": 1,
+
+                "curCol": 1,
+
+                "controlMod": 1
+
+            }
+
+        ],
+
+        "conveyor": [
+
+            {
+
+                "equiNum": "1114",
+
+                "commandNum": "12345678",
+
+                "deviceStatus": 1,
+
+                "controlMod": 1,
+
+                "itemSize": 1,
+
+                "itemWeight": 1,
+
+                "preCommand": 1,
+
+                "preStatus": 1
+
+            },
+
+            {
+
+                "equiNum": "2114",
+
+                "commandNum": "12345678",
+
+                "deviceStatus": 1,
+
+                "controlMod": 1,
+
+                "itemSize": 1,
+
+                "itemWeight": 1,
+
+                "preCommand": 1,
+
+                "preStatus": 1
+
+            }
+
+        ],
+
+        "packager": [
+
+            {
+
+                "equiNum": "1114",
+
+                "commandNum": "12345678",
+
+                "deviceStatus": 1,
+
+                "controlMod": 1,
+
+                "itemSize": 1,
+
+                "inOutRequire": 1,
+
+                "preCommand": 1,
+
+                "preStatus": 1
+
+            },
+
+            {
+
+                "equiNum": "2114",
+
+                "commandNum": "12345678",
+
+                "deviceStatus": 1,
+
+                "controlMod": 1,
+
+                "itemSize": 1,
+
+                "inOutRequire": 1,
+
+                "preCommand": 1,
+
+                "preStatus": 1
+
+            }
+
+        ]
+
+    }
+
+}

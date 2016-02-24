@@ -1,0 +1,33 @@
+﻿{
+
+    " infoType": 22,
+
+    " infoDesc": "巷道定义",
+
+    "source": "wms",
+
+    " destination": "wcs",
+
+    "serial": 1234,
+
+    "content": {
+
+        "PID": 1234,
+
+        "NO_Lane": 4,
+
+        "MaxRows": 2,
+
+        "MaxCols": 50,
+
+        "MaxLayers": 4,
+
+        "LaneType": 0,
+
+        "NO_Lane_PLC": 8,
+
+        "OrderID": 8
+
+    }
+
+}

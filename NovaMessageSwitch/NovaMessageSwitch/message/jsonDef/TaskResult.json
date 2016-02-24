@@ -1,0 +1,22 @@
+﻿{
+
+    "infoType": 42,
+
+    "infoDesc": "任务结果",
+
+    "source": "wcs",
+
+    "destination": "wms",
+
+  "serial": 1234,
+  "clientID":1234,
+
+    "content": {
+
+        "commandNum":"12345678",
+
+           "result":1
+
+    }
+
+}

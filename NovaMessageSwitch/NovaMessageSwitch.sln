@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaMessageSwitch", "NovaMessageSwitch\NovaMessageSwitch.csproj", "{51D22A0D-B99B-4EDF-91D6-86BF7F34F514}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpTool", "HelpTool\HelpTool.csproj", "{04362E76-CC6A-48B1-B5E8-1D7C973AFDDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaMessageSwitch.message", "NovaMessageSwitch.message\NovaMessageSwitch.message.csproj", "{6134D67C-B662-4E92-BF71-B1439684F3B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51D22A0D-B99B-4EDF-91D6-86BF7F34F514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51D22A0D-B99B-4EDF-91D6-86BF7F34F514}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51D22A0D-B99B-4EDF-91D6-86BF7F34F514}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51D22A0D-B99B-4EDF-91D6-86BF7F34F514}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04362E76-CC6A-48B1-B5E8-1D7C973AFDDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04362E76-CC6A-48B1-B5E8-1D7C973AFDDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04362E76-CC6A-48B1-B5E8-1D7C973AFDDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04362E76-CC6A-48B1-B5E8-1D7C973AFDDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6134D67C-B662-4E92-BF71-B1439684F3B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6134D67C-B662-4E92-BF71-B1439684F3B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6134D67C-B662-4E92-BF71-B1439684F3B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6134D67C-B662-4E92-BF71-B1439684F3B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

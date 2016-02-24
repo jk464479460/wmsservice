@@ -1,0 +1,19 @@
+﻿{
+
+    " infoType": 1,
+
+    " infoDesc": "反馈报文",
+
+    "source": "wcs",
+
+    " destination": "wms",
+
+    "serial": 1235,
+
+    "content": {
+
+        "oriSerial": 1234
+
+    }
+
+}

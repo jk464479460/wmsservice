@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--存储wcs客户端连接状态-->
+<WcsList>
+  <!--<Wcs Ip="127.0.0.1" CreateTime="2015-1-1 12:30" lastUpdateTime="2015-1-1 12:40"></Wcs>-->
+</WcsList>

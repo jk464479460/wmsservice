@@ -1,0 +1,20 @@
+﻿{
+
+  " infoType": 2,
+
+  " infoDesc": "",
+
+  "source": "wcs",
+
+  " destination": "wms",
+
+  "serial": 1235,
+
+  "content": {
+
+    "oriSerial": 1234
+
+  }
+
+}
+

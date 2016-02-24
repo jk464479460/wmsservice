@@ -1,0 +1,21 @@
+﻿{
+
+    " infoType": 10,
+
+    " infoDesc": "问询报文",
+
+    "source": "wms",
+
+    " destination": "wcs",
+
+    "serial": 1235,
+
+    "content": {
+
+        "objectID": 1234,
+
+        "objectDesc": "deviceStatus"
+
+    }
+
+}
