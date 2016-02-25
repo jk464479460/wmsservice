@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -15,6 +14,7 @@ using Newtonsoft.Json;
 using NovaMessageSwitch.WMS;
 using NovaMessageSwitch.message;
 using NovaMessageSwitch.Tool;
+using static NovaMessageSwitch.UpdateUi;
 
 namespace NovaMessageSwitch.Bll
 {
@@ -79,7 +79,7 @@ namespace NovaMessageSwitch.Bll
                     try
                     {
                         var dataCount = myClientSocket.Receive(result);
-                        Debug.Assert(dataCount < BufferSize, "接收数据大于缓冲区设置");
+                        Debug.Assert(dataCount < BufferSize, "接收数据大于缓冲区设置 "+dataCount+" "+ Encoding.UTF8.GetString(result));
                     }
                     catch (Exception ex)
                     {
@@ -97,8 +97,8 @@ namespace NovaMessageSwitch.Bll
                     var info = _socketTool.CreateInfoDisplay(myClientSocket);
                     info.Message = receiveStr;
                     info.CustomColor = Color.Green;
-                    _socketTool.PrintInfoConsole($"远处端口：{ipEndPoint.Port} 发来消息:{receiveStr}", Console.ForegroundColor,
-                        info);
+                    _socketTool.PrintInfoConsole($"远处端口：{ipEndPoint?.Port} 发来消息:{receiveStr}", Console.ForegroundColor,
+                        info,UpdateUi.PostMessageInfo);
 
                     var receiveContent = _socketTool.UnPackMessage(receiveStr);
                     dynamic obj = JsonConvert.DeserializeObject(receiveContent);
@@ -108,16 +108,16 @@ namespace NovaMessageSwitch.Bll
 
                     wcsReceiver.ClientId = Convert.ToString(obj.serial.Value);
                     wcsReceiver.ReplyAckWcs(myClientSocket, wcsReceiver.ClientId);
-
-                    //测试
-                    if (obj.infoType == 30)
-                    {
-                        test.Add(obj);
-                        var toolt=new FrameHandlerTool();
-                        if(obj.totalFrame==test.Count)
-                            toolt.Test(test);
-                        continue;
-                    }
+                    Thread.Sleep(500);
+                    ////测试
+                    //if (obj.infoType == 30)
+                    //{
+                    //    test.Add(obj);
+                    //    var toolt=new FrameHandlerTool();
+                    //    if(obj.totalFrame==test.Count)
+                    //        toolt.Test(test);
+                    //    continue;
+                    //}
                     //youhua
                     if (obj.infoType == 40 || obj.infoType == 42)
                         wcsReceiver.ReplyBrowser(obj);
@@ -145,11 +145,11 @@ namespace NovaMessageSwitch.Bll
         {
             if (_wcsList.Keys.Contains(clientId))
             {
-                var endPoint = _wcsList[(int)clientId];
+                var endPoint = _wcsList[clientId];
                 endPoint.EndPoint = socket;
                 endPoint.RecentTimeOld = endPoint.RecentTime;
                 endPoint.RecentTime = DateTime.Now;
-                UpdateUi.Post(endPoint);
+                Post(endPoint);
                 return;
             }
             var newEndPoit = new WcsEndpoint<Socket>
@@ -158,8 +158,8 @@ namespace NovaMessageSwitch.Bll
                 RecentTimeOld = null,
                 EndPoint = socket
             };
-            UpdateUi.Post(newEndPoit);
-            _wcsList.Add((int)clientId, newEndPoit);
+            Post(newEndPoit);
+            _wcsList.Add(clientId, newEndPoit);
         }
 
         #endregion
@@ -224,142 +224,7 @@ namespace NovaMessageSwitch.Bll
         }
     }
 
-    public class SocketTool
-    {
-        private static int _commandNum;
-        private static readonly object LockObj = new object();
-        //打印控制 或 更新UI
-        public void PrintInfoConsole(string txt, ConsoleColor color, MessageInfoDisplay infoDisplay = null)
-        {
-            /*var oldColor = Console.ForegroundColor;
-            Console.ForegroundColor = color;
-            Console.WriteLine(@"{0} {1}", txt, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            Console.ForegroundColor = oldColor;*/
-            if (infoDisplay == null) return;
-            UpdateUi.PostMessageInfo(infoDisplay);
-        }
-        //生成发送包
-        public string FormatMessage(string messageJson)
-        {
-            if (string.IsNullOrEmpty(messageJson)) throw new Exception("FormatMessage：报文空");
-            messageJson = $"?{messageJson}$";
-            return messageJson;
-        }
-        //仅保留最近3个月的数据
-        public void DelLog()
-        {
-            try
-            {
-                var path = AppDomain.CurrentDomain.BaseDirectory;
-                var time = DateTime.Now;
-                time = time.AddMonths(-3);
-                var dirName = time.ToString("yyyyMM");
-                var pathDel = path + $"log\\{time.Year}\\" + dirName;
-                var isExists = Directory.Exists(pathDel);
-                if (isExists == false)
-                    return;
-                var dirInfo = new DirectoryInfo(pathDel);
-                dirInfo.Delete(true);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
-
-
-        }
-        //产生校验位
-        public void CreateverifyBit(MessageData<ContentTask> messageData)
-        {
-            try
-            {
-                var content = messageData.content;
-                var verifyCode = (int.Parse(content.deviceS)) ^ content.laneS ^
-                    content.rowS ^ content.colS ^ content.layerS ^ (int.Parse(content.deviceE))
-                    ^ content.laneE ^ content.rowE ^ content.rowE ^ content.colE ^
-                    content.layerE ^ content.ItemSize ^ content.ItemWeight ^ (int.Parse(content.commandNum));
-
-                messageData.content.verifyBit = verifyCode;
-            }
-            catch (Exception ex) { AppLogger.Error("CreateverifyBit", ex); }
-
-        }
-        //发心跳
-        public bool SendHeart(Socket socket)
-        {
-            try
-            {
-                //var heart = "?{\"infoType\":0,\"clientID\":123,\"dateTime\":\"{#time#}\"}$";
-                //heart=heart.Replace("#time#", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                //socket.Send(Encoding.UTF8.GetBytes(heart));
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-            return true;
-        }
-        //报文特征验证
-        public bool ValidateMessageJson(ref string receiveStr)
-        {
-            receiveStr = receiveStr.Replace("\0", string.Empty);
-            if (receiveStr.Length == 0) return false;
-            if (receiveStr[0] != '?' || receiveStr[receiveStr.Length - 1] != '$') return false;
-
-            return !string.IsNullOrEmpty(receiveStr);
-        }
-        //断言 消息实体
-        public void ValidateMessageObj(dynamic obj, string receiveStr)
-        {
-            if (obj == null) Debug.Assert(false, $"接收的数据序列化对象后为null。数据为： {receiveStr}");
-            if (obj.clientID.Value == null) Debug.Assert(false, $"clientID为null。数据为： {receiveStr}");
-            if (obj.infoType.Value == null) Debug.Assert(false, $"infoType为null。数据为： {receiveStr}");
-        }
-        //解包
-        public string UnPackMessage(string messageJson)
-        {
-            if (string.IsNullOrEmpty(messageJson)) return null;
-            var start = messageJson.IndexOf("?", StringComparison.Ordinal);
-            var end = messageJson.IndexOf("$", StringComparison.Ordinal);
-            var res = messageJson.Substring(start + 1, end - 1);
-            return res;
-        }
-        //生成界面UI展示消息内容体
-        public MessageInfoDisplay CreateInfoDisplay(Socket socket = null)
-        {
-            if (socket == null)
-            {
-                var newInfoDisplay = new MessageInfoDisplay
-                {
-                    Source = "local",
-                    Desti = "WMS",
-                    Time = DateTime.Now
-                };
-                return newInfoDisplay;
-            }
-
-            var ipEndPoint = socket.RemoteEndPoint as IPEndPoint;
-            var localEndPoint = socket.LocalEndPoint as IPEndPoint;
-            var obj = new MessageInfoDisplay
-            {
-                Desti = $"{localEndPoint.ToString()}",
-                Source = $"{ipEndPoint.ToString()}",
-                Time = DateTime.Now
-            };
-            return obj;
-        }
-        //产生命令编号
-        public static int CreateCommandNum()
-        {
-            lock (LockObj)
-            {
-                _commandNum++;
-                if (_commandNum <= 0) _commandNum = 0;
-                return _commandNum;
-            }
-        }
-
-    }
+  
 
     public class WcsReceiver
     {
@@ -427,17 +292,15 @@ namespace NovaMessageSwitch.Bll
             var infoDisplay = socketTool.CreateInfoDisplay(socket);
             infoDisplay.Message = sendStr;
             infoDisplay.CustomColor = Color.DodgerBlue;
-            socketTool.PrintInfoConsole($"{sendStr}", ConsoleColor.Green, infoDisplay);
+            socketTool.PrintInfoConsole($"{sendStr}", ConsoleColor.Green, infoDisplay,PostMessageInfo);
         }
         //接收wcs请求
         public void RecieiveRequest(dynamic message)
         {
-            if (message.infoType == (int)MessageType.InfoType10)
-            {
-                helpAsk.MessageFactory = _messageFactory;
-                helpAsk.Analysis(message.content.objectID.ToString());
-                _message = helpAsk.HandleRequesFromWcs(message);
-            }
+            helpAsk.MessageFactory = _messageFactory;
+            helpAsk.Analysis(message.content.objectID.ToString());
+            _message = helpAsk.HandleRequesFromWcs(message);
+            Debug.Assert((object)_message!=null,"请求转换为报文时_message==null");
         }
         //向wcs发送
         public void ReplyResponseToWcs(Socket socket,string oriSerial)
@@ -448,15 +311,12 @@ namespace NovaMessageSwitch.Bll
             {
                 Thread.Sleep(500);
                 var sendStr = $"?{JsonConvert.SerializeObject(message)}$";
-                var w=new StreamWriter("te.txt",true);
-                w.WriteLine(sendStr);
-                w.WriteLine("==========");
-                w.Close();
+                
                 socket.Send(Encoding.UTF8.GetBytes(sendStr));
                 var infoDisplay = InstanceSocketTool.CreateInfoDisplay(socket);
                 infoDisplay.Message = sendStr;
                 infoDisplay.CustomColor = Color.DodgerBlue;
-                InstanceSocketTool.PrintInfoConsole($"{sendStr}", ConsoleColor.Green, infoDisplay);
+                InstanceSocketTool.PrintInfoConsole($"{sendStr}", ConsoleColor.Green, infoDisplay,PostMessageInfo);
             }
         }
 
@@ -539,7 +399,7 @@ namespace NovaMessageSwitch.Bll
                             serial = Guid.NewGuid().ToString("N"),
                             source = DataFlowDirection.wcs.ToString()
                         };
-                        var rickerResult = (List<WCSRickerServiceModel>)wmsResult;
+                        var rickerResult = (WCSRickerServiceModel[])wmsResult;
                         foreach (var ricker in rickerResult)
                         {
                             message23.content.Add(new ContentRicker
@@ -685,7 +545,7 @@ namespace NovaMessageSwitch.Bll
                             serial = Guid.NewGuid().ToString("N"),
                             source = DataFlowDirection.wcs.ToString()
                         };
-                        var foldDownDevResult = (List<WCSFoldDownDevServiceModel>)wmsResult;
+                        var foldDownDevResult = (WCSFoldDownDevServiceModel[])wmsResult;
                         foreach (var foldDown in foldDownDevResult)
                         {
                             message25.content.Add(new ContentFoldDownTrayDev
@@ -738,7 +598,7 @@ namespace NovaMessageSwitch.Bll
                             serial = Guid.NewGuid().ToString("N"),
                             source = DataFlowDirection.wcs.ToString()
                         };
-                        var shuttleResult = (List<WCSShuttleCarServiceModel>)wmsResult;
+                        var shuttleResult = (WCSShuttleCarServiceModel[])wmsResult;
                         foreach (var shuttle in shuttleResult)
                         {
                             message26.content.Add(new ContentShuttle
@@ -773,7 +633,7 @@ namespace NovaMessageSwitch.Bll
                             serial = Guid.NewGuid().ToString("N"),
                             source = DataFlowDirection.wcs.ToString()
                         };
-                        var ledResult = (List<WCSLEDServiceModel>)wmsResult;
+                        var ledResult = (WCSLEDServiceModel[])wmsResult;
                         foreach (var led in ledResult)
                         {
                             message27.content.Add(new ContentLED
@@ -804,7 +664,7 @@ namespace NovaMessageSwitch.Bll
                             serial = Guid.NewGuid().ToString("N"),
                             source = DataFlowDirection.wcs.ToString()
                         };
-                        var comResult = (List<WCSCOMServiceModel>)wmsResult;
+                        var comResult = (WCSCOMServiceModel[])wmsResult;
                         foreach (var com in comResult)
                         {
                             message28.content.Add(new ContentCOM
@@ -835,7 +695,7 @@ namespace NovaMessageSwitch.Bll
                             serial = Guid.NewGuid().ToString("N"),
                             source = DataFlowDirection.wcs.ToString()
                         };
-                        var accountResult = (List<WCSAccountPostAreaServiceModel>)wmsResult;
+                        var accountResult = (WCSAccountPostAreaServiceModel[])wmsResult;
                         foreach (var account in accountResult)
                         {
                             message29.content.Add(new ContentPostingAccount
@@ -967,7 +827,7 @@ namespace NovaMessageSwitch.Bll
             var infoDisplay = socketTool.CreateInfoDisplay();
             infoDisplay.Message = $"tell browser ClientID:{query.ClientId} deviceS:{query.DeviceId} TrayCode:{query.TrayCode} StockInApply";
             infoDisplay.CustomColor = Color.Coral;
-            socketTool.PrintInfoConsole($"tell browser ClientID:{query.ClientId} deviceS:{query.DeviceId} TrayCode:{query.TrayCode} StockInApply", ConsoleColor.Blue, infoDisplay);
+            socketTool.PrintInfoConsole($"tell browser ClientID:{query.ClientId} deviceS:{query.DeviceId} TrayCode:{query.TrayCode} StockInApply", ConsoleColor.Blue, infoDisplay,PostMessageInfo);
         }
 
         //入库任务处理
@@ -979,12 +839,13 @@ namespace NovaMessageSwitch.Bll
                 messageModel.content.commandNum = SocketTool.CreateCommandNum().ToString();
                 socketTool.CreateverifyBit(messageModel);
                 var messageJson = JsonConvert.SerializeObject(messageModel);
-                messageJson = socketTool.FormatMessage(messageJson);
-                wcsClient.EndPoint.Send(Encoding.UTF8.GetBytes(messageJson));
+                var messageJsonNew = socketTool.FormatMessage(messageJson);
+
+                wcsClient.EndPoint.Send(Encoding.UTF8.GetBytes(messageJsonNew));
                 var infoDisplay = socketTool.CreateInfoDisplay(wcsClient.EndPoint);
-                infoDisplay.Message = $"tell wcs ?{messageJson}$";
+                infoDisplay.Message = $"tell wcs ?{messageJsonNew}$";
                 infoDisplay.CustomColor = Color.DodgerBlue;
-                socketTool.PrintInfoConsole("tell wcs:" + messageJson, ConsoleColor.Green, infoDisplay);
+                socketTool.PrintInfoConsole($"tell wcs:{messageJsonNew}" , ConsoleColor.Green, infoDisplay, UpdateUi.PostMessageInfo);
             }
             catch (Exception ex)
             {
@@ -1005,7 +866,7 @@ namespace NovaMessageSwitch.Bll
                 var infoDisplay = socketTool.CreateInfoDisplay();
                 infoDisplay.Message = $"tell browser taskId {taskId} has been send to wcs";
                 infoDisplay.CustomColor = Color.Coral;
-                socketTool.PrintInfoConsole("tell browser taskId:" + taskId, ConsoleColor.Blue, infoDisplay);
+                socketTool.PrintInfoConsole("tell browser taskId:" + taskId, ConsoleColor.Blue, infoDisplay,PostMessageInfo);
             }
             catch (Exception ex)
             {
@@ -1038,7 +899,7 @@ namespace NovaMessageSwitch.Bll
             var infoDisplay = socketTool.CreateInfoDisplay();
             infoDisplay.Message = $"tell browser taskID:{taskId} done";
             infoDisplay.CustomColor = Color.Coral;
-            socketTool.PrintInfoConsole($"tell browser taskID:{taskId} done", ConsoleColor.Blue, infoDisplay);
+            socketTool.PrintInfoConsole($"tell browser taskID:{taskId} done", ConsoleColor.Blue, infoDisplay,UpdateUi.PostMessageInfo);
         }
     }
 
@@ -1051,7 +912,11 @@ namespace NovaMessageSwitch.Bll
 
         public int? DevRealId {
             get { return _devRealId; } 
-            private set { _devRealId = value; }
+            private set
+            {
+                if (value == null) throw new ArgumentNullException(nameof(value));
+                _devRealId = value;
+            }
         }
         /// <summary>
         /// 必填字段
@@ -1075,7 +940,7 @@ namespace NovaMessageSwitch.Bll
             {
                 if (objectId.Contains("-"))
                 {
-                    var arr = objectId.Split(new char[] {'-'}, StringSplitOptions.RemoveEmptyEntries);
+                    var arr = objectId.Split(new[] {'-'}, StringSplitOptions.RemoveEmptyEntries);
                     _devTypeId = int.Parse(arr[0]);
                     _devRealId = int.Parse(arr[1]);
                     return;
@@ -1083,7 +948,7 @@ namespace NovaMessageSwitch.Bll
                 _devTypeId = int.Parse(objectId);
                 _devRealId = null;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 AppLogger.Error("objectId 转换错误");
                 throw new Exception(objectId);
@@ -1112,6 +977,7 @@ namespace NovaMessageSwitch.Bll
                 var browser = new ServiceForWCSClient();
                 var zoneCode = GetZoneCode(message.clientID.ToString());
                 var accountPostList =(WCSPoistionServiceModel[]) browser.GetPositionList(zoneCode);
+                
                 if (_devRealId != null)
                 {
                     accountPostList = accountPostList.Where(x=>x.Lane==_devRealId).ToArray();

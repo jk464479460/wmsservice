@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaMessageSwitch", "NovaMessageSwitch\NovaMessageSwitch.csproj", "{51D22A0D-B99B-4EDF-91D6-86BF7F34F514}"
+	ProjectSection(ProjectDependencies) = postProject
+		{04362E76-CC6A-48B1-B5E8-1D7C973AFDDC} = {04362E76-CC6A-48B1-B5E8-1D7C973AFDDC}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpTool", "HelpTool\HelpTool.csproj", "{04362E76-CC6A-48B1-B5E8-1D7C973AFDDC}"
 EndProject
