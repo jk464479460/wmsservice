@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6134D67C-B662-4E92-BF71-B1439684F3B0}</ProjectGuid>
+    <ProjectGuid>{9428273A-9DC1-4C1F-A1FA-E433D1BB89B0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NovaMessageSwitch.message</RootNamespace>
-    <AssemblyName>NovaMessageSwitch.message</AssemblyName>
+    <RootNamespace>NovaMessageSwitch.MessageHandleFactory</RootNamespace>
+    <AssemblyName>NovaMessageSwitch.MessageFactory</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -29,13 +31,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>D:\NovaMessageSwitch\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,9 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Message.cs" />
+    <Compile Include="Factory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UiMessage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DebugTest\DebugTest.csproj">
+      <Project>{d97d5c50-5cec-41b6-9665-283a6d8b5bd3}</Project>
+      <Name>DebugTest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HelpTool\HelpTool.csproj">
+      <Project>{04362e76-cc6a-48b1-b5e8-1d7c973afddc}</Project>
+      <Name>HelpTool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NovaMessageSwitch.message\NovaMessageSwitch.message.csproj">
+      <Project>{6134d67c-b662-4e92-bf71-b1439684f3b0}</Project>
+      <Name>NovaMessageSwitch.message</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WmsServiceModel\WmsServiceModel.csproj">
+      <Project>{1c503923-08cc-46cb-af9d-c526d7475795}</Project>
+      <Name>WmsServiceModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Net.Sockets;
 
 namespace NovaMessageSwitch.Model
 {
@@ -18,5 +19,10 @@ namespace NovaMessageSwitch.Model
         public DateTime RecentTime { get; set; } 
         public DateTime? RecentTimeOld { get; set; }
     }
-   
+    //接受socket请求实体类
+    public class ReceiveEntity
+    {
+        public dynamic Message { get; set; }
+        public Socket Client { get; set; }
+    }
 }

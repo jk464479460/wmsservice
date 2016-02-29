@@ -509,6 +509,7 @@
       <xs:element minOccurs="0" name="Layer" type="xs:int" />
       <xs:element minOccurs="0" name="Position_State" type="tns:PositionStateServiceEnum" />
       <xs:element minOccurs="0" name="Row" type="xs:int" />
+      <xs:element minOccurs="0" name="Update_Time" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="WCSPoistionServiceModel" nillable="true" type="tns:WCSPoistionServiceModel" />

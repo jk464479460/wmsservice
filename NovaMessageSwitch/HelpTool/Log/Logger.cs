@@ -2,7 +2,7 @@
 using log4net;
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
-namespace NovaMessageSwitch.Tool
+namespace NovaMessageSwitch.Tool.Log
 {
     /// <summary>
     /// 应用程序日志类

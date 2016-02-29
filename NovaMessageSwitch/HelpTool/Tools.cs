@@ -11,6 +11,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Newtonsoft.Json;
 using NovaMessageSwitch.message;
+using NovaMessageSwitch.Tool.Log;
 
 namespace NovaMessageSwitch.Tool
 {
@@ -168,22 +169,22 @@ namespace NovaMessageSwitch.Tool
     {
         private static int _commandNum;
         private static readonly object LockObj = new object();
+
         /// <summary>
         /// UpdateUi.PostMessageInfo(infoDisplay);
         /// </summary>
         /// <param name="txt"></param>
         /// <param name="color"></param>
-        /// <param name="param"></param>
         /// <param name="infoDisplay"></param>
         /// <param name="action"></param>
         public void PrintInfoConsole(string txt, ConsoleColor color, MessageInfoDisplay infoDisplay = null, Action<object> action = null)
         {
-            /*var oldColor = Console.ForegroundColor;
-            Console.ForegroundColor = color;
-            Console.WriteLine(@"{0} {1}", txt, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            Console.ForegroundColor = oldColor;*/
             if (infoDisplay == null) return;
             action?.Invoke(infoDisplay);
+        }
+        public void UpdateWcsDisplay(object data, Action<object> action = null)
+        {
+            action?.Invoke(data);
         }
         //生成发送包
         public string FormatMessage(string messageJson)
@@ -289,8 +290,8 @@ namespace NovaMessageSwitch.Tool
             var localEndPoint = socket.LocalEndPoint as IPEndPoint;
             var obj = new MessageInfoDisplay
             {
-                Desti = $"{localEndPoint?.ToString()}",
-                Source = $"{ipEndPoint?.ToString()}",
+                Desti = $"{localEndPoint}",
+                Source = $"{ipEndPoint}",
                 Time = DateTime.Now
             };
             return obj;

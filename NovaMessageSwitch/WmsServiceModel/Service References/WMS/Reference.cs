@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NovaMessageSwitch.WMS {
+namespace NovaMessageSwitch.WmsServiceModel.WMS {
     using System.Runtime.Serialization;
     using System;
     
@@ -388,7 +388,7 @@ namespace NovaMessageSwitch.WMS {
         private string ShowColorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private NovaMessageSwitch.WMS.ZoneStructureServiceEnum StructureField;
+        private NovaMessageSwitch.WmsServiceModel.WMS.ZoneStructureServiceEnum StructureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int SubAreasField;
@@ -439,7 +439,7 @@ namespace NovaMessageSwitch.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public NovaMessageSwitch.WMS.ZoneStructureServiceEnum Structure {
+        public NovaMessageSwitch.WmsServiceModel.WMS.ZoneStructureServiceEnum Structure {
             get {
                 return this.StructureField;
             }
@@ -534,7 +534,7 @@ namespace NovaMessageSwitch.WMS {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private NovaMessageSwitch.WMS.TrackTypeServiceEnum Lane_TypeField;
+        private NovaMessageSwitch.WmsServiceModel.WMS.TrackTypeServiceEnum Lane_TypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int MaxColsField;
@@ -565,7 +565,7 @@ namespace NovaMessageSwitch.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public NovaMessageSwitch.WMS.TrackTypeServiceEnum Lane_Type {
+        public NovaMessageSwitch.WmsServiceModel.WMS.TrackTypeServiceEnum Lane_Type {
             get {
                 return this.Lane_TypeField;
             }
@@ -1419,10 +1419,10 @@ namespace NovaMessageSwitch.WMS {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private NovaMessageSwitch.WMS.ConveyorCOMBarCodeServiceEnum COMBarCodeField;
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorCOMBarCodeServiceEnum COMBarCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private NovaMessageSwitch.WMS.ConveyorCheckBarcodeServiceEnum CheckBarcodeField;
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorCheckBarcodeServiceEnum CheckBarcodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int DefineColField;
@@ -1449,25 +1449,25 @@ namespace NovaMessageSwitch.WMS {
         private bool IfUseBarCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private NovaMessageSwitch.WMS.ConveyorInputNeedBarServiceEnum InputNeedBarField;
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorInputNeedBarServiceEnum InputNeedBarField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private NovaMessageSwitch.WMS.ConveyorLEDSQID_InputServiceEnum LEDSQID_InputField;
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorLEDSQID_InputServiceEnum LEDSQID_InputField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int LEDSQID_LockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private NovaMessageSwitch.WMS.ConveyorLEDSQID_OutServiceEnum LEDSQID_OutField;
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorLEDSQID_OutServiceEnum LEDSQID_OutField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private NovaMessageSwitch.WMS.ConveyorLEDSQID_PickServiceEnum LEDSQID_PickField;
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorLEDSQID_PickServiceEnum LEDSQID_PickField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool LockStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private NovaMessageSwitch.WMS.ConveyorPathTypeServiceEnum PathTypeField;
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorPathTypeServiceEnum PathTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal PerHeightField;
@@ -1515,7 +1515,7 @@ namespace NovaMessageSwitch.WMS {
         private int SQIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private NovaMessageSwitch.WMS.ConveyorSpecificationFromServiceEnum SpecificationFromField;
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorSpecificationFromServiceEnum SpecificationFromField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime UpdatetimeField;
@@ -1590,7 +1590,7 @@ namespace NovaMessageSwitch.WMS {
         private string WXorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private NovaMessageSwitch.WMS.ConveyorWeithtFromServiceEnum WeithtFromField;
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorWeithtFromServiceEnum WeithtFromField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal XField;
@@ -1609,7 +1609,7 @@ namespace NovaMessageSwitch.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public NovaMessageSwitch.WMS.ConveyorCOMBarCodeServiceEnum COMBarCode {
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorCOMBarCodeServiceEnum COMBarCode {
             get {
                 return this.COMBarCodeField;
             }
@@ -1622,7 +1622,7 @@ namespace NovaMessageSwitch.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public NovaMessageSwitch.WMS.ConveyorCheckBarcodeServiceEnum CheckBarcode {
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorCheckBarcodeServiceEnum CheckBarcode {
             get {
                 return this.CheckBarcodeField;
             }
@@ -1739,7 +1739,7 @@ namespace NovaMessageSwitch.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public NovaMessageSwitch.WMS.ConveyorInputNeedBarServiceEnum InputNeedBar {
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorInputNeedBarServiceEnum InputNeedBar {
             get {
                 return this.InputNeedBarField;
             }
@@ -1752,7 +1752,7 @@ namespace NovaMessageSwitch.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public NovaMessageSwitch.WMS.ConveyorLEDSQID_InputServiceEnum LEDSQID_Input {
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorLEDSQID_InputServiceEnum LEDSQID_Input {
             get {
                 return this.LEDSQID_InputField;
             }
@@ -1778,7 +1778,7 @@ namespace NovaMessageSwitch.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public NovaMessageSwitch.WMS.ConveyorLEDSQID_OutServiceEnum LEDSQID_Out {
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorLEDSQID_OutServiceEnum LEDSQID_Out {
             get {
                 return this.LEDSQID_OutField;
             }
@@ -1791,7 +1791,7 @@ namespace NovaMessageSwitch.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public NovaMessageSwitch.WMS.ConveyorLEDSQID_PickServiceEnum LEDSQID_Pick {
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorLEDSQID_PickServiceEnum LEDSQID_Pick {
             get {
                 return this.LEDSQID_PickField;
             }
@@ -1817,7 +1817,7 @@ namespace NovaMessageSwitch.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public NovaMessageSwitch.WMS.ConveyorPathTypeServiceEnum PathType {
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorPathTypeServiceEnum PathType {
             get {
                 return this.PathTypeField;
             }
@@ -2025,7 +2025,7 @@ namespace NovaMessageSwitch.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public NovaMessageSwitch.WMS.ConveyorSpecificationFromServiceEnum SpecificationFrom {
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorSpecificationFromServiceEnum SpecificationFrom {
             get {
                 return this.SpecificationFromField;
             }
@@ -2350,7 +2350,7 @@ namespace NovaMessageSwitch.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public NovaMessageSwitch.WMS.ConveyorWeithtFromServiceEnum WeithtFrom {
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorWeithtFromServiceEnum WeithtFrom {
             get {
                 return this.WeithtFromField;
             }
@@ -2567,7 +2567,7 @@ namespace NovaMessageSwitch.WMS {
         private int SQIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private NovaMessageSwitch.WMS.FoldDownDevSpecificationFromServiceEnum SpecificationFromField;
+        private NovaMessageSwitch.WmsServiceModel.WMS.FoldDownDevSpecificationFromServiceEnum SpecificationFromField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime UpdatetimeField;
@@ -2642,7 +2642,7 @@ namespace NovaMessageSwitch.WMS {
         private string WXorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private NovaMessageSwitch.WMS.FoldDownDevWeightFromServiceEnum WeightFromField;
+        private NovaMessageSwitch.WmsServiceModel.WMS.FoldDownDevWeightFromServiceEnum WeightFromField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal XField;
@@ -2947,7 +2947,7 @@ namespace NovaMessageSwitch.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public NovaMessageSwitch.WMS.FoldDownDevSpecificationFromServiceEnum SpecificationFrom {
+        public NovaMessageSwitch.WmsServiceModel.WMS.FoldDownDevSpecificationFromServiceEnum SpecificationFrom {
             get {
                 return this.SpecificationFromField;
             }
@@ -3272,7 +3272,7 @@ namespace NovaMessageSwitch.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public NovaMessageSwitch.WMS.FoldDownDevWeightFromServiceEnum WeightFrom {
+        public NovaMessageSwitch.WmsServiceModel.WMS.FoldDownDevWeightFromServiceEnum WeightFrom {
             get {
                 return this.WeightFromField;
             }
@@ -3358,7 +3358,7 @@ namespace NovaMessageSwitch.WMS {
         private string DB6Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private NovaMessageSwitch.WMS.ShuttleCarDirectorServiceEnum DirectorField;
+        private NovaMessageSwitch.WmsServiceModel.WMS.ShuttleCarDirectorServiceEnum DirectorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool LockStateField;
@@ -3430,7 +3430,7 @@ namespace NovaMessageSwitch.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public NovaMessageSwitch.WMS.ShuttleCarDirectorServiceEnum Director {
+        public NovaMessageSwitch.WmsServiceModel.WMS.ShuttleCarDirectorServiceEnum Director {
             get {
                 return this.DirectorField;
             }
@@ -3625,7 +3625,7 @@ namespace NovaMessageSwitch.WMS {
         private int COMAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private NovaMessageSwitch.WMS.LEDColorTypeServiceEnum ColorTypeField;
+        private NovaMessageSwitch.WmsServiceModel.WMS.LEDColorTypeServiceEnum ColorTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int LEDAddressField;
@@ -3675,7 +3675,7 @@ namespace NovaMessageSwitch.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public NovaMessageSwitch.WMS.LEDColorTypeServiceEnum ColorType {
+        public NovaMessageSwitch.WmsServiceModel.WMS.LEDColorTypeServiceEnum ColorType {
             get {
                 return this.ColorTypeField;
             }
@@ -4097,10 +4097,13 @@ namespace NovaMessageSwitch.WMS {
         private int LayerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private NovaMessageSwitch.WMS.PositionStateServiceEnum Position_StateField;
+        private NovaMessageSwitch.WmsServiceModel.WMS.PositionStateServiceEnum Position_StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int RowField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime Update_TimeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -4152,7 +4155,7 @@ namespace NovaMessageSwitch.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public NovaMessageSwitch.WMS.PositionStateServiceEnum Position_State {
+        public NovaMessageSwitch.WmsServiceModel.WMS.PositionStateServiceEnum Position_State {
             get {
                 return this.Position_StateField;
             }
@@ -4173,6 +4176,19 @@ namespace NovaMessageSwitch.WMS {
                 if ((this.RowField.Equals(value) != true)) {
                     this.RowField = value;
                     this.RaisePropertyChanged("Row");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Update_Time {
+            get {
+                return this.Update_TimeField;
+            }
+            set {
+                if ((this.Update_TimeField.Equals(value) != true)) {
+                    this.Update_TimeField = value;
+                    this.RaisePropertyChanged("Update_Time");
                 }
             }
         }
@@ -4206,16 +4222,16 @@ namespace NovaMessageSwitch.WMS {
     public interface IServiceForWCS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetTaskList", ReplyAction="http://tempuri.org/IServiceForWCS/GetTaskListResponse")]
-        NovaMessageSwitch.WMS.WCSTaskServiceModel[] GetTaskList();
+        NovaMessageSwitch.WmsServiceModel.WMS.WCSTaskServiceModel[] GetTaskList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetTaskList", ReplyAction="http://tempuri.org/IServiceForWCS/GetTaskListResponse")]
-        System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSTaskServiceModel[]> GetTaskListAsync();
+        System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSTaskServiceModel[]> GetTaskListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/SendStockInApply", ReplyAction="http://tempuri.org/IServiceForWCS/SendStockInApplyResponse")]
-        bool SendStockInApply(NovaMessageSwitch.WMS.WCSStockInApplyServiceModel stockInApply);
+        bool SendStockInApply(NovaMessageSwitch.WmsServiceModel.WMS.WCSStockInApplyServiceModel stockInApply);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/SendStockInApply", ReplyAction="http://tempuri.org/IServiceForWCS/SendStockInApplyResponse")]
-        System.Threading.Tasks.Task<bool> SendStockInApplyAsync(NovaMessageSwitch.WMS.WCSStockInApplyServiceModel stockInApply);
+        System.Threading.Tasks.Task<bool> SendStockInApplyAsync(NovaMessageSwitch.WmsServiceModel.WMS.WCSStockInApplyServiceModel stockInApply);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/MarkTaskAsSend", ReplyAction="http://tempuri.org/IServiceForWCS/MarkTaskAsSendResponse")]
         bool MarkTaskAsSend(string taskId, string commandNumber);
@@ -4230,79 +4246,79 @@ namespace NovaMessageSwitch.WMS {
         System.Threading.Tasks.Task<bool> MarkTaskAsDoneAsync(string taskId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetTaskDetail", ReplyAction="http://tempuri.org/IServiceForWCS/GetTaskDetailResponse")]
-        NovaMessageSwitch.WMS.WCSTaskDetailServiceModel GetTaskDetail(string taskId);
+        NovaMessageSwitch.WmsServiceModel.WMS.WCSTaskDetailServiceModel GetTaskDetail(string taskId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetTaskDetail", ReplyAction="http://tempuri.org/IServiceForWCS/GetTaskDetailResponse")]
-        System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSTaskDetailServiceModel> GetTaskDetailAsync(string taskId);
+        System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSTaskDetailServiceModel> GetTaskDetailAsync(string taskId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetZoneList", ReplyAction="http://tempuri.org/IServiceForWCS/GetZoneListResponse")]
-        NovaMessageSwitch.WMS.WCSZoneServiceModel[] GetZoneList();
+        NovaMessageSwitch.WmsServiceModel.WMS.WCSZoneServiceModel[] GetZoneList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetZoneList", ReplyAction="http://tempuri.org/IServiceForWCS/GetZoneListResponse")]
-        System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSZoneServiceModel[]> GetZoneListAsync();
+        System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSZoneServiceModel[]> GetZoneListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetLaneList", ReplyAction="http://tempuri.org/IServiceForWCS/GetLaneListResponse")]
-        NovaMessageSwitch.WMS.WCSLaneServiceModel[] GetLaneList(string wcsClientID, string zoneCode);
+        NovaMessageSwitch.WmsServiceModel.WMS.WCSLaneServiceModel[] GetLaneList(string wcsClientID, string zoneCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetLaneList", ReplyAction="http://tempuri.org/IServiceForWCS/GetLaneListResponse")]
-        System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSLaneServiceModel[]> GetLaneListAsync(string wcsClientID, string zoneCode);
+        System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSLaneServiceModel[]> GetLaneListAsync(string wcsClientID, string zoneCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetRickerList", ReplyAction="http://tempuri.org/IServiceForWCS/GetRickerListResponse")]
-        NovaMessageSwitch.WMS.WCSRickerServiceModel[] GetRickerList(string wcsClientID, string zoneCode);
+        NovaMessageSwitch.WmsServiceModel.WMS.WCSRickerServiceModel[] GetRickerList(string wcsClientID, string zoneCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetRickerList", ReplyAction="http://tempuri.org/IServiceForWCS/GetRickerListResponse")]
-        System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSRickerServiceModel[]> GetRickerListAsync(string wcsClientID, string zoneCode);
+        System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSRickerServiceModel[]> GetRickerListAsync(string wcsClientID, string zoneCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetConveyorList", ReplyAction="http://tempuri.org/IServiceForWCS/GetConveyorListResponse")]
-        NovaMessageSwitch.WMS.WCSConveyorServiceModel[] GetConveyorList(string wcsClientID, int SQID);
+        NovaMessageSwitch.WmsServiceModel.WMS.WCSConveyorServiceModel[] GetConveyorList(string wcsClientID, int SQID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetConveyorList", ReplyAction="http://tempuri.org/IServiceForWCS/GetConveyorListResponse")]
-        System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSConveyorServiceModel[]> GetConveyorListAsync(string wcsClientID, int SQID);
+        System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSConveyorServiceModel[]> GetConveyorListAsync(string wcsClientID, int SQID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetFoldDownDevList", ReplyAction="http://tempuri.org/IServiceForWCS/GetFoldDownDevListResponse")]
-        NovaMessageSwitch.WMS.WCSFoldDownDevServiceModel[] GetFoldDownDevList(string wcsClientID, int SQID);
+        NovaMessageSwitch.WmsServiceModel.WMS.WCSFoldDownDevServiceModel[] GetFoldDownDevList(string wcsClientID, int SQID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetFoldDownDevList", ReplyAction="http://tempuri.org/IServiceForWCS/GetFoldDownDevListResponse")]
-        System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSFoldDownDevServiceModel[]> GetFoldDownDevListAsync(string wcsClientID, int SQID);
+        System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSFoldDownDevServiceModel[]> GetFoldDownDevListAsync(string wcsClientID, int SQID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetShuttleCarList", ReplyAction="http://tempuri.org/IServiceForWCS/GetShuttleCarListResponse")]
-        NovaMessageSwitch.WMS.WCSShuttleCarServiceModel[] GetShuttleCarList(string wcsClientID, int SQID);
+        NovaMessageSwitch.WmsServiceModel.WMS.WCSShuttleCarServiceModel[] GetShuttleCarList(string wcsClientID, int SQID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetShuttleCarList", ReplyAction="http://tempuri.org/IServiceForWCS/GetShuttleCarListResponse")]
-        System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSShuttleCarServiceModel[]> GetShuttleCarListAsync(string wcsClientID, int SQID);
+        System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSShuttleCarServiceModel[]> GetShuttleCarListAsync(string wcsClientID, int SQID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetLEDList", ReplyAction="http://tempuri.org/IServiceForWCS/GetLEDListResponse")]
-        NovaMessageSwitch.WMS.WCSLEDServiceModel[] GetLEDList(string wcsClientID, int LEDSQID);
+        NovaMessageSwitch.WmsServiceModel.WMS.WCSLEDServiceModel[] GetLEDList(string wcsClientID, int LEDSQID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetLEDList", ReplyAction="http://tempuri.org/IServiceForWCS/GetLEDListResponse")]
-        System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSLEDServiceModel[]> GetLEDListAsync(string wcsClientID, int LEDSQID);
+        System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSLEDServiceModel[]> GetLEDListAsync(string wcsClientID, int LEDSQID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetCOMList", ReplyAction="http://tempuri.org/IServiceForWCS/GetCOMListResponse")]
-        NovaMessageSwitch.WMS.WCSCOMServiceModel[] GetCOMList(string wcsClientID, int PID);
+        NovaMessageSwitch.WmsServiceModel.WMS.WCSCOMServiceModel[] GetCOMList(string wcsClientID, int PID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetCOMList", ReplyAction="http://tempuri.org/IServiceForWCS/GetCOMListResponse")]
-        System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSCOMServiceModel[]> GetCOMListAsync(string wcsClientID, int PID);
+        System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSCOMServiceModel[]> GetCOMListAsync(string wcsClientID, int PID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetAccountPostAreaList", ReplyAction="http://tempuri.org/IServiceForWCS/GetAccountPostAreaListResponse")]
-        NovaMessageSwitch.WMS.WCSAccountPostAreaServiceModel[] GetAccountPostAreaList(string wcsClientID, string commandNum);
+        NovaMessageSwitch.WmsServiceModel.WMS.WCSAccountPostAreaServiceModel[] GetAccountPostAreaList(string wcsClientID, string commandNum);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetAccountPostAreaList", ReplyAction="http://tempuri.org/IServiceForWCS/GetAccountPostAreaListResponse")]
-        System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSAccountPostAreaServiceModel[]> GetAccountPostAreaListAsync(string wcsClientID, string commandNum);
+        System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSAccountPostAreaServiceModel[]> GetAccountPostAreaListAsync(string wcsClientID, string commandNum);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetPositionList", ReplyAction="http://tempuri.org/IServiceForWCS/GetPositionListResponse")]
-        NovaMessageSwitch.WMS.WCSPoistionServiceModel[] GetPositionList(string zoneCode);
+        NovaMessageSwitch.WmsServiceModel.WMS.WCSPoistionServiceModel[] GetPositionList(string zoneCode, System.Nullable<System.DateTime> sinceTime);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceForWCS/GetPositionList", ReplyAction="http://tempuri.org/IServiceForWCS/GetPositionListResponse")]
-        System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSPoistionServiceModel[]> GetPositionListAsync(string zoneCode);
+        System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSPoistionServiceModel[]> GetPositionListAsync(string zoneCode, System.Nullable<System.DateTime> sinceTime);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServiceForWCSChannel : NovaMessageSwitch.WMS.IServiceForWCS, System.ServiceModel.IClientChannel {
+    public interface IServiceForWCSChannel : NovaMessageSwitch.WmsServiceModel.WMS.IServiceForWCS, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceForWCSClient : System.ServiceModel.ClientBase<NovaMessageSwitch.WMS.IServiceForWCS>, NovaMessageSwitch.WMS.IServiceForWCS {
+    public partial class ServiceForWCSClient : System.ServiceModel.ClientBase<NovaMessageSwitch.WmsServiceModel.WMS.IServiceForWCS>, NovaMessageSwitch.WmsServiceModel.WMS.IServiceForWCS {
         
         public ServiceForWCSClient() {
         }
@@ -4323,19 +4339,19 @@ namespace NovaMessageSwitch.WMS {
                 base(binding, remoteAddress) {
         }
         
-        public NovaMessageSwitch.WMS.WCSTaskServiceModel[] GetTaskList() {
+        public NovaMessageSwitch.WmsServiceModel.WMS.WCSTaskServiceModel[] GetTaskList() {
             return base.Channel.GetTaskList();
         }
         
-        public System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSTaskServiceModel[]> GetTaskListAsync() {
+        public System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSTaskServiceModel[]> GetTaskListAsync() {
             return base.Channel.GetTaskListAsync();
         }
         
-        public bool SendStockInApply(NovaMessageSwitch.WMS.WCSStockInApplyServiceModel stockInApply) {
+        public bool SendStockInApply(NovaMessageSwitch.WmsServiceModel.WMS.WCSStockInApplyServiceModel stockInApply) {
             return base.Channel.SendStockInApply(stockInApply);
         }
         
-        public System.Threading.Tasks.Task<bool> SendStockInApplyAsync(NovaMessageSwitch.WMS.WCSStockInApplyServiceModel stockInApply) {
+        public System.Threading.Tasks.Task<bool> SendStockInApplyAsync(NovaMessageSwitch.WmsServiceModel.WMS.WCSStockInApplyServiceModel stockInApply) {
             return base.Channel.SendStockInApplyAsync(stockInApply);
         }
         
@@ -4355,92 +4371,92 @@ namespace NovaMessageSwitch.WMS {
             return base.Channel.MarkTaskAsDoneAsync(taskId);
         }
         
-        public NovaMessageSwitch.WMS.WCSTaskDetailServiceModel GetTaskDetail(string taskId) {
+        public NovaMessageSwitch.WmsServiceModel.WMS.WCSTaskDetailServiceModel GetTaskDetail(string taskId) {
             return base.Channel.GetTaskDetail(taskId);
         }
         
-        public System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSTaskDetailServiceModel> GetTaskDetailAsync(string taskId) {
+        public System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSTaskDetailServiceModel> GetTaskDetailAsync(string taskId) {
             return base.Channel.GetTaskDetailAsync(taskId);
         }
         
-        public NovaMessageSwitch.WMS.WCSZoneServiceModel[] GetZoneList() {
+        public NovaMessageSwitch.WmsServiceModel.WMS.WCSZoneServiceModel[] GetZoneList() {
             return base.Channel.GetZoneList();
         }
         
-        public System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSZoneServiceModel[]> GetZoneListAsync() {
+        public System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSZoneServiceModel[]> GetZoneListAsync() {
             return base.Channel.GetZoneListAsync();
         }
         
-        public NovaMessageSwitch.WMS.WCSLaneServiceModel[] GetLaneList(string wcsClientID, string zoneCode) {
+        public NovaMessageSwitch.WmsServiceModel.WMS.WCSLaneServiceModel[] GetLaneList(string wcsClientID, string zoneCode) {
             return base.Channel.GetLaneList(wcsClientID, zoneCode);
         }
         
-        public System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSLaneServiceModel[]> GetLaneListAsync(string wcsClientID, string zoneCode) {
+        public System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSLaneServiceModel[]> GetLaneListAsync(string wcsClientID, string zoneCode) {
             return base.Channel.GetLaneListAsync(wcsClientID, zoneCode);
         }
         
-        public NovaMessageSwitch.WMS.WCSRickerServiceModel[] GetRickerList(string wcsClientID, string zoneCode) {
+        public NovaMessageSwitch.WmsServiceModel.WMS.WCSRickerServiceModel[] GetRickerList(string wcsClientID, string zoneCode) {
             return base.Channel.GetRickerList(wcsClientID, zoneCode);
         }
         
-        public System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSRickerServiceModel[]> GetRickerListAsync(string wcsClientID, string zoneCode) {
+        public System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSRickerServiceModel[]> GetRickerListAsync(string wcsClientID, string zoneCode) {
             return base.Channel.GetRickerListAsync(wcsClientID, zoneCode);
         }
         
-        public NovaMessageSwitch.WMS.WCSConveyorServiceModel[] GetConveyorList(string wcsClientID, int SQID) {
+        public NovaMessageSwitch.WmsServiceModel.WMS.WCSConveyorServiceModel[] GetConveyorList(string wcsClientID, int SQID) {
             return base.Channel.GetConveyorList(wcsClientID, SQID);
         }
         
-        public System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSConveyorServiceModel[]> GetConveyorListAsync(string wcsClientID, int SQID) {
+        public System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSConveyorServiceModel[]> GetConveyorListAsync(string wcsClientID, int SQID) {
             return base.Channel.GetConveyorListAsync(wcsClientID, SQID);
         }
         
-        public NovaMessageSwitch.WMS.WCSFoldDownDevServiceModel[] GetFoldDownDevList(string wcsClientID, int SQID) {
+        public NovaMessageSwitch.WmsServiceModel.WMS.WCSFoldDownDevServiceModel[] GetFoldDownDevList(string wcsClientID, int SQID) {
             return base.Channel.GetFoldDownDevList(wcsClientID, SQID);
         }
         
-        public System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSFoldDownDevServiceModel[]> GetFoldDownDevListAsync(string wcsClientID, int SQID) {
+        public System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSFoldDownDevServiceModel[]> GetFoldDownDevListAsync(string wcsClientID, int SQID) {
             return base.Channel.GetFoldDownDevListAsync(wcsClientID, SQID);
         }
         
-        public NovaMessageSwitch.WMS.WCSShuttleCarServiceModel[] GetShuttleCarList(string wcsClientID, int SQID) {
+        public NovaMessageSwitch.WmsServiceModel.WMS.WCSShuttleCarServiceModel[] GetShuttleCarList(string wcsClientID, int SQID) {
             return base.Channel.GetShuttleCarList(wcsClientID, SQID);
         }
         
-        public System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSShuttleCarServiceModel[]> GetShuttleCarListAsync(string wcsClientID, int SQID) {
+        public System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSShuttleCarServiceModel[]> GetShuttleCarListAsync(string wcsClientID, int SQID) {
             return base.Channel.GetShuttleCarListAsync(wcsClientID, SQID);
         }
         
-        public NovaMessageSwitch.WMS.WCSLEDServiceModel[] GetLEDList(string wcsClientID, int LEDSQID) {
+        public NovaMessageSwitch.WmsServiceModel.WMS.WCSLEDServiceModel[] GetLEDList(string wcsClientID, int LEDSQID) {
             return base.Channel.GetLEDList(wcsClientID, LEDSQID);
         }
         
-        public System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSLEDServiceModel[]> GetLEDListAsync(string wcsClientID, int LEDSQID) {
+        public System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSLEDServiceModel[]> GetLEDListAsync(string wcsClientID, int LEDSQID) {
             return base.Channel.GetLEDListAsync(wcsClientID, LEDSQID);
         }
         
-        public NovaMessageSwitch.WMS.WCSCOMServiceModel[] GetCOMList(string wcsClientID, int PID) {
+        public NovaMessageSwitch.WmsServiceModel.WMS.WCSCOMServiceModel[] GetCOMList(string wcsClientID, int PID) {
             return base.Channel.GetCOMList(wcsClientID, PID);
         }
         
-        public System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSCOMServiceModel[]> GetCOMListAsync(string wcsClientID, int PID) {
+        public System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSCOMServiceModel[]> GetCOMListAsync(string wcsClientID, int PID) {
             return base.Channel.GetCOMListAsync(wcsClientID, PID);
         }
         
-        public NovaMessageSwitch.WMS.WCSAccountPostAreaServiceModel[] GetAccountPostAreaList(string wcsClientID, string commandNum) {
+        public NovaMessageSwitch.WmsServiceModel.WMS.WCSAccountPostAreaServiceModel[] GetAccountPostAreaList(string wcsClientID, string commandNum) {
             return base.Channel.GetAccountPostAreaList(wcsClientID, commandNum);
         }
         
-        public System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSAccountPostAreaServiceModel[]> GetAccountPostAreaListAsync(string wcsClientID, string commandNum) {
+        public System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSAccountPostAreaServiceModel[]> GetAccountPostAreaListAsync(string wcsClientID, string commandNum) {
             return base.Channel.GetAccountPostAreaListAsync(wcsClientID, commandNum);
         }
         
-        public NovaMessageSwitch.WMS.WCSPoistionServiceModel[] GetPositionList(string zoneCode) {
-            return base.Channel.GetPositionList(zoneCode);
+        public NovaMessageSwitch.WmsServiceModel.WMS.WCSPoistionServiceModel[] GetPositionList(string zoneCode, System.Nullable<System.DateTime> sinceTime) {
+            return base.Channel.GetPositionList(zoneCode, sinceTime);
         }
         
-        public System.Threading.Tasks.Task<NovaMessageSwitch.WMS.WCSPoistionServiceModel[]> GetPositionListAsync(string zoneCode) {
-            return base.Channel.GetPositionListAsync(zoneCode);
+        public System.Threading.Tasks.Task<NovaMessageSwitch.WmsServiceModel.WMS.WCSPoistionServiceModel[]> GetPositionListAsync(string zoneCode, System.Nullable<System.DateTime> sinceTime) {
+            return base.Channel.GetPositionListAsync(zoneCode, sinceTime);
         }
     }
 }

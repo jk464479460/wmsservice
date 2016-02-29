@@ -10,7 +10,7 @@ using NovaMessageSwitch.Bll;
 using System.Threading;
 using NovaMessageSwitch.Model;
 using NovaMessageSwitch.Properties;
-using NovaMessageSwitch.Tool;
+using NovaMessageSwitch.Tool.Log;
 
 namespace NovaMessageSwitch
 {
@@ -27,6 +27,7 @@ namespace NovaMessageSwitch
             UpdateUi.Context= SynchronizationContext.Current;
             UpdateUi.CallBackMethod = OnUpdateWcsEvent;
             UpdateUi.CallBackMethodMessageInfo = OnUpdateMessageInfoEvent;
+            UpdateUi.CallbackUpdateStrip = UpdateStrip;
             bgwork.DoWork += Bgwork_DoWork;
             bgwork.RunWorkerAsync();
             FormClosed += Form1_FormClosed;
@@ -34,7 +35,6 @@ namespace NovaMessageSwitch
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //NovaMessageSwitch
             try
             {
 
@@ -61,22 +61,24 @@ namespace NovaMessageSwitch
         private void Bgwork_DoWork(object sender, DoWorkEventArgs e)
         {
             _server = new WcsServer();
+
+            var taskWms = Task.Factory.StartNew(() => {
+                AppLogger.Info("启动任务监听");
+                _pid2 = Thread.CurrentThread;
+               /* this.BeginInvoke(new Action(() =>
+                {
+                    this.toolStripStatusLabel1.Text += Resources.Form1_Bgwork_DoWork_启动wms任务轮询;
+                }), null);*/
+                _server.StartForWms();
+            });
+            Thread.Sleep(200);
             var taskWcs = Task.Factory.StartNew(()=>
             {
                 _pid1 = Thread.CurrentThread;
-                _server.StartForWcs();
+               
                 AppLogger.Info(Resources.Form1_Bgwork_DoWork_启动wcs监听);
-                BeginInvoke(new Action(() => toolStripStatusLabel1.Text = Resources.Form1_Bgwork_DoWork_启动wcs监听),null);
-            });
-            Thread.Sleep(200);
-            var taskWms = Task.Factory.StartNew(() => {
-                AppLogger.Info("启动任务监听");
-                _pid2=Thread.CurrentThread;
-                BeginInvoke(new Action(() =>
-                {
-                    toolStripStatusLabel1.Text += Resources.Form1_Bgwork_DoWork_启动wms任务轮询;
-                }), null);
-                _server.StartForWms();
+              /*  this.BeginInvoke(new Action(() => this.toolStripStatusLabel1.Text = Resources.Form1_Bgwork_DoWork_启动wcs监听), null);*/
+                _server.StartForWcs();
             });
         }
 
@@ -118,12 +120,19 @@ namespace NovaMessageSwitch
             viewItem.ToolTipText=viewItem.SubItems[3].Text;
             if (InfoList.Items.Count > 10000) InfoList.Items.Clear();
         }
+
+        protected virtual void UpdateStrip(object param)
+        {
+            var str = param.ToString();
+            this.toolStripStatusLabel1.Text = toolStripStatusLabel1.Text + str;
+        }
     }
     public class UpdateUi
     {
         public static SynchronizationContext Context { get; set; }
         public static SendOrPostCallback CallBackMethod { get; set; }
         public static SendOrPostCallback CallBackMethodMessageInfo { get; set; }
+        public static SendOrPostCallback CallbackUpdateStrip { get; set; }
 
         public static void Post(object param)
         {
@@ -132,6 +141,10 @@ namespace NovaMessageSwitch
         public static void PostMessageInfo(object param)
         {
             Context.Post(CallBackMethodMessageInfo, param);
+        }
+        public static void PostUpdateToolStrip(object param)
+        {
+            Context.Post(CallbackUpdateStrip, param);
         }
     }
 }
