@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -115,11 +114,13 @@ namespace NovaMessageSwitch.Tool
         }
         public List<dynamic> GetPackage(dynamic message)
         {
+            var contentStr = $"{JsonConvert.SerializeObject(message.content)}";
             var result = new List<dynamic>();
-            if ((int)message.infoType == (int)MessageType.InfoType30)
+            if (contentStr.Length > FrameSize && !string.IsNullOrEmpty(contentStr))
+                /*(int)message.infoType == (int)MessageType.InfoType30*/
             {
-                var data = (MessageData<ArrayList>)message;
-                var contentList = CreateFrameArray(data.infoType, JsonConvert.SerializeObject(data.content));
+                var data = message; /*(MessageData<ArrayList>)*/
+                var contentList = CreateFrameArray(/*data.infoType,*/ contentStr);
                 for (var i = 0; i < TotalFrame; i++)
                 {
                     var tempMessage = new MessageData<string>
@@ -139,19 +140,25 @@ namespace NovaMessageSwitch.Tool
                 }
             }
             else
+            {
+               /* message.currentFrame = 0;
+                message.totalFrame = 1;*/
                 result.Add(message);
+            }
+               
             return result;
         }
 
-        private List<string> CreateFrameArray(int infoType, string oriContent)
+        private List<string> CreateFrameArray(/*int infoType,*/ string oriContent)
         {
-            if (infoType == (int)MessageType.InfoType30)
+            //if (infoType == (int)MessageType.InfoType30)
             {
                 var compressStr = CompressStringTool.CompressString(oriContent);
                 Md5 = CompressStringTool.Md5Encrypt(compressStr);
                 var compressByte = Encoding.UTF8.GetBytes(compressStr);
                 TotalFrame = compressByte.Length / FrameSize;
-                if (compressByte.Length % FrameSize != 0) TotalFrame++;
+                if (compressByte.Length % FrameSize > 0) TotalFrame=(compressByte.Length/FrameSize)+1;
+                if (compressByte.Length % FrameSize == 0) TotalFrame = compressByte.Length / FrameSize;
                 var result = new List<string>();
                 for (var i = 0; i < TotalFrame; i++)
                 {
@@ -160,7 +167,7 @@ namespace NovaMessageSwitch.Tool
                 }
                 return result;
             }
-            return null;
+            //return null;
         }
 
     }

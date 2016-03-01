@@ -60,7 +60,7 @@ namespace NovaMessageSwitch.MessageHandleFactory
                             serial = Guid.NewGuid().ToString("N"),
                             source = DataFlowDirection.wcs.ToString()
                         };
-                        var laneResult = (WCSLaneServiceModel[])wmsResult;
+                        var laneResult = (IOrderedEnumerable<WCSLaneServiceModel>)wmsResult;
                         foreach (var lane in laneResult)
                         {
                             message22.content.Add(new ContentLane
@@ -410,13 +410,13 @@ namespace NovaMessageSwitch.MessageHandleFactory
                             source = DataFlowDirection.wcs.ToString()
                         };
                         var goodsLocationResult = (WCSPoistionServiceModel[])wmsResult;
-                        var laneList = (from p in goodsLocationResult select p.Lane).Distinct();
+                        var laneList = (from p in goodsLocationResult select p.Lane).Distinct().OrderBy(x=>x);
                         foreach (var lane in laneList) //遍历巷道 依次添加每一个巷道
                         {
                             var tempLane = new ArrayList();
                             message30.content.Add(tempLane);
                             DebugTest.DebugVersion.RowsCnt=0;
-                            foreach (var row in (from p in goodsLocationResult where p.Lane==lane select p.Row).Distinct() /*goodsLocationResult.Where(x => x.Lane == lane.Key)*/)//找出属于该巷道的排
+                            foreach (var row in (from p in goodsLocationResult  where p.Lane== lane select p.Row).Distinct().OrderBy(x=>x) /*goodsLocationResult.Where(x => x.Lane == lane.Key)*/)//找出属于该巷道的排
                             {
                                 var newRow = new ArrayList();
                                 tempLane.Add(newRow);
@@ -424,14 +424,14 @@ namespace NovaMessageSwitch.MessageHandleFactory
 
                                 //巷道---排--列
                                 DebugTest.DebugVersion.ColCnt = 0;
-                                foreach (var cl in (from k in goodsLocationResult where k.Lane==lane && k.Row==row select k.Column).Distinct()/* into j select j*//*goodsLocationResult.Where(x => x.Lane == lane.Key && x.Row == row.Key)*/)
+                                foreach (var cl in (from k in goodsLocationResult where k.Lane==lane && k.Row==row  select k.Column).Distinct().OrderBy(x=>x)/* into j select j*//*goodsLocationResult.Where(x => x.Lane == lane.Key && x.Row == row.Key)*/)
                                 {
                                     var newCl = new ArrayList();
                                     newRow.Add(newCl);
                                     DebugTest.DebugVersion.ColCnt++;
                                     //layer
                                     var layer = new StringBuilder();
-                                    foreach (var grid in goodsLocationResult.Where(x => x.Lane == lane && x.Row ==row  && x.Column == cl))
+                                    foreach (var grid in (from j in goodsLocationResult where j.Lane == lane && j.Row == row && j.Column == cl select j).OrderBy(x=>x.Layer)) /*goodsLocationResult.Where(x => x.Lane == lane && x.Row ==row  && x.Column == cl)*/
                                     {
                                         newCl.Add((int)grid.Position_State);
                                         layer.Append(grid.Position_State+",");

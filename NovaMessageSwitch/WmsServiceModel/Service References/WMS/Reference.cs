@@ -710,7 +710,7 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         private string RBackup2TitleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int RColSField;
+        private string RColSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RCommandNumField;
@@ -719,13 +719,13 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         private string RControlModField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int RCurrentLaneField;
+        private string RCurrentLaneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RDeviceStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int RLayerSField;
+        private string RLayerSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RPreCommandEchoField;
@@ -734,7 +734,7 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         private string RPreCommandStatusEchoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int RRowSField;
+        private string RRowSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int SQIDField;
@@ -767,10 +767,10 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         private string WBackup2TitleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WColEField;
+        private string WColEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WColSField;
+        private string WColSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WCommandNumField;
@@ -785,25 +785,25 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         private string WDeviceSNumField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WFetchLaneField;
+        private string WFetchLaneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WLayerEField;
+        private string WLayerEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WLayerSField;
+        private string WLayerSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WRowEField;
+        private string WRowEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WRowSField;
+        private string WRowSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WSizeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WUnloadLaneField;
+        private string WUnloadLaneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WWeightField;
@@ -932,12 +932,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int RColS {
+        public string RColS {
             get {
                 return this.RColSField;
             }
             set {
-                if ((this.RColSField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.RColSField, value) != true)) {
                     this.RColSField = value;
                     this.RaisePropertyChanged("RColS");
                 }
@@ -971,12 +971,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int RCurrentLane {
+        public string RCurrentLane {
             get {
                 return this.RCurrentLaneField;
             }
             set {
-                if ((this.RCurrentLaneField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.RCurrentLaneField, value) != true)) {
                     this.RCurrentLaneField = value;
                     this.RaisePropertyChanged("RCurrentLane");
                 }
@@ -997,12 +997,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int RLayerS {
+        public string RLayerS {
             get {
                 return this.RLayerSField;
             }
             set {
-                if ((this.RLayerSField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.RLayerSField, value) != true)) {
                     this.RLayerSField = value;
                     this.RaisePropertyChanged("RLayerS");
                 }
@@ -1036,12 +1036,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int RRowS {
+        public string RRowS {
             get {
                 return this.RRowSField;
             }
             set {
-                if ((this.RRowSField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.RRowSField, value) != true)) {
                     this.RRowSField = value;
                     this.RaisePropertyChanged("RRowS");
                 }
@@ -1179,12 +1179,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WColE {
+        public string WColE {
             get {
                 return this.WColEField;
             }
             set {
-                if ((this.WColEField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WColEField, value) != true)) {
                     this.WColEField = value;
                     this.RaisePropertyChanged("WColE");
                 }
@@ -1192,12 +1192,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WColS {
+        public string WColS {
             get {
                 return this.WColSField;
             }
             set {
-                if ((this.WColSField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WColSField, value) != true)) {
                     this.WColSField = value;
                     this.RaisePropertyChanged("WColS");
                 }
@@ -1257,12 +1257,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WFetchLane {
+        public string WFetchLane {
             get {
                 return this.WFetchLaneField;
             }
             set {
-                if ((this.WFetchLaneField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WFetchLaneField, value) != true)) {
                     this.WFetchLaneField = value;
                     this.RaisePropertyChanged("WFetchLane");
                 }
@@ -1270,12 +1270,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WLayerE {
+        public string WLayerE {
             get {
                 return this.WLayerEField;
             }
             set {
-                if ((this.WLayerEField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WLayerEField, value) != true)) {
                     this.WLayerEField = value;
                     this.RaisePropertyChanged("WLayerE");
                 }
@@ -1283,12 +1283,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WLayerS {
+        public string WLayerS {
             get {
                 return this.WLayerSField;
             }
             set {
-                if ((this.WLayerSField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WLayerSField, value) != true)) {
                     this.WLayerSField = value;
                     this.RaisePropertyChanged("WLayerS");
                 }
@@ -1296,12 +1296,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WRowE {
+        public string WRowE {
             get {
                 return this.WRowEField;
             }
             set {
-                if ((this.WRowEField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WRowEField, value) != true)) {
                     this.WRowEField = value;
                     this.RaisePropertyChanged("WRowE");
                 }
@@ -1309,12 +1309,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WRowS {
+        public string WRowS {
             get {
                 return this.WRowSField;
             }
             set {
-                if ((this.WRowSField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WRowSField, value) != true)) {
                     this.WRowSField = value;
                     this.RaisePropertyChanged("WRowS");
                 }
@@ -1335,12 +1335,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WUnloadLane {
+        public string WUnloadLane {
             get {
                 return this.WUnloadLaneField;
             }
             set {
-                if ((this.WUnloadLaneField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WUnloadLaneField, value) != true)) {
                     this.WUnloadLaneField = value;
                     this.RaisePropertyChanged("WUnloadLane");
                 }
@@ -1545,10 +1545,10 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         private string WBackup2TitleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WColEField;
+        private string WColEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WColSField;
+        private string WColSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WCommandNumField;
@@ -1563,25 +1563,25 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         private string WDeviceSNumField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WFetchLaneField;
+        private string WFetchLaneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WLayerEField;
+        private string WLayerEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WLayerSField;
+        private string WLayerSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WRowEField;
+        private string WRowEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WRowSField;
+        private string WRowSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WSizeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WUnloadLaneField;
+        private string WUnloadLaneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WWeightField;
@@ -2155,12 +2155,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WColE {
+        public string WColE {
             get {
                 return this.WColEField;
             }
             set {
-                if ((this.WColEField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WColEField, value) != true)) {
                     this.WColEField = value;
                     this.RaisePropertyChanged("WColE");
                 }
@@ -2168,12 +2168,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WColS {
+        public string WColS {
             get {
                 return this.WColSField;
             }
             set {
-                if ((this.WColSField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WColSField, value) != true)) {
                     this.WColSField = value;
                     this.RaisePropertyChanged("WColS");
                 }
@@ -2233,12 +2233,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WFetchLane {
+        public string WFetchLane {
             get {
                 return this.WFetchLaneField;
             }
             set {
-                if ((this.WFetchLaneField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WFetchLaneField, value) != true)) {
                     this.WFetchLaneField = value;
                     this.RaisePropertyChanged("WFetchLane");
                 }
@@ -2246,12 +2246,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WLayerE {
+        public string WLayerE {
             get {
                 return this.WLayerEField;
             }
             set {
-                if ((this.WLayerEField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WLayerEField, value) != true)) {
                     this.WLayerEField = value;
                     this.RaisePropertyChanged("WLayerE");
                 }
@@ -2259,12 +2259,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WLayerS {
+        public string WLayerS {
             get {
                 return this.WLayerSField;
             }
             set {
-                if ((this.WLayerSField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WLayerSField, value) != true)) {
                     this.WLayerSField = value;
                     this.RaisePropertyChanged("WLayerS");
                 }
@@ -2272,12 +2272,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WRowE {
+        public string WRowE {
             get {
                 return this.WRowEField;
             }
             set {
-                if ((this.WRowEField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WRowEField, value) != true)) {
                     this.WRowEField = value;
                     this.RaisePropertyChanged("WRowE");
                 }
@@ -2285,12 +2285,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WRowS {
+        public string WRowS {
             get {
                 return this.WRowSField;
             }
             set {
-                if ((this.WRowSField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WRowSField, value) != true)) {
                     this.WRowSField = value;
                     this.RaisePropertyChanged("WRowS");
                 }
@@ -2311,12 +2311,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WUnloadLane {
+        public string WUnloadLane {
             get {
                 return this.WUnloadLaneField;
             }
             set {
-                if ((this.WUnloadLaneField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WUnloadLaneField, value) != true)) {
                     this.WUnloadLaneField = value;
                     this.RaisePropertyChanged("WUnloadLane");
                 }
@@ -2597,10 +2597,10 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         private string WBackup2TitleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WColEField;
+        private string WColEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WColSField;
+        private string WColSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WCommandNumField;
@@ -2615,25 +2615,25 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         private string WDeviceSNumField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WFetchLaneField;
+        private string WFetchLaneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WLayerEField;
+        private string WLayerEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WLayerSField;
+        private string WLayerSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WRowEField;
+        private string WRowEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WRowSField;
+        private string WRowSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WSizeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WUnloadLaneField;
+        private string WUnloadLaneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WWeightField;
@@ -3077,12 +3077,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WColE {
+        public string WColE {
             get {
                 return this.WColEField;
             }
             set {
-                if ((this.WColEField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WColEField, value) != true)) {
                     this.WColEField = value;
                     this.RaisePropertyChanged("WColE");
                 }
@@ -3090,12 +3090,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WColS {
+        public string WColS {
             get {
                 return this.WColSField;
             }
             set {
-                if ((this.WColSField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WColSField, value) != true)) {
                     this.WColSField = value;
                     this.RaisePropertyChanged("WColS");
                 }
@@ -3155,12 +3155,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WFetchLane {
+        public string WFetchLane {
             get {
                 return this.WFetchLaneField;
             }
             set {
-                if ((this.WFetchLaneField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WFetchLaneField, value) != true)) {
                     this.WFetchLaneField = value;
                     this.RaisePropertyChanged("WFetchLane");
                 }
@@ -3168,12 +3168,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WLayerE {
+        public string WLayerE {
             get {
                 return this.WLayerEField;
             }
             set {
-                if ((this.WLayerEField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WLayerEField, value) != true)) {
                     this.WLayerEField = value;
                     this.RaisePropertyChanged("WLayerE");
                 }
@@ -3181,12 +3181,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WLayerS {
+        public string WLayerS {
             get {
                 return this.WLayerSField;
             }
             set {
-                if ((this.WLayerSField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WLayerSField, value) != true)) {
                     this.WLayerSField = value;
                     this.RaisePropertyChanged("WLayerS");
                 }
@@ -3194,12 +3194,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WRowE {
+        public string WRowE {
             get {
                 return this.WRowEField;
             }
             set {
-                if ((this.WRowEField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WRowEField, value) != true)) {
                     this.WRowEField = value;
                     this.RaisePropertyChanged("WRowE");
                 }
@@ -3207,12 +3207,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WRowS {
+        public string WRowS {
             get {
                 return this.WRowSField;
             }
             set {
-                if ((this.WRowSField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WRowSField, value) != true)) {
                     this.WRowSField = value;
                     this.RaisePropertyChanged("WRowS");
                 }
@@ -3233,12 +3233,12 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WUnloadLane {
+        public string WUnloadLane {
             get {
                 return this.WUnloadLaneField;
             }
             set {
-                if ((this.WUnloadLaneField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.WUnloadLaneField, value) != true)) {
                     this.WUnloadLaneField = value;
                     this.RaisePropertyChanged("WUnloadLane");
                 }

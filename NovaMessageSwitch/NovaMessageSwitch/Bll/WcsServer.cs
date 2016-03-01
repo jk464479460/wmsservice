@@ -86,7 +86,7 @@ namespace NovaMessageSwitch.Bll
             while (true)
             {
                 Thread.Sleep(1000);
-                //try
+                try
                 {
                     var myClientSocket = (Socket)clientSocket;
                     var result = new byte[BufferSize];
@@ -125,10 +125,10 @@ namespace NovaMessageSwitch.Bll
                     });
                     Thread.Sleep(500);
                 }
-                /* catch (Exception ex)
+                 catch (Exception ex)
                  {
                      AppLogger.Error($"{ex.Message} {ex.StackTrace}", ex);
-                 }*/
+                 }
 
             }
         }
@@ -148,17 +148,19 @@ namespace NovaMessageSwitch.Bll
                     wcsReceiver.ClientId = Convert.ToString(messageEntity.Message.serial.Value);
                     wcsReceiver.ReplyAckWcs(messageEntity.Client, wcsReceiver.ClientId);
                     if (messageEntity.Message.infoType == 40 || messageEntity.Message.infoType == 42)
-                        wcsReceiver.ReplyBrowser(messageEntity.Message);
-                    else
                     {
-                        wcsReceiver.RecieiveRequest(messageEntity.Message);
+                        wcsReceiver.ReplyBrowser(messageEntity.Message);
+                        continue;
+                    }
+                       
+                    wcsReceiver.RecieiveRequest(messageEntity.Message, new Action(delegate
+                    {
                         _sendMailBox.Enqueue(new ReceiveEntity
                         {
                             Client = messageEntity.Client,
                             Message = wcsReceiver.Message
                         });
-                     
-                    }
+                    }));
                 }
                 catch (Exception ex)
                 {
@@ -413,12 +415,13 @@ namespace NovaMessageSwitch.Bll
             socketTool.PrintInfoConsole($"{sendStr}", ConsoleColor.Green, infoDisplay, PostMessageInfo);
         }
         //接收wcs请求
-        public void RecieiveRequest(dynamic message)
+        public void RecieiveRequest(dynamic message, Action f)
         {
             helpAsk.MessageFactory = _messageFactory;
             helpAsk.Analysis(message.content.objectID.ToString());
             _message = helpAsk.HandleRequesFromWcs(message);
             Debug.Assert((object)_message != null, "请求转换为报文时_message==null");
+            f();
         }
         //向wcs发送
         public void ReplyResponseToWcs(Socket socket, string oriSerial)

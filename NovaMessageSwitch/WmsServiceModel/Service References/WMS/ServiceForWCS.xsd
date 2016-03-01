@@ -105,15 +105,15 @@
       <xs:element minOccurs="0" name="RBackup1Title" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RBackup2" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RBackup2Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RColS" type="xs:int" />
+      <xs:element minOccurs="0" name="RColS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RCommandNum" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RControlMod" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RCurrentLane" type="xs:int" />
+      <xs:element minOccurs="0" name="RCurrentLane" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RDeviceStatus" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RLayerS" type="xs:int" />
+      <xs:element minOccurs="0" name="RLayerS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RPreCommandEcho" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RPreCommandStatusEcho" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RRowS" type="xs:int" />
+      <xs:element minOccurs="0" name="RRowS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SQID" type="xs:int" />
       <xs:element minOccurs="0" name="UpdateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="UseRBU1" type="xs:boolean" />
@@ -124,19 +124,19 @@
       <xs:element minOccurs="0" name="WBackup1Title" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WBackup2" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WBackup2Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WColE" type="xs:int" />
-      <xs:element minOccurs="0" name="WColS" type="xs:int" />
+      <xs:element minOccurs="0" name="WColE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WColS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WCommandNum" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WCommandType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WDeviceENum" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WDeviceSNum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WFetchLane" type="xs:int" />
-      <xs:element minOccurs="0" name="WLayerE" type="xs:int" />
-      <xs:element minOccurs="0" name="WLayerS" type="xs:int" />
-      <xs:element minOccurs="0" name="WRowE" type="xs:int" />
-      <xs:element minOccurs="0" name="WRowS" type="xs:int" />
+      <xs:element minOccurs="0" name="WFetchLane" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WLayerE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WLayerS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WRowE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WRowS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WSize" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WUnloadLane" type="xs:int" />
+      <xs:element minOccurs="0" name="WUnloadLane" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WWeight" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WXor" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ifSpecification" type="xs:boolean" />
@@ -194,19 +194,19 @@
       <xs:element minOccurs="0" name="WBackup1Title" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WBackup2" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WBackup2Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WColE" type="xs:int" />
-      <xs:element minOccurs="0" name="WColS" type="xs:int" />
+      <xs:element minOccurs="0" name="WColE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WColS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WCommandNum" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WCommandType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WDeviceENum" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WDeviceSNum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WFetchLane" type="xs:int" />
-      <xs:element minOccurs="0" name="WLayerE" type="xs:int" />
-      <xs:element minOccurs="0" name="WLayerS" type="xs:int" />
-      <xs:element minOccurs="0" name="WRowE" type="xs:int" />
-      <xs:element minOccurs="0" name="WRowS" type="xs:int" />
+      <xs:element minOccurs="0" name="WFetchLane" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WLayerE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WLayerS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WRowE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WRowS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WSize" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WUnloadLane" type="xs:int" />
+      <xs:element minOccurs="0" name="WUnloadLane" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WWeight" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WXor" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WeithtFrom" type="tns:ConveyorWeithtFromServiceEnum" />
@@ -352,19 +352,19 @@
       <xs:element minOccurs="0" name="WBackup1Title" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WBackup2" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WBackup2Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WColE" type="xs:int" />
-      <xs:element minOccurs="0" name="WColS" type="xs:int" />
+      <xs:element minOccurs="0" name="WColE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WColS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WCommandNum" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WCommandType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WDeviceENum" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WDeviceSNum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WFetchLane" type="xs:int" />
-      <xs:element minOccurs="0" name="WLayerE" type="xs:int" />
-      <xs:element minOccurs="0" name="WLayerS" type="xs:int" />
-      <xs:element minOccurs="0" name="WRowE" type="xs:int" />
-      <xs:element minOccurs="0" name="WRowS" type="xs:int" />
+      <xs:element minOccurs="0" name="WFetchLane" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WLayerE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WLayerS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WRowE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WRowS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WSize" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WUnloadLane" type="xs:int" />
+      <xs:element minOccurs="0" name="WUnloadLane" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WWeight" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WXor" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WeightFrom" type="tns:FoldDownDevWeightFromServiceEnum" />
