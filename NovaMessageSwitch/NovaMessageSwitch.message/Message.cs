@@ -196,6 +196,12 @@ namespace NovaMessageSwitch.message
         public int PerWidth { get; set; }
         public int PerHeight { get; set; }
         public string Updatetime { get; set; }
+
+        public string PreDevice { get; set; }
+        public string NextDevice { get; set; }
+        public string Direction { get; set; }
+        public string ConveyorType { get; set; }
+
     }
     /// <summary>
     /// 折叠机
@@ -363,6 +369,8 @@ namespace NovaMessageSwitch.message
     {
         public string equiNum { get; set; }
         public string commandNum { get; set; }
+        public int jobType { get; set; }
+
         public string deviceS { get; set; }
         public int laneS { get; set; }
         public int rowS { get; set; }

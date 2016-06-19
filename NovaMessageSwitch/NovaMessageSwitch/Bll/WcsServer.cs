@@ -4,13 +4,17 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
+using System.IO.MemoryMappedFiles;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NovaMessageSwitch.message;
 using NovaMessageSwitch.MessageHandleFactory;
 using NovaMessageSwitch.Tool;
@@ -33,6 +37,7 @@ namespace NovaMessageSwitch.Bll
         private static ConcurrentQueue<ReceiveEntity> _receiveMailBox = new ConcurrentQueue<ReceiveEntity>();//收件箱
         private static ConcurrentQueue<ReceiveEntity> _sendMailBox = new ConcurrentQueue<ReceiveEntity>();//发件箱
         private static object _lockwcsList = new object();
+        private static CachePool _sPoolyncDataPool = new CachePool();
 
 
         #region wcs
@@ -47,13 +52,22 @@ namespace NovaMessageSwitch.Bll
             _socket.Listen(int.Parse(_config.MaxConnect));
             var thread = new Thread(ListenClientConnectWcs);
             CallbackUpdateStrip("启动wcs监听;");
-
             thread.Start();
             var receiveBoxHandler = new Thread(HandReceiveMailbox);//收件邮箱侦听
             receiveBoxHandler.Start();
 
             var sendBoxHandler = new Thread(HandleSendMailbox);//发件箱侦听
             sendBoxHandler.Start();
+            var browser = new ServiceForWCSClient();
+            Task.Factory.StartNew(() =>
+            {
+                while (true)
+                {
+                    browser.KeepAlive();
+                    Thread.Sleep(2000);
+                }
+
+            });
         }
 
         /// <summary>
@@ -85,8 +99,7 @@ namespace NovaMessageSwitch.Bll
         {
             while (true)
             {
-                Thread.Sleep(1000);
-                //try
+                try
                 {
                     var myClientSocket = (Socket)clientSocket;
                     var result = new byte[BufferSize];
@@ -117,47 +130,72 @@ namespace NovaMessageSwitch.Bll
                     _socketTool.ValidateMessageObj(obj, receiveStr);
                     AddDictWcs((int)obj.clientID.Value, myClientSocket);
                     if (obj.infoType.Value == 0) continue;
-
+                    var wcsReceiver = new WcsReceiver(_taskStockIn)
+                    {
+                        CacheSyncPool = _sPoolyncDataPool,
+                        ClientId = Convert.ToString(obj.serial.Value)
+                    };
+                    Thread.Sleep(1000);
+                    wcsReceiver.ReplyAckWcs(myClientSocket, wcsReceiver.ClientId);
                     _receiveMailBox.Enqueue(new ReceiveEntity
                     {
                         Client = myClientSocket,
                         Message = obj
                     });
-                    Thread.Sleep(500);
+
                 }
-                /* catch (Exception ex)
-                 {
-                     AppLogger.Error($"{ex.Message} {ex.StackTrace}", ex);
-                 }*/
+                catch (Exception ex)
+                {
+                    AppLogger.Error($"{ex.Message} {ex.StackTrace}", ex);
+                }
 
             }
         }
 
         void HandReceiveMailbox()
         {
-            var wcsReceiver = new WcsReceiver(_taskStockIn, _messageFactory, _socketTool);
             while (true)
             {
-                Thread.Sleep(1000);
-                if (_receiveMailBox.IsEmpty) continue;
+                 if (_receiveMailBox.IsEmpty)
+                 {
+                     Thread.Sleep(100);
+                     continue;
+                 }
                 try
                 {
                     ReceiveEntity messageEntity;
                     _receiveMailBox.TryDequeue(out messageEntity);
-                    if (messageEntity == null) return;
-                    wcsReceiver.ClientId = Convert.ToString(messageEntity.Message.serial.Value);
-                    wcsReceiver.ReplyAckWcs(messageEntity.Client, wcsReceiver.ClientId);
-                    if (messageEntity.Message.infoType == 40 || messageEntity.Message.infoType == 42)
-                        wcsReceiver.ReplyBrowser(messageEntity.Message);
-                    else
+                   
+                    Action a = () =>
                     {
-                        wcsReceiver.RecieiveRequest(messageEntity.Message);
+                        var wcsReceiver = new WcsReceiver(_taskStockIn)
+                        {
+                            CacheSyncPool = _sPoolyncDataPool,
+                            ClientId = Convert.ToString(messageEntity.Message.serial.Value)
+                        };
+
+                        if (messageEntity.Message.infoType == 40 || messageEntity.Message.infoType == 42 || messageEntity.Message.infoType == 50)
+                        {
+                            wcsReceiver.ReplyBrowser(messageEntity.Message);
+                            return;
+                        }
+                        wcsReceiver.RecieiveRequest(messageEntity.Message, new Action(delegate
+                        {
+
+
+                        }));
                         _sendMailBox.Enqueue(new ReceiveEntity
                         {
                             Client = messageEntity.Client,
                             Message = wcsReceiver.Message
                         });
-                     
+
+                    };
+                    a.BeginInvoke(new AsyncCallback(Callback), null);
+                    if (_receiveMailBox.IsEmpty)
+                    {
+                        _receiveMailBox=new ConcurrentQueue<ReceiveEntity>();
+                        ClearMemory();
                     }
                 }
                 catch (Exception ex)
@@ -167,25 +205,39 @@ namespace NovaMessageSwitch.Bll
             }
         }
 
+        static void Callback(IAsyncResult result)
+        {
+            
+           
+        }
+
         void HandleSendMailbox()
         {
-            var wcsReceiver = new WcsReceiver(_taskStockIn, _messageFactory, _socketTool);
             while (true)
             {
-                Thread.Sleep(1000);
                 try
                 {
-                    if (_sendMailBox.IsEmpty) continue;
+                    if (_sendMailBox.IsEmpty)
+                    {
+                        Thread.Sleep(100);
+                        continue;
+                    }
                     ReceiveEntity messageEntity;
                     _sendMailBox.TryDequeue(out messageEntity);
-                    if (messageEntity == null) return;
-                    wcsReceiver.ClientId = Convert.ToString(messageEntity.Message.serial);
-                    wcsReceiver.Message = messageEntity.Message;
-                    wcsReceiver.ReplyResponseToWcs(messageEntity.Client, wcsReceiver.ClientId);
+                    var wcsReceiver = new WcsReceiver(_taskStockIn)
+                    {
+                        Message = messageEntity.Message
+                    };
+                    wcsReceiver.ReplyResponseToWcs(messageEntity.Client);
+                    if (_sendMailBox.IsEmpty)
+                    {
+                        _sendMailBox = new ConcurrentQueue<ReceiveEntity>();
+                        ClearMemory();
+                    }
                 }
                 catch (Exception ex)
                 {
-                    AppLogger.Error($"HandleSendMailbox：{ex.StackTrace}", ex);
+                    AppLogger.Error($"HandleSendMailbox：{ex.StackTrace}【-】{ex.Message}", ex);
                 }
             }
         }
@@ -205,17 +257,24 @@ namespace NovaMessageSwitch.Bll
                     endPoint.EndPoint = socket;
                     endPoint.RecentTimeOld = endPoint.RecentTime;
                     endPoint.RecentTime = DateTime.Now;
-                    _socketTool.UpdateWcsDisplay(endPoint, Post);//Post(endPoint);
-                    return;
+                    _socketTool.UpdateWcsDisplay(endPoint, Post); //Post(endPoint);
                 }
-                var newEndPoit = new WcsEndpoint<Socket>
+                else
                 {
-                    RecentTime = DateTime.Now,
-                    RecentTimeOld = null,
-                    EndPoint = socket
-                };
-                _wcsList.Add(clientId, newEndPoit);
-                _socketTool.UpdateWcsDisplay(newEndPoit, Post);// Post(newEndPoit);
+                    var newEndPoit = new WcsEndpoint<Socket>
+                    {
+                        RecentTime = DateTime.Now,
+                        RecentTimeOld = null,
+                        EndPoint = socket
+                    };
+                    _wcsList.Add(clientId, newEndPoit);
+                }
+
+               /* foreach (var wcs in _wcsList.Where(wcs => (wcs.Value.RecentTime - DateTime.Now).Minutes > 2))
+                {
+                    _wcsList.Remove(wcs.Key);
+                }*/
+                _socketTool.UpdateWcsDisplay(_wcsList, Post);
             }
         }
 
@@ -227,7 +286,7 @@ namespace NovaMessageSwitch.Bll
         /// </summary>
         public void StartForWms()
         {
-            UpdateUi.CallbackUpdateStrip("启动wms监听;");
+            CallbackUpdateStrip("启动wms监听;");
             while (true)
             {
                 Thread.Sleep(2000);
@@ -256,7 +315,7 @@ namespace NovaMessageSwitch.Bll
             foreach (var task in taskList)
             {
                 var messageModel = GetMessageModel(task);
-                HandTaskOneByOne(task.ClientId, task.TaskId, messageModel);
+                HandTaskOneByOne($"{_wcsList.Keys.FirstOrDefault()}", task.TaskId, messageModel);
             }
         }
         /// <summary>
@@ -277,27 +336,90 @@ namespace NovaMessageSwitch.Bll
 
         private dynamic GetMessageModel(WCSTaskServiceModel query)
         {
-            var infoType = query.TaskType.Equals("入库") ? 31 : 0;
+            var infoType = int.Parse(query.TaskType);//.Equals("入库") ? 31 : 0;
             var result = new WmsService().ConstructModel(infoType, query);
             return result;
         }
 
         #endregion
+
+        #region 内存回收
+        [DllImport("kernel32.dll", EntryPoint = "SetProcessWorkingSetSize")]
+        public static extern int SetProcessWorkingSetSize(IntPtr process, int minSize, int maxSize);
+        /// <summary>
+        /// 释放内存
+        /// </summary>
+        public static void ClearMemory()
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+            {
+                SetProcessWorkingSetSize(Process.GetCurrentProcess().Handle, -1, -1);
+            }
+        }
+        #endregion
     }
 
     public class WmsService
     {
+        public IDictionary<string, Action<dynamic>> RouteFunc = new Dictionary<string, Action<dynamic>>();
+
+        public WmsService()
+        {
+            InitRouteFunc();
+        }
+        //step1初始化应答
+        void InitRouteFunc()
+        {
+            //定时上报plc状态信息
+            RouteFunc.Add("50", x =>
+            {
+                var browser=new ServiceForWCSClient();
+                var contents = (JArray) x.content;
+                browser.UpdatePLC(contents.Select(t => new WCSPLCServiceModel {PLC_Code = Convert.ToString(t["PLCID"]), PLC_IsOnline = Convert.ToBoolean(t["ONLINE"])}).ToArray());
+            });
+            RouteFunc.Add("101", x =>
+            {
+                //call private func
+            });
+            RouteFunc.Add("102", x =>
+            {
+                //call private func
+            });
+            RouteFunc.Add("103", x =>
+           {
+               //call private func
+           });
+            RouteFunc.Add("104", x =>
+            {
+                //call private func
+            });
+            RouteFunc.Add("105", x =>
+            {
+                //call private func
+            });
+            RouteFunc.Add("106", x =>
+            {
+                //call private func
+            });
+            RouteFunc.Add("107", x =>
+            {
+                //call private func
+            });
+        }
+
         public dynamic ConstructModel(int infoType, object wmsResult, int clientId = 0)
         {
             switch (infoType)
             {
-                case 31:
+                case 1://入库
                     #region 31
                     var taskResult = (WCSTaskServiceModel)wmsResult;
                     var serial = taskResult.TaskId;
                     var message31 = new MessageData<ContentTask>
                     {
-                        infoType = infoType,
+                        infoType = 31,
                         content = new ContentTask(),
                         destination = DataFlowDirection.wcs.ToString(),
                         source = DataFlowDirection.wms.ToString(),
@@ -308,6 +430,7 @@ namespace NovaMessageSwitch.Bll
                     if (detailModel == null) throw new NullReferenceException("TaskDetailServiceModel");
 
                     message31.content.deviceS = detailModel.StartDeviceId;
+                    message31.content.jobType = infoType;
                     message31.content.laneS = detailModel.StartLane ?? 0;
                     message31.content.rowS = detailModel.StartRow ?? 0;
                     message31.content.colS = detailModel.StartCol ?? 0;
@@ -348,20 +471,23 @@ namespace NovaMessageSwitch.Bll
         private TaskSendDown _taskStockIn;
         private MessageFactory _messageFactory;
         private dynamic _message;
-        private HelpAskType helpAsk = new HelpAskType { CacheHelp = new CachePool() };
+        private HelpAskType _helpAsk;
+        private readonly WmsService _mwsService = new WmsService();
 
+        public CachePool CacheSyncPool { get; set; }
         public string ClientId { get; set; }
         public dynamic Message { get { return _message; } set { _message = value; } }
 
-        public WcsReceiver(TaskSendDown taskStockIn, MessageFactory messageFactory, SocketTool tool)
+        public WcsReceiver(TaskSendDown taskStockIn/*, MessageFactory messageFactory, SocketTool tool*/)
         {
             _taskStockIn = taskStockIn;
-            _messageFactory = messageFactory;
-            InstanceSocketTool = tool;
+            _messageFactory = new MessageFactory();//messageFactory;
+            InstanceSocketTool = new SocketTool();//tool;
+            _helpAsk = new HelpAskType {CacheHelp = new CachePool()};
         }
         public SocketTool InstanceSocketTool { get; private set; }
 
-        //请求wms
+
         public void ReplyBrowser(dynamic message)
         {
             try
@@ -378,6 +504,11 @@ namespace NovaMessageSwitch.Bll
                     _taskStockIn.StockInApply(query);
                     return;
                 }
+                if (message.infoType == 50)
+                {
+                    _mwsService.RouteFunc["50"](message);
+                    return;
+                }
 
 
                 if (message.infoType != (int)MessageType.InfoType42) return;
@@ -391,7 +522,7 @@ namespace NovaMessageSwitch.Bll
             }
         }
 
-        //接收消息后发确认
+
         public void ReplyAckWcs(Socket socket, string oriSerial)
         {
             var socketTool = InstanceSocketTool;
@@ -412,22 +543,32 @@ namespace NovaMessageSwitch.Bll
             infoDisplay.CustomColor = Color.DodgerBlue;
             socketTool.PrintInfoConsole($"{sendStr}", ConsoleColor.Green, infoDisplay, PostMessageInfo);
         }
-        //接收wcs请求
-        public void RecieiveRequest(dynamic message)
+
+        public void RecieiveRequest(dynamic message, Action f)
         {
-            helpAsk.MessageFactory = _messageFactory;
-            helpAsk.Analysis(message.content.objectID.ToString());
-            _message = helpAsk.HandleRequesFromWcs(message);
+            _helpAsk.MessageFactory = _messageFactory;
+            _helpAsk.Analysis(message.content.objectID.ToString());
+            _message = _helpAsk.HandleRequesFromWcs(message);
             Debug.Assert((object)_message != null, "请求转换为报文时_message==null");
+            //同步数据转发给wms且缓存 待定义完成此处修改
+            if (_message.GetType().GetProperty("YesReturnWms") != null)
+            {
+                CacheSyncPool.SetCache(nameof(_message.MessageEntity), _message.MessageEntity);
+                _mwsService.RouteFunc[_message.MessageEntity.ToString()](_message.MessageEntity);
+                return;
+            }
+            f.Invoke();
         }
-        //向wcs发送
-        public void ReplyResponseToWcs(Socket socket, string oriSerial)
+
+        public void ReplyResponseToWcs(Socket socket/*, string oriSerial*/)
         {
             var packageList = new FrameHandlerTool().GetPackage(_message);
-
+            var sleepTime = 2000;
+            if (packageList.Count == 1)
+                sleepTime = 1;
             foreach (var message in packageList)
             {
-                Thread.Sleep(500);
+                Thread.Sleep(2000);//发送太快 会粘包
                 var sendStr = $"?{JsonConvert.SerializeObject(message)}$";
 
                 socket.Send(Encoding.UTF8.GetBytes(sendStr));
@@ -445,10 +586,16 @@ namespace NovaMessageSwitch.Bll
     {
         private static readonly object LockDict = new object();
         private static IDictionary<string, CmdInfo> _taskCmdDict = new Dictionary<string, CmdInfo>();
+        private static int _commandNum;
+        private static readonly object LockObj = new object();
+        private static MemoryMappedFile _file;//= MemoryMappedFile.CreateFromFile("cmd.nova", FileMode.OpenOrCreate, "MyFile", 512);
+        private MemoryMappedViewAccessor _viewAcc;//= _file.CreateViewAccessor();
 
         public TaskSendDown(SocketTool instanceSocketTool)
         {
             InstanceSocketTool = instanceSocketTool;
+            _file = MemoryMappedFile.CreateFromFile("cmd.nova", FileMode.OpenOrCreate, "MyFile", 512);
+            _viewAcc = _file.CreateViewAccessor();
         }
 
         public SocketTool InstanceSocketTool { get; }
@@ -472,20 +619,27 @@ namespace NovaMessageSwitch.Bll
             var socketTool = InstanceSocketTool;
             try
             {
-                messageModel.content.commandNum = SocketTool.CreateCommandNum().ToString();
+                messageModel.content.commandNum = /*SocketTool*/CreateCommandNum().ToString();
                 socketTool.CreateverifyBit(messageModel);
-                var messageJson = JsonConvert.SerializeObject(messageModel);
-                var messageJsonNew = socketTool.FormatMessage(messageJson);
+                //var messageJson = JsonConvert.SerializeObject(messageModel);
+                var packageList = new FrameHandlerTool().GetPackage(messageModel);
+                foreach (var message in packageList)
+                {
+                    Thread.Sleep(1000);
+                    var messageJson = JsonConvert.SerializeObject(message);
+                    var messageJsonNew = socketTool.FormatMessage(messageJson);
 
-                wcsClient.EndPoint.Send(Encoding.UTF8.GetBytes(messageJsonNew));
-                var infoDisplay = socketTool.CreateInfoDisplay(wcsClient.EndPoint);
-                infoDisplay.Message = $"tell wcs ?{messageJsonNew}$";
-                infoDisplay.CustomColor = Color.DodgerBlue;
-                socketTool.PrintInfoConsole($"tell wcs:{messageJsonNew}", ConsoleColor.Green, infoDisplay, PostMessageInfo);
+                    wcsClient.EndPoint.Send(Encoding.UTF8.GetBytes($"{messageJsonNew}"));
+                    var infoDisplay = socketTool.CreateInfoDisplay(wcsClient.EndPoint);
+                    infoDisplay.Message = $"tell wcs {messageJsonNew}";
+                    infoDisplay.CustomColor = Color.DodgerBlue;
+                    socketTool.PrintInfoConsole($"tell wcs:{messageJsonNew}", ConsoleColor.Green, infoDisplay, PostMessageInfo);
+
+                }
             }
             catch (Exception ex)
             {
-                AppLogger.Error("HandTaskOneByOne tell wcs:", ex);
+                AppLogger.Error($"HandTaskOneByOne tell wcs: {ex.StackTrace}", ex);
                 return;
             }
             if (_taskCmdDict.Keys.Contains(taskId))
@@ -506,7 +660,7 @@ namespace NovaMessageSwitch.Bll
             }
             catch (Exception ex)
             {
-                AppLogger.Error("HandTaskOneByOne tell wms:", ex);
+                AppLogger.Error($"HandTaskOneByOne tell wms:{ex.StackTrace}", ex);
             }
         }
 
@@ -537,8 +691,58 @@ namespace NovaMessageSwitch.Bll
             infoDisplay.CustomColor = Color.Coral;
             socketTool.PrintInfoConsole($"tell browser taskID:{taskId} done", ConsoleColor.Blue, infoDisplay, PostMessageInfo);
         }
+
+        //产生命令编号
+        public /*static*/ int CreateCommandNum()
+        {
+            lock (LockObj)
+            {
+                _commandNum = RMemoryFile(_commandNum);
+
+                if (_commandNum <= 0) _commandNum = 0;
+                return _commandNum;
+            }
+        }
+
+        /*static*/
+        int RMemoryFile(int num)
+        {
+
+            {
+
+                int strLength = _viewAcc.ReadInt32(0);
+                char[] charsInMMf = new char[strLength];
+                //读取字符
+                _viewAcc.ReadArray(0, charsInMMf, 0, strLength);
+                var result = string.Join("", charsInMMf);
+                num = string.IsNullOrEmpty(result) ? num : int.Parse(result);
+                var wNum = $"{++num}";
+
+                _viewAcc.WriteArray(0, wNum.ToCharArray(), 0, wNum.Length);
+            }
+            _file.Dispose();
+            return num;
+        }
     }
 
+    class ReceiveEntityEqualityComparer : IEqualityComparer<ReceiveEntity>
+    {
+        public bool Equals(ReceiveEntity b1, ReceiveEntity b2)
+        {
+            if (b2 == null && b1 == null)
+                return true;
+            else if (b1 == null | b2 == null)
+                return false;
+            else if (b1.Client == b2.Client)
+                return true;
+            else
+                return false;
+        }
 
-
+        public int GetHashCode(ReceiveEntity bx)
+        {
+            var hCode = bx.Client;
+            return hCode.GetHashCode();
+        }
+    }
 }

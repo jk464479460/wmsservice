@@ -37,65 +37,35 @@
   <wsdl:message name="IServiceForWCS_GetTaskDetail_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTaskDetailResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceForWCS_GetZoneList_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetZoneList" />
-  </wsdl:message>
-  <wsdl:message name="IServiceForWCS_GetZoneList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetZoneListResponse" />
-  </wsdl:message>
   <wsdl:message name="IServiceForWCS_GetLaneList_InputMessage">
     <wsdl:part name="parameters" element="tns:GetLaneList" />
   </wsdl:message>
   <wsdl:message name="IServiceForWCS_GetLaneList_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetLaneListResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceForWCS_GetRickerList_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRickerList" />
-  </wsdl:message>
-  <wsdl:message name="IServiceForWCS_GetRickerList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRickerListResponse" />
-  </wsdl:message>
-  <wsdl:message name="IServiceForWCS_GetConveyorList_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetConveyorList" />
-  </wsdl:message>
-  <wsdl:message name="IServiceForWCS_GetConveyorList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetConveyorListResponse" />
-  </wsdl:message>
-  <wsdl:message name="IServiceForWCS_GetFoldDownDevList_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetFoldDownDevList" />
-  </wsdl:message>
-  <wsdl:message name="IServiceForWCS_GetFoldDownDevList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetFoldDownDevListResponse" />
-  </wsdl:message>
-  <wsdl:message name="IServiceForWCS_GetShuttleCarList_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetShuttleCarList" />
-  </wsdl:message>
-  <wsdl:message name="IServiceForWCS_GetShuttleCarList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetShuttleCarListResponse" />
-  </wsdl:message>
-  <wsdl:message name="IServiceForWCS_GetLEDList_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetLEDList" />
-  </wsdl:message>
-  <wsdl:message name="IServiceForWCS_GetLEDList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetLEDListResponse" />
-  </wsdl:message>
-  <wsdl:message name="IServiceForWCS_GetCOMList_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetCOMList" />
-  </wsdl:message>
-  <wsdl:message name="IServiceForWCS_GetCOMList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetCOMListResponse" />
-  </wsdl:message>
-  <wsdl:message name="IServiceForWCS_GetAccountPostAreaList_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAccountPostAreaList" />
-  </wsdl:message>
-  <wsdl:message name="IServiceForWCS_GetAccountPostAreaList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAccountPostAreaListResponse" />
-  </wsdl:message>
   <wsdl:message name="IServiceForWCS_GetPositionList_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPositionList" />
   </wsdl:message>
   <wsdl:message name="IServiceForWCS_GetPositionList_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPositionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceForWCS_GetAllDeviceList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDeviceList" />
+  </wsdl:message>
+  <wsdl:message name="IServiceForWCS_GetAllDeviceList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDeviceListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceForWCS_KeepAlive_InputMessage">
+    <wsdl:part name="parameters" element="tns:KeepAlive" />
+  </wsdl:message>
+  <wsdl:message name="IServiceForWCS_KeepAlive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KeepAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceForWCS_UpdatePLC_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePLC" />
+  </wsdl:message>
+  <wsdl:message name="IServiceForWCS_UpdatePLC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePLCResponse" />
   </wsdl:message>
   <wsdl:portType name="IServiceForWCS">
     <wsdl:operation name="GetTaskList">
@@ -118,45 +88,25 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceForWCS/GetTaskDetail" message="tns:IServiceForWCS_GetTaskDetail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceForWCS/GetTaskDetailResponse" message="tns:IServiceForWCS_GetTaskDetail_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetZoneList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceForWCS/GetZoneList" message="tns:IServiceForWCS_GetZoneList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceForWCS/GetZoneListResponse" message="tns:IServiceForWCS_GetZoneList_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetLaneList">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceForWCS/GetLaneList" message="tns:IServiceForWCS_GetLaneList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceForWCS/GetLaneListResponse" message="tns:IServiceForWCS_GetLaneList_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetRickerList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceForWCS/GetRickerList" message="tns:IServiceForWCS_GetRickerList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceForWCS/GetRickerListResponse" message="tns:IServiceForWCS_GetRickerList_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetConveyorList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceForWCS/GetConveyorList" message="tns:IServiceForWCS_GetConveyorList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceForWCS/GetConveyorListResponse" message="tns:IServiceForWCS_GetConveyorList_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetFoldDownDevList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceForWCS/GetFoldDownDevList" message="tns:IServiceForWCS_GetFoldDownDevList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceForWCS/GetFoldDownDevListResponse" message="tns:IServiceForWCS_GetFoldDownDevList_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetShuttleCarList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceForWCS/GetShuttleCarList" message="tns:IServiceForWCS_GetShuttleCarList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceForWCS/GetShuttleCarListResponse" message="tns:IServiceForWCS_GetShuttleCarList_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetLEDList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceForWCS/GetLEDList" message="tns:IServiceForWCS_GetLEDList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceForWCS/GetLEDListResponse" message="tns:IServiceForWCS_GetLEDList_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetCOMList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceForWCS/GetCOMList" message="tns:IServiceForWCS_GetCOMList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceForWCS/GetCOMListResponse" message="tns:IServiceForWCS_GetCOMList_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAccountPostAreaList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceForWCS/GetAccountPostAreaList" message="tns:IServiceForWCS_GetAccountPostAreaList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceForWCS/GetAccountPostAreaListResponse" message="tns:IServiceForWCS_GetAccountPostAreaList_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetPositionList">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceForWCS/GetPositionList" message="tns:IServiceForWCS_GetPositionList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceForWCS/GetPositionListResponse" message="tns:IServiceForWCS_GetPositionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDeviceList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceForWCS/GetAllDeviceList" message="tns:IServiceForWCS_GetAllDeviceList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceForWCS/GetAllDeviceListResponse" message="tns:IServiceForWCS_GetAllDeviceList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KeepAlive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceForWCS/KeepAlive" message="tns:IServiceForWCS_KeepAlive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceForWCS/KeepAliveResponse" message="tns:IServiceForWCS_KeepAlive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePLC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceForWCS/UpdatePLC" message="tns:IServiceForWCS_UpdatePLC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceForWCS/UpdatePLCResponse" message="tns:IServiceForWCS_UpdatePLC_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceForWCS" type="tns:IServiceForWCS">
@@ -206,15 +156,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetZoneList">
-      <soap:operation soapAction="http://tempuri.org/IServiceForWCS/GetZoneList" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GetLaneList">
       <soap:operation soapAction="http://tempuri.org/IServiceForWCS/GetLaneList" style="document" />
       <wsdl:input>
@@ -224,71 +165,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetRickerList">
-      <soap:operation soapAction="http://tempuri.org/IServiceForWCS/GetRickerList" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetConveyorList">
-      <soap:operation soapAction="http://tempuri.org/IServiceForWCS/GetConveyorList" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetFoldDownDevList">
-      <soap:operation soapAction="http://tempuri.org/IServiceForWCS/GetFoldDownDevList" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetShuttleCarList">
-      <soap:operation soapAction="http://tempuri.org/IServiceForWCS/GetShuttleCarList" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetLEDList">
-      <soap:operation soapAction="http://tempuri.org/IServiceForWCS/GetLEDList" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetCOMList">
-      <soap:operation soapAction="http://tempuri.org/IServiceForWCS/GetCOMList" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAccountPostAreaList">
-      <soap:operation soapAction="http://tempuri.org/IServiceForWCS/GetAccountPostAreaList" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GetPositionList">
       <soap:operation soapAction="http://tempuri.org/IServiceForWCS/GetPositionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDeviceList">
+      <soap:operation soapAction="http://tempuri.org/IServiceForWCS/GetAllDeviceList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KeepAlive">
+      <soap:operation soapAction="http://tempuri.org/IServiceForWCS/KeepAlive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePLC">
+      <soap:operation soapAction="http://tempuri.org/IServiceForWCS/UpdatePLC" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

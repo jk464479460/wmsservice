@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:49806/Services/ServiceForWCS.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="ArrayOfWCSTaskServiceModel">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="WCSTaskServiceModel" nillable="true" type="tns:WCSTaskServiceModel" />
@@ -9,7 +8,6 @@
   <xs:element name="ArrayOfWCSTaskServiceModel" nillable="true" type="tns:ArrayOfWCSTaskServiceModel" />
   <xs:complexType name="WCSTaskServiceModel">
     <xs:sequence>
-      <xs:element minOccurs="0" name="ClientId" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TaskId" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TaskLevel" type="xs:int" />
       <xs:element minOccurs="0" name="TaskType" nillable="true" type="xs:string" />
@@ -39,31 +37,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="WCSTaskDetailServiceModel" nillable="true" type="tns:WCSTaskDetailServiceModel" />
-  <xs:complexType name="ArrayOfWCSZoneServiceModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="WCSZoneServiceModel" nillable="true" type="tns:WCSZoneServiceModel" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfWCSZoneServiceModel" nillable="true" type="tns:ArrayOfWCSZoneServiceModel" />
-  <xs:complexType name="WCSZoneServiceModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="IFDis" type="xs:boolean" />
-      <xs:element minOccurs="0" name="ShowColor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Structure" type="tns:ZoneStructureServiceEnum" />
-      <xs:element minOccurs="0" name="SubAreas" type="xs:int" />
-      <xs:element minOccurs="0" name="WCSClientID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Zone_Code" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Zone_Name" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="WCSZoneServiceModel" nillable="true" type="tns:WCSZoneServiceModel" />
-  <xs:simpleType name="ZoneStructureServiceEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Solid" />
-      <xs:enumeration value="Plat" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="ZoneStructureServiceEnum" nillable="true" type="tns:ZoneStructureServiceEnum" />
   <xs:complexType name="ArrayOfWCSLaneServiceModel">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="WCSLaneServiceModel" nillable="true" type="tns:WCSLaneServiceModel" />
@@ -72,7 +45,7 @@
   <xs:element name="ArrayOfWCSLaneServiceModel" nillable="true" type="tns:ArrayOfWCSLaneServiceModel" />
   <xs:complexType name="WCSLaneServiceModel">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Lane_Type" type="tns:TrackTypeServiceEnum" />
+      <xs:element minOccurs="0" name="Lane_Type" type="xs:int" />
       <xs:element minOccurs="0" name="MaxCols" type="xs:int" />
       <xs:element minOccurs="0" name="MaxLayers" type="xs:int" />
       <xs:element minOccurs="0" name="MaxRows" type="xs:int" />
@@ -82,420 +55,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="WCSLaneServiceModel" nillable="true" type="tns:WCSLaneServiceModel" />
-  <xs:simpleType name="TrackTypeServiceEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Straight" />
-      <xs:enumeration value="Curved" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="TrackTypeServiceEnum" nillable="true" type="tns:TrackTypeServiceEnum" />
-  <xs:complexType name="ArrayOfWCSRickerServiceModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="WCSRickerServiceModel" nillable="true" type="tns:WCSRickerServiceModel" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfWCSRickerServiceModel" nillable="true" type="tns:ArrayOfWCSRickerServiceModel" />
-  <xs:complexType name="WCSRickerServiceModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="BuffCurLane" type="xs:int" />
-      <xs:element minOccurs="0" name="LockState" type="xs:boolean" />
-      <xs:element minOccurs="0" name="NO_Lane" type="xs:int" />
-      <xs:element minOccurs="0" name="Pname" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RBackup1" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RBackup1Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RBackup2" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RBackup2Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RColS" type="xs:int" />
-      <xs:element minOccurs="0" name="RCommandNum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RControlMod" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RCurrentLane" type="xs:int" />
-      <xs:element minOccurs="0" name="RDeviceStatus" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RLayerS" type="xs:int" />
-      <xs:element minOccurs="0" name="RPreCommandEcho" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RPreCommandStatusEcho" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RRowS" type="xs:int" />
-      <xs:element minOccurs="0" name="SQID" type="xs:int" />
-      <xs:element minOccurs="0" name="UpdateTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="UseRBU1" type="xs:boolean" />
-      <xs:element minOccurs="0" name="UseRBU2" type="xs:boolean" />
-      <xs:element minOccurs="0" name="UseWBU1" type="xs:boolean" />
-      <xs:element minOccurs="0" name="UseWBU2" type="xs:boolean" />
-      <xs:element minOccurs="0" name="WBackup1" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WBackup1Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WBackup2" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WBackup2Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WColE" type="xs:int" />
-      <xs:element minOccurs="0" name="WColS" type="xs:int" />
-      <xs:element minOccurs="0" name="WCommandNum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WCommandType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WDeviceENum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WDeviceSNum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WFetchLane" type="xs:int" />
-      <xs:element minOccurs="0" name="WLayerE" type="xs:int" />
-      <xs:element minOccurs="0" name="WLayerS" type="xs:int" />
-      <xs:element minOccurs="0" name="WRowE" type="xs:int" />
-      <xs:element minOccurs="0" name="WRowS" type="xs:int" />
-      <xs:element minOccurs="0" name="WSize" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WUnloadLane" type="xs:int" />
-      <xs:element minOccurs="0" name="WWeight" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WXor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ifSpecification" type="xs:boolean" />
-      <xs:element minOccurs="0" name="ifWeight" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="WCSRickerServiceModel" nillable="true" type="tns:WCSRickerServiceModel" />
-  <xs:complexType name="ArrayOfWCSConveyorServiceModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="WCSConveyorServiceModel" nillable="true" type="tns:WCSConveyorServiceModel" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfWCSConveyorServiceModel" nillable="true" type="tns:ArrayOfWCSConveyorServiceModel" />
-  <xs:complexType name="WCSConveyorServiceModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="COMBarCode" type="tns:ConveyorCOMBarCodeServiceEnum" />
-      <xs:element minOccurs="0" name="CheckBarcode" type="tns:ConveyorCheckBarcodeServiceEnum" />
-      <xs:element minOccurs="0" name="DefineCol" type="xs:int" />
-      <xs:element minOccurs="0" name="DefineLane" type="xs:int" />
-      <xs:element minOccurs="0" name="DefineLayer" type="xs:int" />
-      <xs:element minOccurs="0" name="DefineRow" type="xs:int" />
-      <xs:element minOccurs="0" name="IFIn" type="xs:boolean" />
-      <xs:element minOccurs="0" name="IFWriteSpecification" type="xs:boolean" />
-      <xs:element minOccurs="0" name="IFWriteWeight" type="xs:boolean" />
-      <xs:element minOccurs="0" name="IfUseBarCode" type="xs:boolean" />
-      <xs:element minOccurs="0" name="InputNeedBar" type="tns:ConveyorInputNeedBarServiceEnum" />
-      <xs:element minOccurs="0" name="LEDSQID_Input" type="tns:ConveyorLEDSQID_InputServiceEnum" />
-      <xs:element minOccurs="0" name="LEDSQID_Lock" type="xs:int" />
-      <xs:element minOccurs="0" name="LEDSQID_Out" type="tns:ConveyorLEDSQID_OutServiceEnum" />
-      <xs:element minOccurs="0" name="LEDSQID_Pick" type="tns:ConveyorLEDSQID_PickServiceEnum" />
-      <xs:element minOccurs="0" name="LockState" type="xs:boolean" />
-      <xs:element minOccurs="0" name="PathType" type="tns:ConveyorPathTypeServiceEnum" />
-      <xs:element minOccurs="0" name="PerHeight" type="xs:decimal" />
-      <xs:element minOccurs="0" name="PerWidth" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Pname" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RBackup1" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RBackup1Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RBackup2" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RBackup2Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RCommandNum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RControlMod" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RDeviceStatus" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RPreCommandEcho" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RPreCommandStatusEcho" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RSpecificationType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RWeight" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SQID" type="xs:int" />
-      <xs:element minOccurs="0" name="SpecificationFrom" type="tns:ConveyorSpecificationFromServiceEnum" />
-      <xs:element minOccurs="0" name="Updatetime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="UseRDB1" type="xs:boolean" />
-      <xs:element minOccurs="0" name="UseRDB2" type="xs:boolean" />
-      <xs:element minOccurs="0" name="UseWBU1" type="xs:boolean" />
-      <xs:element minOccurs="0" name="UseWBU2" type="xs:boolean" />
-      <xs:element minOccurs="0" name="WBackup1" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WBackup1Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WBackup2" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WBackup2Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WColE" type="xs:int" />
-      <xs:element minOccurs="0" name="WColS" type="xs:int" />
-      <xs:element minOccurs="0" name="WCommandNum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WCommandType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WDeviceENum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WDeviceSNum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WFetchLane" type="xs:int" />
-      <xs:element minOccurs="0" name="WLayerE" type="xs:int" />
-      <xs:element minOccurs="0" name="WLayerS" type="xs:int" />
-      <xs:element minOccurs="0" name="WRowE" type="xs:int" />
-      <xs:element minOccurs="0" name="WRowS" type="xs:int" />
-      <xs:element minOccurs="0" name="WSize" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WUnloadLane" type="xs:int" />
-      <xs:element minOccurs="0" name="WWeight" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WXor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WeithtFrom" type="tns:ConveyorWeithtFromServiceEnum" />
-      <xs:element minOccurs="0" name="X" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Y" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="WCSConveyorServiceModel" nillable="true" type="tns:WCSConveyorServiceModel" />
-  <xs:simpleType name="ConveyorCOMBarCodeServiceEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="PLC">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Invalid">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="COM">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="ConveyorCOMBarCodeServiceEnum" nillable="true" type="tns:ConveyorCOMBarCodeServiceEnum" />
-  <xs:simpleType name="ConveyorCheckBarcodeServiceEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="NO" />
-      <xs:enumeration value="YES" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="ConveyorCheckBarcodeServiceEnum" nillable="true" type="tns:ConveyorCheckBarcodeServiceEnum" />
-  <xs:simpleType name="ConveyorInputNeedBarServiceEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="NoNeed" />
-      <xs:enumeration value="Need" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="ConveyorInputNeedBarServiceEnum" nillable="true" type="tns:ConveyorInputNeedBarServiceEnum" />
-  <xs:simpleType name="ConveyorLEDSQID_InputServiceEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="No">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="ConveyorLEDSQID_InputServiceEnum" nillable="true" type="tns:ConveyorLEDSQID_InputServiceEnum" />
-  <xs:simpleType name="ConveyorLEDSQID_OutServiceEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="No">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="ConveyorLEDSQID_OutServiceEnum" nillable="true" type="tns:ConveyorLEDSQID_OutServiceEnum" />
-  <xs:simpleType name="ConveyorLEDSQID_PickServiceEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="No">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="ConveyorLEDSQID_PickServiceEnum" nillable="true" type="tns:ConveyorLEDSQID_PickServiceEnum" />
-  <xs:simpleType name="ConveyorPathTypeServiceEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Single" />
-      <xs:enumeration value="More" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="ConveyorPathTypeServiceEnum" nillable="true" type="tns:ConveyorPathTypeServiceEnum" />
-  <xs:simpleType name="ConveyorSpecificationFromServiceEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Electrical" />
-      <xs:enumeration value="Other" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="ConveyorSpecificationFromServiceEnum" nillable="true" type="tns:ConveyorSpecificationFromServiceEnum" />
-  <xs:simpleType name="ConveyorWeithtFromServiceEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Electrical" />
-      <xs:enumeration value="Other" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="ConveyorWeithtFromServiceEnum" nillable="true" type="tns:ConveyorWeithtFromServiceEnum" />
-  <xs:complexType name="ArrayOfWCSFoldDownDevServiceModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="WCSFoldDownDevServiceModel" nillable="true" type="tns:WCSFoldDownDevServiceModel" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfWCSFoldDownDevServiceModel" nillable="true" type="tns:ArrayOfWCSFoldDownDevServiceModel" />
-  <xs:complexType name="WCSFoldDownDevServiceModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="IfECSReadFlag" type="xs:boolean" />
-      <xs:element minOccurs="0" name="IfECSWriteFlag" type="xs:boolean" />
-      <xs:element minOccurs="0" name="IfWriteSpecification" type="xs:boolean" />
-      <xs:element minOccurs="0" name="IfWriteWeight" type="xs:boolean" />
-      <xs:element minOccurs="0" name="LockState" type="xs:boolean" />
-      <xs:element minOccurs="0" name="PerHeight" type="xs:decimal" />
-      <xs:element minOccurs="0" name="PerWidth" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Pname" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RBackup1" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RBackup1Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RBackup2" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RBackup2Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RCommandNum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RControlMod" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RDeviceStatus" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RInputApp" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ROutputApp" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RPreCommandEcho" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RPreCommandStatusEcho" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RSpecificationType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RWeight" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SQID" type="xs:int" />
-      <xs:element minOccurs="0" name="SpecificationFrom" type="tns:FoldDownDevSpecificationFromServiceEnum" />
-      <xs:element minOccurs="0" name="Updatetime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="UseRDB1" type="xs:boolean" />
-      <xs:element minOccurs="0" name="UseRDB2" type="xs:boolean" />
-      <xs:element minOccurs="0" name="UseWBU1" type="xs:boolean" />
-      <xs:element minOccurs="0" name="UseWBU2" type="xs:boolean" />
-      <xs:element minOccurs="0" name="WBackup1" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WBackup1Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WBackup2" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WBackup2Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WColE" type="xs:int" />
-      <xs:element minOccurs="0" name="WColS" type="xs:int" />
-      <xs:element minOccurs="0" name="WCommandNum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WCommandType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WDeviceENum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WDeviceSNum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WFetchLane" type="xs:int" />
-      <xs:element minOccurs="0" name="WLayerE" type="xs:int" />
-      <xs:element minOccurs="0" name="WLayerS" type="xs:int" />
-      <xs:element minOccurs="0" name="WRowE" type="xs:int" />
-      <xs:element minOccurs="0" name="WRowS" type="xs:int" />
-      <xs:element minOccurs="0" name="WSize" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WUnloadLane" type="xs:int" />
-      <xs:element minOccurs="0" name="WWeight" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WXor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WeightFrom" type="tns:FoldDownDevWeightFromServiceEnum" />
-      <xs:element minOccurs="0" name="X" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Y" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="WCSFoldDownDevServiceModel" nillable="true" type="tns:WCSFoldDownDevServiceModel" />
-  <xs:simpleType name="FoldDownDevSpecificationFromServiceEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Electrical" />
-      <xs:enumeration value="Other" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="FoldDownDevSpecificationFromServiceEnum" nillable="true" type="tns:FoldDownDevSpecificationFromServiceEnum" />
-  <xs:simpleType name="FoldDownDevWeightFromServiceEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Electrical" />
-      <xs:enumeration value="Other" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="FoldDownDevWeightFromServiceEnum" nillable="true" type="tns:FoldDownDevWeightFromServiceEnum" />
-  <xs:complexType name="ArrayOfWCSShuttleCarServiceModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="WCSShuttleCarServiceModel" nillable="true" type="tns:WCSShuttleCarServiceModel" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfWCSShuttleCarServiceModel" nillable="true" type="tns:ArrayOfWCSShuttleCarServiceModel" />
-  <xs:complexType name="WCSShuttleCarServiceModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Cols" type="xs:int" />
-      <xs:element minOccurs="0" name="DB6" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Director" type="tns:ShuttleCarDirectorServiceEnum" />
-      <xs:element minOccurs="0" name="LockState" type="xs:boolean" />
-      <xs:element minOccurs="0" name="PerHeight" type="xs:decimal" />
-      <xs:element minOccurs="0" name="PerWidth" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Pname" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RCommandNum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RCurrentCol" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RDeviceStats" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SQID" type="xs:int" />
-      <xs:element minOccurs="0" name="UpdateTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="X" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Y" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="WCSShuttleCarServiceModel" nillable="true" type="tns:WCSShuttleCarServiceModel" />
-  <xs:simpleType name="ShuttleCarDirectorServiceEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Right" />
-      <xs:enumeration value="Down" />
-      <xs:enumeration value="Left" />
-      <xs:enumeration value="Up" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="ShuttleCarDirectorServiceEnum" nillable="true" type="tns:ShuttleCarDirectorServiceEnum" />
-  <xs:complexType name="ArrayOfWCSLEDServiceModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="WCSLEDServiceModel" nillable="true" type="tns:WCSLEDServiceModel" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfWCSLEDServiceModel" nillable="true" type="tns:ArrayOfWCSLEDServiceModel" />
-  <xs:complexType name="WCSLEDServiceModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="COMAddress" type="xs:int" />
-      <xs:element minOccurs="0" name="ColorType" type="tns:LEDColorTypeServiceEnum" />
-      <xs:element minOccurs="0" name="LEDAddress" type="xs:int" />
-      <xs:element minOccurs="0" name="LEDHeight" type="xs:int" />
-      <xs:element minOccurs="0" name="LEDName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LEDSQID" type="xs:int" />
-      <xs:element minOccurs="0" name="LEDWidth" type="xs:int" />
-      <xs:element minOccurs="0" name="LeftMoveSpeed" type="xs:int" />
-      <xs:element minOccurs="0" name="OptionID" type="xs:int" />
-      <xs:element minOccurs="0" name="RefreshLeafInterView" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="WCSLEDServiceModel" nillable="true" type="tns:WCSLEDServiceModel" />
-  <xs:simpleType name="LEDColorTypeServiceEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="UniColor">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Color">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="LEDColorTypeServiceEnum" nillable="true" type="tns:LEDColorTypeServiceEnum" />
-  <xs:complexType name="ArrayOfWCSCOMServiceModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="WCSCOMServiceModel" nillable="true" type="tns:WCSCOMServiceModel" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfWCSCOMServiceModel" nillable="true" type="tns:ArrayOfWCSCOMServiceModel" />
-  <xs:complexType name="WCSCOMServiceModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Dtr" type="xs:int" />
-      <xs:element minOccurs="0" name="Hw" type="xs:int" />
-      <xs:element minOccurs="0" name="PID" type="xs:int" />
-      <xs:element minOccurs="0" name="Rts" type="xs:int" />
-      <xs:element minOccurs="0" name="Sw" type="xs:int" />
-      <xs:element minOccurs="0" name="ibaudrate" type="xs:int" />
-      <xs:element minOccurs="0" name="ibytesize" type="xs:int" />
-      <xs:element minOccurs="0" name="iparity" type="xs:int" />
-      <xs:element minOccurs="0" name="istopbits" type="xs:int" />
-      <xs:element minOccurs="0" name="port" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="WCSCOMServiceModel" nillable="true" type="tns:WCSCOMServiceModel" />
-  <xs:complexType name="ArrayOfWCSAccountPostAreaServiceModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="WCSAccountPostAreaServiceModel" nillable="true" type="tns:WCSAccountPostAreaServiceModel" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfWCSAccountPostAreaServiceModel" nillable="true" type="tns:ArrayOfWCSAccountPostAreaServiceModel" />
-  <xs:complexType name="WCSAccountPostAreaServiceModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="PID" type="xs:int" />
-      <xs:element minOccurs="0" name="RCommandNum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RWCommandStatus" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="WCSAccountPostAreaServiceModel" nillable="true" type="tns:WCSAccountPostAreaServiceModel" />
   <xs:complexType name="ArrayOfWCSPoistionServiceModel">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="WCSPoistionServiceModel" nillable="true" type="tns:WCSPoistionServiceModel" />
@@ -507,18 +66,37 @@
       <xs:element minOccurs="0" name="Column" type="xs:int" />
       <xs:element minOccurs="0" name="Lane" type="xs:int" />
       <xs:element minOccurs="0" name="Layer" type="xs:int" />
-      <xs:element minOccurs="0" name="Position_State" type="tns:PositionStateServiceEnum" />
+      <xs:element minOccurs="0" name="Position_State" type="xs:int" />
       <xs:element minOccurs="0" name="Row" type="xs:int" />
       <xs:element minOccurs="0" name="Update_Time" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="WCSPoistionServiceModel" nillable="true" type="tns:WCSPoistionServiceModel" />
-  <xs:simpleType name="PositionStateServiceEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="NoGoods" />
-      <xs:enumeration value="InStock" />
-      <xs:enumeration value="Reservation" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="PositionStateServiceEnum" nillable="true" type="tns:PositionStateServiceEnum" />
+  <xs:complexType name="ArrayOfWCSDeviceValueServiceModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WCSDeviceValueServiceModel" nillable="true" type="tns:WCSDeviceValueServiceModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWCSDeviceValueServiceModel" nillable="true" type="tns:ArrayOfWCSDeviceValueServiceModel" />
+  <xs:complexType name="WCSDeviceValueServiceModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DeviceField_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeviceField_Value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Device_Id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WCSDeviceValueServiceModel" nillable="true" type="tns:WCSDeviceValueServiceModel" />
+  <xs:complexType name="ArrayOfWCSPLCServiceModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WCSPLCServiceModel" nillable="true" type="tns:WCSPLCServiceModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWCSPLCServiceModel" nillable="true" type="tns:ArrayOfWCSPLCServiceModel" />
+  <xs:complexType name="WCSPLCServiceModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PLC_Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLC_IsOnline" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WCSPLCServiceModel" nillable="true" type="tns:WCSPLCServiceModel" />
 </xs:schema>

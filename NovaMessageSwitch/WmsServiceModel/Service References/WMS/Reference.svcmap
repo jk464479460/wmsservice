@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:49806/Services/ServiceForWCS.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServiceForWCS.disco" MetadataType="Disco" ID="1d781e49-fa6e-41fe-aaa9-db8020164f09" SourceId="1" SourceUrl="http://localhost:49806/Services/ServiceForWCS.svc?disco" />
-    <MetadataFile FileName="ServiceForWCS.xsd" MetadataType="Schema" ID="ab04e538-cc5e-4082-bacc-1efc7cedb48e" SourceId="1" SourceUrl="http://localhost:49806/Services/ServiceForWCS.svc?xsd=xsd2" />
-    <MetadataFile FileName="ServiceForWCS1.xsd" MetadataType="Schema" ID="efe49d8c-52c2-4bd0-8e67-cb0c9dbf489e" SourceId="1" SourceUrl="http://localhost:49806/Services/ServiceForWCS.svc?xsd=xsd1" />
-    <MetadataFile FileName="ServiceForWCS2.xsd" MetadataType="Schema" ID="dbb082da-9aae-41c0-ab5f-dfcb96240962" SourceId="1" SourceUrl="http://localhost:49806/Services/ServiceForWCS.svc?xsd=xsd0" />
-    <MetadataFile FileName="ServiceForWCS.wsdl" MetadataType="Wsdl" ID="7060bd10-1c50-4881-90ac-8e905fefd6f4" SourceId="1" SourceUrl="http://localhost:49806/Services/ServiceForWCS.svc?wsdl" />
+    <MetadataFile FileName="ServiceForWCS.disco" MetadataType="Disco" ID="e02ecea1-22aa-499b-91f5-2521b8bab16e" SourceId="1" SourceUrl="http://localhost:49806/Services/ServiceForWCS.svc?disco" />
+    <MetadataFile FileName="ServiceForWCS.xsd" MetadataType="Schema" ID="148cc24a-7966-4cd4-ac1d-9e7e9fd59d2d" SourceId="1" SourceUrl="http://localhost:49806/Services/ServiceForWCS.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceForWCS1.xsd" MetadataType="Schema" ID="715bb1bb-209f-40ec-93cc-15dafe5010f1" SourceId="1" SourceUrl="http://localhost:49806/Services/ServiceForWCS.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceForWCS2.xsd" MetadataType="Schema" ID="0b8f0c36-cbdd-4cf1-a0ac-9e76a988ba17" SourceId="1" SourceUrl="http://localhost:49806/Services/ServiceForWCS.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceForWCS.wsdl" MetadataType="Wsdl" ID="0218bae2-8ef1-4d7d-99da-bf5eb55d4fd7" SourceId="1" SourceUrl="http://localhost:49806/Services/ServiceForWCS.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

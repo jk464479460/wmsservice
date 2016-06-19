@@ -48,7 +48,9 @@
   <ItemGroup>
     <Compile Include="DataCache\Cache.cs" />
     <Compile Include="Log\Logger.cs" />
-    <Compile Include="Tools.cs" />
+    <Compile Include="C:\Users\Administrator\Desktop\Tools.cs">
+      <Link>Tools.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace NovaMessageSwitch
         public Form1()
         {
             InitializeComponent();
-            UpdateUi.Context= SynchronizationContext.Current;
+            UpdateUi.Context = SynchronizationContext.Current;
             UpdateUi.CallBackMethod = OnUpdateWcsEvent;
             UpdateUi.CallBackMethodMessageInfo = OnUpdateMessageInfoEvent;
             UpdateUi.CallbackUpdateStrip = UpdateStrip;
@@ -48,7 +49,7 @@ namespace NovaMessageSwitch
                 }
                 var proName = "NovaMessageSwitch";
                 var p = Process.GetProcessesByName(proName);
-                if(p.Any())
+                if (p.Any())
                     p[0].Kill();
             }
             catch (Exception)
@@ -62,22 +63,18 @@ namespace NovaMessageSwitch
         {
             _server = new WcsServer();
 
-            var taskWms = Task.Factory.StartNew(() => {
+            var taskWms = Task.Factory.StartNew(() =>
+            {
                 AppLogger.Info("启动任务监听");
                 _pid2 = Thread.CurrentThread;
-               /* this.BeginInvoke(new Action(() =>
-                {
-                    this.toolStripStatusLabel1.Text += Resources.Form1_Bgwork_DoWork_启动wms任务轮询;
-                }), null);*/
                 _server.StartForWms();
             });
             Thread.Sleep(200);
-            var taskWcs = Task.Factory.StartNew(()=>
+            var taskWcs = Task.Factory.StartNew(() =>
             {
                 _pid1 = Thread.CurrentThread;
-               
+
                 AppLogger.Info(Resources.Form1_Bgwork_DoWork_启动wcs监听);
-              /*  this.BeginInvoke(new Action(() => this.toolStripStatusLabel1.Text = Resources.Form1_Bgwork_DoWork_启动wcs监听), null);*/
                 _server.StartForWcs();
             });
         }
@@ -85,8 +82,19 @@ namespace NovaMessageSwitch
 
         protected virtual void OnUpdateWcsEvent(object param)
         {
-            var wcsendpoint = param as WcsEndpoint<Socket>;
-            var ipEndPoint = wcsendpoint?.EndPoint.RemoteEndPoint as IPEndPoint;
+            wcsListView.Items.Clear();
+            var wcsendpoint = param as IDictionary<int, WcsEndpoint<Socket>>;
+            if (wcsendpoint == null) return;
+            foreach (var kv in wcsendpoint)
+            {
+                var ipEndPoint = kv.Value.EndPoint.RemoteEndPoint as IPEndPoint;
+                var uniqueId = $"{ipEndPoint}";
+                var viewItem = wcsListView.Items.Add((wcsListView.Items.Count + 1) + "");
+                viewItem.SubItems.Add(uniqueId);
+                viewItem.SubItems.Add(kv.Value.RecentTimeOld?.ToString("yyyy-MM-dd HH:mm:ss") ?? "-");
+                viewItem.SubItems.Add(kv.Value.RecentTime.ToString("yyyy-MM-dd HH:mm:ss"));
+            }
+            /* var ipEndPoint = wcsendpoint?.EndPoint.RemoteEndPoint as IPEndPoint;
             var uniqueId = $"{ipEndPoint?.ToString()}";
             foreach (var item in wcsListView.Items)
             {
@@ -103,22 +111,22 @@ namespace NovaMessageSwitch
             var viewItem = wcsListView.Items.Add((wcsListView.Items.Count + 1) + "");
             viewItem.SubItems.Add(uniqueId);
             viewItem.SubItems.Add(wcsendpoint?.RecentTimeOld?.ToString("yyyy-MM-dd HH:mm:ss") ?? "-");
-            viewItem.SubItems.Add(wcsendpoint?.RecentTime.ToString("yyyy-MM-dd HH:mm:ss"));
+            viewItem.SubItems.Add(wcsendpoint?.RecentTime.ToString("yyyy-MM-dd HH:mm:ss"));*/
         }
 
         protected virtual void OnUpdateMessageInfoEvent(object param)
         {
             var infoDisplay = param as MessageInfoDisplay;
             if (infoDisplay == null) return;
-            var viewItem = InfoList.Items.Add((InfoList.Items.Count+1)+"");
+            var viewItem = InfoList.Items.Add((InfoList.Items.Count + 1) + "");
             viewItem.ForeColor = infoDisplay.CustomColor;
             viewItem.SubItems.Add(infoDisplay.Source);
             viewItem.SubItems.Add(infoDisplay.Desti);
             viewItem.SubItems.Add(infoDisplay.Message);
-            viewItem.SubItems.Add(infoDisplay.Time?.ToString("yyyy-MM-dd HH:mm:ss")??"-");
+            viewItem.SubItems.Add(infoDisplay.Time?.ToString("yyyy-MM-dd HH:mm:ss") ?? "-");
             viewItem.EnsureVisible();
-            viewItem.ToolTipText=viewItem.SubItems[3].Text;
-            if (InfoList.Items.Count > 10000) InfoList.Items.Clear();
+            viewItem.ToolTipText = viewItem.SubItems[3].Text;
+            if (InfoList.Items.Count > 500) InfoList.Items.Clear();
         }
 
         protected virtual void UpdateStrip(object param)

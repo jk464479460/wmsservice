@@ -63,7 +63,7 @@
             this.InfoList.Location = new System.Drawing.Point(0, 0);
             this.InfoList.Name = "InfoList";
             this.InfoList.ShowItemToolTips = true;
-            this.InfoList.Size = new System.Drawing.Size(956, 611);
+            this.InfoList.Size = new System.Drawing.Size(956, 594);
             this.InfoList.TabIndex = 1;
             this.InfoList.UseCompatibleStateImageBehavior = false;
             this.InfoList.View = System.Windows.Forms.View.Details;
@@ -104,7 +104,7 @@
             this.wcsListView.GridLines = true;
             this.wcsListView.Location = new System.Drawing.Point(0, 0);
             this.wcsListView.Name = "wcsListView";
-            this.wcsListView.Size = new System.Drawing.Size(412, 611);
+            this.wcsListView.Size = new System.Drawing.Size(412, 594);
             this.wcsListView.TabIndex = 3;
             this.wcsListView.UseCompatibleStateImageBehavior = false;
             this.wcsListView.View = System.Windows.Forms.View.Details;
@@ -136,14 +136,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(412, 611);
+            this.panel1.Size = new System.Drawing.Size(412, 594);
             this.panel1.TabIndex = 4;
             // 
             // statusServer
             // 
             this.statusServer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusServer.Location = new System.Drawing.Point(0, 589);
+            this.statusServer.Location = new System.Drawing.Point(0, 572);
             this.statusServer.Name = "statusServer";
             this.statusServer.Size = new System.Drawing.Size(412, 22);
             this.statusServer.TabIndex = 2;
@@ -158,9 +158,9 @@
             // 
             this.panel2.Controls.Add(this.InfoList);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(418, 0);
+            this.panel2.Location = new System.Drawing.Point(412, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(956, 611);
+            this.panel2.Size = new System.Drawing.Size(956, 594);
             this.panel2.TabIndex = 5;
             // 
             // Form1
@@ -169,7 +169,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1374, 611);
+            this.ClientSize = new System.Drawing.Size(1356, 611);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

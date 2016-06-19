@@ -54,40 +54,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\WMS\NovaMessageSwitch.WmsServiceModel.WMS.WCSAccountPostAreaServiceModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\WMS\NovaMessageSwitch.WmsServiceModel.WMS.WCSCOMServiceModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\WMS\NovaMessageSwitch.WmsServiceModel.WMS.WCSConveyorServiceModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\WMS\NovaMessageSwitch.WmsServiceModel.WMS.WCSFoldDownDevServiceModel.datasource">
+    <None Include="Service References\WMS\NovaMessageSwitch.WmsServiceModel.WMS.WCSDeviceValueServiceModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\WMS\NovaMessageSwitch.WmsServiceModel.WMS.WCSLaneServiceModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\WMS\NovaMessageSwitch.WmsServiceModel.WMS.WCSLEDServiceModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\WMS\NovaMessageSwitch.WmsServiceModel.WMS.WCSPoistionServiceModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\WMS\NovaMessageSwitch.WmsServiceModel.WMS.WCSRickerServiceModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\WMS\NovaMessageSwitch.WmsServiceModel.WMS.WCSShuttleCarServiceModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\WMS\NovaMessageSwitch.WmsServiceModel.WMS.WCSTaskDetailServiceModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\WMS\NovaMessageSwitch.WmsServiceModel.WMS.WCSTaskServiceModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\WMS\NovaMessageSwitch.WmsServiceModel.WMS.WCSZoneServiceModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\WMS\ServiceForWCS.wsdl" />
@@ -105,9 +84,6 @@
     <WCFMetadataStorage Include="Service References\WMS\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\WMS\ServiceForWCS.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\WMS\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +94,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WMS\ServiceForWCS.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

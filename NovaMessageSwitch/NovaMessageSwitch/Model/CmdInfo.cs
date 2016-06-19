@@ -24,5 +24,6 @@ namespace NovaMessageSwitch.Model
     {
         public dynamic Message { get; set; }
         public Socket Client { get; set; }
+        public int Type { get; set; }
     }
 }
