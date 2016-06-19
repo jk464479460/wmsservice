@@ -632,7 +632,134 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+<<<<<<< HEAD
         private string DeviceField_NameField;
+=======
+        private int BuffCurLaneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool LockStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NO_LaneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RBackup1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RBackup1TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RBackup2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RBackup2TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RColSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RCommandNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RControlModField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RCurrentLaneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RDeviceStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RLayerSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RPreCommandEchoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RPreCommandStatusEchoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RRowSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SQIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime UpdateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool UseRBU1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool UseRBU2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool UseWBU1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool UseWBU2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WBackup1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WBackup1TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WBackup2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WBackup2TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WColEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WColSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WCommandNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WCommandTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WDeviceENumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WDeviceSNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WFetchLaneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WLayerEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WLayerSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WRowEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WRowSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WUnloadLaneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WXorField;
+>>>>>>> origin/master
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DeviceField_ValueField;
@@ -689,6 +816,3211 @@ namespace NovaMessageSwitch.WmsServiceModel.WMS {
             }
         }
         
+<<<<<<< HEAD
+=======
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Pname {
+            get {
+                return this.PnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PnameField, value) != true)) {
+                    this.PnameField = value;
+                    this.RaisePropertyChanged("Pname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RBackup1 {
+            get {
+                return this.RBackup1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RBackup1Field, value) != true)) {
+                    this.RBackup1Field = value;
+                    this.RaisePropertyChanged("RBackup1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RBackup1Title {
+            get {
+                return this.RBackup1TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RBackup1TitleField, value) != true)) {
+                    this.RBackup1TitleField = value;
+                    this.RaisePropertyChanged("RBackup1Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RBackup2 {
+            get {
+                return this.RBackup2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RBackup2Field, value) != true)) {
+                    this.RBackup2Field = value;
+                    this.RaisePropertyChanged("RBackup2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RBackup2Title {
+            get {
+                return this.RBackup2TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RBackup2TitleField, value) != true)) {
+                    this.RBackup2TitleField = value;
+                    this.RaisePropertyChanged("RBackup2Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RColS {
+            get {
+                return this.RColSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RColSField, value) != true)) {
+                    this.RColSField = value;
+                    this.RaisePropertyChanged("RColS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RCommandNum {
+            get {
+                return this.RCommandNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RCommandNumField, value) != true)) {
+                    this.RCommandNumField = value;
+                    this.RaisePropertyChanged("RCommandNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RControlMod {
+            get {
+                return this.RControlModField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RControlModField, value) != true)) {
+                    this.RControlModField = value;
+                    this.RaisePropertyChanged("RControlMod");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RCurrentLane {
+            get {
+                return this.RCurrentLaneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RCurrentLaneField, value) != true)) {
+                    this.RCurrentLaneField = value;
+                    this.RaisePropertyChanged("RCurrentLane");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RDeviceStatus {
+            get {
+                return this.RDeviceStatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RDeviceStatusField, value) != true)) {
+                    this.RDeviceStatusField = value;
+                    this.RaisePropertyChanged("RDeviceStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RLayerS {
+            get {
+                return this.RLayerSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RLayerSField, value) != true)) {
+                    this.RLayerSField = value;
+                    this.RaisePropertyChanged("RLayerS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RPreCommandEcho {
+            get {
+                return this.RPreCommandEchoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RPreCommandEchoField, value) != true)) {
+                    this.RPreCommandEchoField = value;
+                    this.RaisePropertyChanged("RPreCommandEcho");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RPreCommandStatusEcho {
+            get {
+                return this.RPreCommandStatusEchoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RPreCommandStatusEchoField, value) != true)) {
+                    this.RPreCommandStatusEchoField = value;
+                    this.RaisePropertyChanged("RPreCommandStatusEcho");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RRowS {
+            get {
+                return this.RRowSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RRowSField, value) != true)) {
+                    this.RRowSField = value;
+                    this.RaisePropertyChanged("RRowS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SQID {
+            get {
+                return this.SQIDField;
+            }
+            set {
+                if ((this.SQIDField.Equals(value) != true)) {
+                    this.SQIDField = value;
+                    this.RaisePropertyChanged("SQID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime UpdateTime {
+            get {
+                return this.UpdateTimeField;
+            }
+            set {
+                if ((this.UpdateTimeField.Equals(value) != true)) {
+                    this.UpdateTimeField = value;
+                    this.RaisePropertyChanged("UpdateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool UseRBU1 {
+            get {
+                return this.UseRBU1Field;
+            }
+            set {
+                if ((this.UseRBU1Field.Equals(value) != true)) {
+                    this.UseRBU1Field = value;
+                    this.RaisePropertyChanged("UseRBU1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool UseRBU2 {
+            get {
+                return this.UseRBU2Field;
+            }
+            set {
+                if ((this.UseRBU2Field.Equals(value) != true)) {
+                    this.UseRBU2Field = value;
+                    this.RaisePropertyChanged("UseRBU2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool UseWBU1 {
+            get {
+                return this.UseWBU1Field;
+            }
+            set {
+                if ((this.UseWBU1Field.Equals(value) != true)) {
+                    this.UseWBU1Field = value;
+                    this.RaisePropertyChanged("UseWBU1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool UseWBU2 {
+            get {
+                return this.UseWBU2Field;
+            }
+            set {
+                if ((this.UseWBU2Field.Equals(value) != true)) {
+                    this.UseWBU2Field = value;
+                    this.RaisePropertyChanged("UseWBU2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WBackup1 {
+            get {
+                return this.WBackup1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WBackup1Field, value) != true)) {
+                    this.WBackup1Field = value;
+                    this.RaisePropertyChanged("WBackup1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WBackup1Title {
+            get {
+                return this.WBackup1TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WBackup1TitleField, value) != true)) {
+                    this.WBackup1TitleField = value;
+                    this.RaisePropertyChanged("WBackup1Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WBackup2 {
+            get {
+                return this.WBackup2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WBackup2Field, value) != true)) {
+                    this.WBackup2Field = value;
+                    this.RaisePropertyChanged("WBackup2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WBackup2Title {
+            get {
+                return this.WBackup2TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WBackup2TitleField, value) != true)) {
+                    this.WBackup2TitleField = value;
+                    this.RaisePropertyChanged("WBackup2Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WColE {
+            get {
+                return this.WColEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WColEField, value) != true)) {
+                    this.WColEField = value;
+                    this.RaisePropertyChanged("WColE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WColS {
+            get {
+                return this.WColSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WColSField, value) != true)) {
+                    this.WColSField = value;
+                    this.RaisePropertyChanged("WColS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WCommandNum {
+            get {
+                return this.WCommandNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WCommandNumField, value) != true)) {
+                    this.WCommandNumField = value;
+                    this.RaisePropertyChanged("WCommandNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WCommandType {
+            get {
+                return this.WCommandTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WCommandTypeField, value) != true)) {
+                    this.WCommandTypeField = value;
+                    this.RaisePropertyChanged("WCommandType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WDeviceENum {
+            get {
+                return this.WDeviceENumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WDeviceENumField, value) != true)) {
+                    this.WDeviceENumField = value;
+                    this.RaisePropertyChanged("WDeviceENum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WDeviceSNum {
+            get {
+                return this.WDeviceSNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WDeviceSNumField, value) != true)) {
+                    this.WDeviceSNumField = value;
+                    this.RaisePropertyChanged("WDeviceSNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WFetchLane {
+            get {
+                return this.WFetchLaneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WFetchLaneField, value) != true)) {
+                    this.WFetchLaneField = value;
+                    this.RaisePropertyChanged("WFetchLane");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WLayerE {
+            get {
+                return this.WLayerEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WLayerEField, value) != true)) {
+                    this.WLayerEField = value;
+                    this.RaisePropertyChanged("WLayerE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WLayerS {
+            get {
+                return this.WLayerSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WLayerSField, value) != true)) {
+                    this.WLayerSField = value;
+                    this.RaisePropertyChanged("WLayerS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WRowE {
+            get {
+                return this.WRowEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WRowEField, value) != true)) {
+                    this.WRowEField = value;
+                    this.RaisePropertyChanged("WRowE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WRowS {
+            get {
+                return this.WRowSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WRowSField, value) != true)) {
+                    this.WRowSField = value;
+                    this.RaisePropertyChanged("WRowS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WSize {
+            get {
+                return this.WSizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WSizeField, value) != true)) {
+                    this.WSizeField = value;
+                    this.RaisePropertyChanged("WSize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WUnloadLane {
+            get {
+                return this.WUnloadLaneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WUnloadLaneField, value) != true)) {
+                    this.WUnloadLaneField = value;
+                    this.RaisePropertyChanged("WUnloadLane");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WWeight {
+            get {
+                return this.WWeightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WWeightField, value) != true)) {
+                    this.WWeightField = value;
+                    this.RaisePropertyChanged("WWeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WXor {
+            get {
+                return this.WXorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WXorField, value) != true)) {
+                    this.WXorField = value;
+                    this.RaisePropertyChanged("WXor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool ifSpecification {
+            get {
+                return this.ifSpecificationField;
+            }
+            set {
+                if ((this.ifSpecificationField.Equals(value) != true)) {
+                    this.ifSpecificationField = value;
+                    this.RaisePropertyChanged("ifSpecification");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool ifWeight {
+            get {
+                return this.ifWeightField;
+            }
+            set {
+                if ((this.ifWeightField.Equals(value) != true)) {
+                    this.ifWeightField = value;
+                    this.RaisePropertyChanged("ifWeight");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WCSConveyorServiceModel", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    [System.SerializableAttribute()]
+    public partial class WCSConveyorServiceModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorCOMBarCodeServiceEnum COMBarCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorCheckBarcodeServiceEnum CheckBarcodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DefineColField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DefineLaneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DefineLayerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DefineRowField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IFInField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IFWriteSpecificationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IFWriteWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IfUseBarCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorInputNeedBarServiceEnum InputNeedBarField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorLEDSQID_InputServiceEnum LEDSQID_InputField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LEDSQID_LockField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorLEDSQID_OutServiceEnum LEDSQID_OutField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorLEDSQID_PickServiceEnum LEDSQID_PickField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool LockStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorPathTypeServiceEnum PathTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PerHeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PerWidthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RBackup1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RBackup1TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RBackup2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RBackup2TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RCommandNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RControlModField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RDeviceStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RPreCommandEchoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RPreCommandStatusEchoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RSpecificationTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SQIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorSpecificationFromServiceEnum SpecificationFromField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime UpdatetimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool UseRDB1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool UseRDB2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool UseWBU1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool UseWBU2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WBackup1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WBackup1TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WBackup2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WBackup2TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WColEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WColSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WCommandNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WCommandTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WDeviceENumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WDeviceSNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WFetchLaneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WLayerEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WLayerSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WRowEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WRowSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WUnloadLaneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WXorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private NovaMessageSwitch.WmsServiceModel.WMS.ConveyorWeithtFromServiceEnum WeithtFromField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal XField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal YField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorCOMBarCodeServiceEnum COMBarCode {
+            get {
+                return this.COMBarCodeField;
+            }
+            set {
+                if ((this.COMBarCodeField.Equals(value) != true)) {
+                    this.COMBarCodeField = value;
+                    this.RaisePropertyChanged("COMBarCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorCheckBarcodeServiceEnum CheckBarcode {
+            get {
+                return this.CheckBarcodeField;
+            }
+            set {
+                if ((this.CheckBarcodeField.Equals(value) != true)) {
+                    this.CheckBarcodeField = value;
+                    this.RaisePropertyChanged("CheckBarcode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DefineCol {
+            get {
+                return this.DefineColField;
+            }
+            set {
+                if ((this.DefineColField.Equals(value) != true)) {
+                    this.DefineColField = value;
+                    this.RaisePropertyChanged("DefineCol");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DefineLane {
+            get {
+                return this.DefineLaneField;
+            }
+            set {
+                if ((this.DefineLaneField.Equals(value) != true)) {
+                    this.DefineLaneField = value;
+                    this.RaisePropertyChanged("DefineLane");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DefineLayer {
+            get {
+                return this.DefineLayerField;
+            }
+            set {
+                if ((this.DefineLayerField.Equals(value) != true)) {
+                    this.DefineLayerField = value;
+                    this.RaisePropertyChanged("DefineLayer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DefineRow {
+            get {
+                return this.DefineRowField;
+            }
+            set {
+                if ((this.DefineRowField.Equals(value) != true)) {
+                    this.DefineRowField = value;
+                    this.RaisePropertyChanged("DefineRow");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IFIn {
+            get {
+                return this.IFInField;
+            }
+            set {
+                if ((this.IFInField.Equals(value) != true)) {
+                    this.IFInField = value;
+                    this.RaisePropertyChanged("IFIn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IFWriteSpecification {
+            get {
+                return this.IFWriteSpecificationField;
+            }
+            set {
+                if ((this.IFWriteSpecificationField.Equals(value) != true)) {
+                    this.IFWriteSpecificationField = value;
+                    this.RaisePropertyChanged("IFWriteSpecification");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IFWriteWeight {
+            get {
+                return this.IFWriteWeightField;
+            }
+            set {
+                if ((this.IFWriteWeightField.Equals(value) != true)) {
+                    this.IFWriteWeightField = value;
+                    this.RaisePropertyChanged("IFWriteWeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IfUseBarCode {
+            get {
+                return this.IfUseBarCodeField;
+            }
+            set {
+                if ((this.IfUseBarCodeField.Equals(value) != true)) {
+                    this.IfUseBarCodeField = value;
+                    this.RaisePropertyChanged("IfUseBarCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorInputNeedBarServiceEnum InputNeedBar {
+            get {
+                return this.InputNeedBarField;
+            }
+            set {
+                if ((this.InputNeedBarField.Equals(value) != true)) {
+                    this.InputNeedBarField = value;
+                    this.RaisePropertyChanged("InputNeedBar");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorLEDSQID_InputServiceEnum LEDSQID_Input {
+            get {
+                return this.LEDSQID_InputField;
+            }
+            set {
+                if ((this.LEDSQID_InputField.Equals(value) != true)) {
+                    this.LEDSQID_InputField = value;
+                    this.RaisePropertyChanged("LEDSQID_Input");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LEDSQID_Lock {
+            get {
+                return this.LEDSQID_LockField;
+            }
+            set {
+                if ((this.LEDSQID_LockField.Equals(value) != true)) {
+                    this.LEDSQID_LockField = value;
+                    this.RaisePropertyChanged("LEDSQID_Lock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorLEDSQID_OutServiceEnum LEDSQID_Out {
+            get {
+                return this.LEDSQID_OutField;
+            }
+            set {
+                if ((this.LEDSQID_OutField.Equals(value) != true)) {
+                    this.LEDSQID_OutField = value;
+                    this.RaisePropertyChanged("LEDSQID_Out");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorLEDSQID_PickServiceEnum LEDSQID_Pick {
+            get {
+                return this.LEDSQID_PickField;
+            }
+            set {
+                if ((this.LEDSQID_PickField.Equals(value) != true)) {
+                    this.LEDSQID_PickField = value;
+                    this.RaisePropertyChanged("LEDSQID_Pick");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool LockState {
+            get {
+                return this.LockStateField;
+            }
+            set {
+                if ((this.LockStateField.Equals(value) != true)) {
+                    this.LockStateField = value;
+                    this.RaisePropertyChanged("LockState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorPathTypeServiceEnum PathType {
+            get {
+                return this.PathTypeField;
+            }
+            set {
+                if ((this.PathTypeField.Equals(value) != true)) {
+                    this.PathTypeField = value;
+                    this.RaisePropertyChanged("PathType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal PerHeight {
+            get {
+                return this.PerHeightField;
+            }
+            set {
+                if ((this.PerHeightField.Equals(value) != true)) {
+                    this.PerHeightField = value;
+                    this.RaisePropertyChanged("PerHeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal PerWidth {
+            get {
+                return this.PerWidthField;
+            }
+            set {
+                if ((this.PerWidthField.Equals(value) != true)) {
+                    this.PerWidthField = value;
+                    this.RaisePropertyChanged("PerWidth");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Pname {
+            get {
+                return this.PnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PnameField, value) != true)) {
+                    this.PnameField = value;
+                    this.RaisePropertyChanged("Pname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RBackup1 {
+            get {
+                return this.RBackup1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RBackup1Field, value) != true)) {
+                    this.RBackup1Field = value;
+                    this.RaisePropertyChanged("RBackup1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RBackup1Title {
+            get {
+                return this.RBackup1TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RBackup1TitleField, value) != true)) {
+                    this.RBackup1TitleField = value;
+                    this.RaisePropertyChanged("RBackup1Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RBackup2 {
+            get {
+                return this.RBackup2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RBackup2Field, value) != true)) {
+                    this.RBackup2Field = value;
+                    this.RaisePropertyChanged("RBackup2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RBackup2Title {
+            get {
+                return this.RBackup2TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RBackup2TitleField, value) != true)) {
+                    this.RBackup2TitleField = value;
+                    this.RaisePropertyChanged("RBackup2Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RCommandNum {
+            get {
+                return this.RCommandNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RCommandNumField, value) != true)) {
+                    this.RCommandNumField = value;
+                    this.RaisePropertyChanged("RCommandNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RControlMod {
+            get {
+                return this.RControlModField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RControlModField, value) != true)) {
+                    this.RControlModField = value;
+                    this.RaisePropertyChanged("RControlMod");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RDeviceStatus {
+            get {
+                return this.RDeviceStatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RDeviceStatusField, value) != true)) {
+                    this.RDeviceStatusField = value;
+                    this.RaisePropertyChanged("RDeviceStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RPreCommandEcho {
+            get {
+                return this.RPreCommandEchoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RPreCommandEchoField, value) != true)) {
+                    this.RPreCommandEchoField = value;
+                    this.RaisePropertyChanged("RPreCommandEcho");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RPreCommandStatusEcho {
+            get {
+                return this.RPreCommandStatusEchoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RPreCommandStatusEchoField, value) != true)) {
+                    this.RPreCommandStatusEchoField = value;
+                    this.RaisePropertyChanged("RPreCommandStatusEcho");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RSpecificationType {
+            get {
+                return this.RSpecificationTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RSpecificationTypeField, value) != true)) {
+                    this.RSpecificationTypeField = value;
+                    this.RaisePropertyChanged("RSpecificationType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RWeight {
+            get {
+                return this.RWeightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RWeightField, value) != true)) {
+                    this.RWeightField = value;
+                    this.RaisePropertyChanged("RWeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SQID {
+            get {
+                return this.SQIDField;
+            }
+            set {
+                if ((this.SQIDField.Equals(value) != true)) {
+                    this.SQIDField = value;
+                    this.RaisePropertyChanged("SQID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorSpecificationFromServiceEnum SpecificationFrom {
+            get {
+                return this.SpecificationFromField;
+            }
+            set {
+                if ((this.SpecificationFromField.Equals(value) != true)) {
+                    this.SpecificationFromField = value;
+                    this.RaisePropertyChanged("SpecificationFrom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Updatetime {
+            get {
+                return this.UpdatetimeField;
+            }
+            set {
+                if ((this.UpdatetimeField.Equals(value) != true)) {
+                    this.UpdatetimeField = value;
+                    this.RaisePropertyChanged("Updatetime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool UseRDB1 {
+            get {
+                return this.UseRDB1Field;
+            }
+            set {
+                if ((this.UseRDB1Field.Equals(value) != true)) {
+                    this.UseRDB1Field = value;
+                    this.RaisePropertyChanged("UseRDB1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool UseRDB2 {
+            get {
+                return this.UseRDB2Field;
+            }
+            set {
+                if ((this.UseRDB2Field.Equals(value) != true)) {
+                    this.UseRDB2Field = value;
+                    this.RaisePropertyChanged("UseRDB2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool UseWBU1 {
+            get {
+                return this.UseWBU1Field;
+            }
+            set {
+                if ((this.UseWBU1Field.Equals(value) != true)) {
+                    this.UseWBU1Field = value;
+                    this.RaisePropertyChanged("UseWBU1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool UseWBU2 {
+            get {
+                return this.UseWBU2Field;
+            }
+            set {
+                if ((this.UseWBU2Field.Equals(value) != true)) {
+                    this.UseWBU2Field = value;
+                    this.RaisePropertyChanged("UseWBU2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WBackup1 {
+            get {
+                return this.WBackup1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WBackup1Field, value) != true)) {
+                    this.WBackup1Field = value;
+                    this.RaisePropertyChanged("WBackup1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WBackup1Title {
+            get {
+                return this.WBackup1TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WBackup1TitleField, value) != true)) {
+                    this.WBackup1TitleField = value;
+                    this.RaisePropertyChanged("WBackup1Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WBackup2 {
+            get {
+                return this.WBackup2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WBackup2Field, value) != true)) {
+                    this.WBackup2Field = value;
+                    this.RaisePropertyChanged("WBackup2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WBackup2Title {
+            get {
+                return this.WBackup2TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WBackup2TitleField, value) != true)) {
+                    this.WBackup2TitleField = value;
+                    this.RaisePropertyChanged("WBackup2Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WColE {
+            get {
+                return this.WColEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WColEField, value) != true)) {
+                    this.WColEField = value;
+                    this.RaisePropertyChanged("WColE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WColS {
+            get {
+                return this.WColSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WColSField, value) != true)) {
+                    this.WColSField = value;
+                    this.RaisePropertyChanged("WColS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WCommandNum {
+            get {
+                return this.WCommandNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WCommandNumField, value) != true)) {
+                    this.WCommandNumField = value;
+                    this.RaisePropertyChanged("WCommandNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WCommandType {
+            get {
+                return this.WCommandTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WCommandTypeField, value) != true)) {
+                    this.WCommandTypeField = value;
+                    this.RaisePropertyChanged("WCommandType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WDeviceENum {
+            get {
+                return this.WDeviceENumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WDeviceENumField, value) != true)) {
+                    this.WDeviceENumField = value;
+                    this.RaisePropertyChanged("WDeviceENum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WDeviceSNum {
+            get {
+                return this.WDeviceSNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WDeviceSNumField, value) != true)) {
+                    this.WDeviceSNumField = value;
+                    this.RaisePropertyChanged("WDeviceSNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WFetchLane {
+            get {
+                return this.WFetchLaneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WFetchLaneField, value) != true)) {
+                    this.WFetchLaneField = value;
+                    this.RaisePropertyChanged("WFetchLane");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WLayerE {
+            get {
+                return this.WLayerEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WLayerEField, value) != true)) {
+                    this.WLayerEField = value;
+                    this.RaisePropertyChanged("WLayerE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WLayerS {
+            get {
+                return this.WLayerSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WLayerSField, value) != true)) {
+                    this.WLayerSField = value;
+                    this.RaisePropertyChanged("WLayerS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WRowE {
+            get {
+                return this.WRowEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WRowEField, value) != true)) {
+                    this.WRowEField = value;
+                    this.RaisePropertyChanged("WRowE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WRowS {
+            get {
+                return this.WRowSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WRowSField, value) != true)) {
+                    this.WRowSField = value;
+                    this.RaisePropertyChanged("WRowS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WSize {
+            get {
+                return this.WSizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WSizeField, value) != true)) {
+                    this.WSizeField = value;
+                    this.RaisePropertyChanged("WSize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WUnloadLane {
+            get {
+                return this.WUnloadLaneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WUnloadLaneField, value) != true)) {
+                    this.WUnloadLaneField = value;
+                    this.RaisePropertyChanged("WUnloadLane");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WWeight {
+            get {
+                return this.WWeightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WWeightField, value) != true)) {
+                    this.WWeightField = value;
+                    this.RaisePropertyChanged("WWeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WXor {
+            get {
+                return this.WXorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WXorField, value) != true)) {
+                    this.WXorField = value;
+                    this.RaisePropertyChanged("WXor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public NovaMessageSwitch.WmsServiceModel.WMS.ConveyorWeithtFromServiceEnum WeithtFrom {
+            get {
+                return this.WeithtFromField;
+            }
+            set {
+                if ((this.WeithtFromField.Equals(value) != true)) {
+                    this.WeithtFromField = value;
+                    this.RaisePropertyChanged("WeithtFrom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal X {
+            get {
+                return this.XField;
+            }
+            set {
+                if ((this.XField.Equals(value) != true)) {
+                    this.XField = value;
+                    this.RaisePropertyChanged("X");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Y {
+            get {
+                return this.YField;
+            }
+            set {
+                if ((this.YField.Equals(value) != true)) {
+                    this.YField = value;
+                    this.RaisePropertyChanged("Y");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConveyorCOMBarCodeServiceEnum", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    public enum ConveyorCOMBarCodeServiceEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PLC = -1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Invalid = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COM = 1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConveyorCheckBarcodeServiceEnum", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    public enum ConveyorCheckBarcodeServiceEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NO = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        YES = 1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConveyorInputNeedBarServiceEnum", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    public enum ConveyorInputNeedBarServiceEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NoNeed = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Need = 1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConveyorLEDSQID_InputServiceEnum", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    public enum ConveyorLEDSQID_InputServiceEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        No = -1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConveyorLEDSQID_OutServiceEnum", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    public enum ConveyorLEDSQID_OutServiceEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        No = -1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConveyorLEDSQID_PickServiceEnum", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    public enum ConveyorLEDSQID_PickServiceEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        No = -1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConveyorPathTypeServiceEnum", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    public enum ConveyorPathTypeServiceEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Single = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        More = 1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConveyorSpecificationFromServiceEnum", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    public enum ConveyorSpecificationFromServiceEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Electrical = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Other = 1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConveyorWeithtFromServiceEnum", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    public enum ConveyorWeithtFromServiceEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Electrical = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Other = 1,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WCSFoldDownDevServiceModel", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    [System.SerializableAttribute()]
+    public partial class WCSFoldDownDevServiceModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IfECSReadFlagField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IfECSWriteFlagField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IfWriteSpecificationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IfWriteWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool LockStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PerHeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PerWidthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RBackup1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RBackup1TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RBackup2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RBackup2TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RCommandNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RControlModField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RDeviceStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RInputAppField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ROutputAppField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RPreCommandEchoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RPreCommandStatusEchoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RSpecificationTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SQIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private NovaMessageSwitch.WmsServiceModel.WMS.FoldDownDevSpecificationFromServiceEnum SpecificationFromField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime UpdatetimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool UseRDB1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool UseRDB2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool UseWBU1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool UseWBU2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WBackup1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WBackup1TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WBackup2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WBackup2TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WColEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WColSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WCommandNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WCommandTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WDeviceENumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WDeviceSNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WFetchLaneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WLayerEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WLayerSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WRowEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WRowSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WUnloadLaneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WXorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private NovaMessageSwitch.WmsServiceModel.WMS.FoldDownDevWeightFromServiceEnum WeightFromField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal XField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal YField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IfECSReadFlag {
+            get {
+                return this.IfECSReadFlagField;
+            }
+            set {
+                if ((this.IfECSReadFlagField.Equals(value) != true)) {
+                    this.IfECSReadFlagField = value;
+                    this.RaisePropertyChanged("IfECSReadFlag");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IfECSWriteFlag {
+            get {
+                return this.IfECSWriteFlagField;
+            }
+            set {
+                if ((this.IfECSWriteFlagField.Equals(value) != true)) {
+                    this.IfECSWriteFlagField = value;
+                    this.RaisePropertyChanged("IfECSWriteFlag");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IfWriteSpecification {
+            get {
+                return this.IfWriteSpecificationField;
+            }
+            set {
+                if ((this.IfWriteSpecificationField.Equals(value) != true)) {
+                    this.IfWriteSpecificationField = value;
+                    this.RaisePropertyChanged("IfWriteSpecification");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IfWriteWeight {
+            get {
+                return this.IfWriteWeightField;
+            }
+            set {
+                if ((this.IfWriteWeightField.Equals(value) != true)) {
+                    this.IfWriteWeightField = value;
+                    this.RaisePropertyChanged("IfWriteWeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool LockState {
+            get {
+                return this.LockStateField;
+            }
+            set {
+                if ((this.LockStateField.Equals(value) != true)) {
+                    this.LockStateField = value;
+                    this.RaisePropertyChanged("LockState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal PerHeight {
+            get {
+                return this.PerHeightField;
+            }
+            set {
+                if ((this.PerHeightField.Equals(value) != true)) {
+                    this.PerHeightField = value;
+                    this.RaisePropertyChanged("PerHeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal PerWidth {
+            get {
+                return this.PerWidthField;
+            }
+            set {
+                if ((this.PerWidthField.Equals(value) != true)) {
+                    this.PerWidthField = value;
+                    this.RaisePropertyChanged("PerWidth");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Pname {
+            get {
+                return this.PnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PnameField, value) != true)) {
+                    this.PnameField = value;
+                    this.RaisePropertyChanged("Pname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RBackup1 {
+            get {
+                return this.RBackup1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RBackup1Field, value) != true)) {
+                    this.RBackup1Field = value;
+                    this.RaisePropertyChanged("RBackup1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RBackup1Title {
+            get {
+                return this.RBackup1TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RBackup1TitleField, value) != true)) {
+                    this.RBackup1TitleField = value;
+                    this.RaisePropertyChanged("RBackup1Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RBackup2 {
+            get {
+                return this.RBackup2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RBackup2Field, value) != true)) {
+                    this.RBackup2Field = value;
+                    this.RaisePropertyChanged("RBackup2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RBackup2Title {
+            get {
+                return this.RBackup2TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RBackup2TitleField, value) != true)) {
+                    this.RBackup2TitleField = value;
+                    this.RaisePropertyChanged("RBackup2Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RCommandNum {
+            get {
+                return this.RCommandNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RCommandNumField, value) != true)) {
+                    this.RCommandNumField = value;
+                    this.RaisePropertyChanged("RCommandNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RControlMod {
+            get {
+                return this.RControlModField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RControlModField, value) != true)) {
+                    this.RControlModField = value;
+                    this.RaisePropertyChanged("RControlMod");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RDeviceStatus {
+            get {
+                return this.RDeviceStatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RDeviceStatusField, value) != true)) {
+                    this.RDeviceStatusField = value;
+                    this.RaisePropertyChanged("RDeviceStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RInputApp {
+            get {
+                return this.RInputAppField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RInputAppField, value) != true)) {
+                    this.RInputAppField = value;
+                    this.RaisePropertyChanged("RInputApp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ROutputApp {
+            get {
+                return this.ROutputAppField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ROutputAppField, value) != true)) {
+                    this.ROutputAppField = value;
+                    this.RaisePropertyChanged("ROutputApp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RPreCommandEcho {
+            get {
+                return this.RPreCommandEchoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RPreCommandEchoField, value) != true)) {
+                    this.RPreCommandEchoField = value;
+                    this.RaisePropertyChanged("RPreCommandEcho");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RPreCommandStatusEcho {
+            get {
+                return this.RPreCommandStatusEchoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RPreCommandStatusEchoField, value) != true)) {
+                    this.RPreCommandStatusEchoField = value;
+                    this.RaisePropertyChanged("RPreCommandStatusEcho");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RSpecificationType {
+            get {
+                return this.RSpecificationTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RSpecificationTypeField, value) != true)) {
+                    this.RSpecificationTypeField = value;
+                    this.RaisePropertyChanged("RSpecificationType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RWeight {
+            get {
+                return this.RWeightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RWeightField, value) != true)) {
+                    this.RWeightField = value;
+                    this.RaisePropertyChanged("RWeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SQID {
+            get {
+                return this.SQIDField;
+            }
+            set {
+                if ((this.SQIDField.Equals(value) != true)) {
+                    this.SQIDField = value;
+                    this.RaisePropertyChanged("SQID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public NovaMessageSwitch.WmsServiceModel.WMS.FoldDownDevSpecificationFromServiceEnum SpecificationFrom {
+            get {
+                return this.SpecificationFromField;
+            }
+            set {
+                if ((this.SpecificationFromField.Equals(value) != true)) {
+                    this.SpecificationFromField = value;
+                    this.RaisePropertyChanged("SpecificationFrom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Updatetime {
+            get {
+                return this.UpdatetimeField;
+            }
+            set {
+                if ((this.UpdatetimeField.Equals(value) != true)) {
+                    this.UpdatetimeField = value;
+                    this.RaisePropertyChanged("Updatetime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool UseRDB1 {
+            get {
+                return this.UseRDB1Field;
+            }
+            set {
+                if ((this.UseRDB1Field.Equals(value) != true)) {
+                    this.UseRDB1Field = value;
+                    this.RaisePropertyChanged("UseRDB1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool UseRDB2 {
+            get {
+                return this.UseRDB2Field;
+            }
+            set {
+                if ((this.UseRDB2Field.Equals(value) != true)) {
+                    this.UseRDB2Field = value;
+                    this.RaisePropertyChanged("UseRDB2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool UseWBU1 {
+            get {
+                return this.UseWBU1Field;
+            }
+            set {
+                if ((this.UseWBU1Field.Equals(value) != true)) {
+                    this.UseWBU1Field = value;
+                    this.RaisePropertyChanged("UseWBU1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool UseWBU2 {
+            get {
+                return this.UseWBU2Field;
+            }
+            set {
+                if ((this.UseWBU2Field.Equals(value) != true)) {
+                    this.UseWBU2Field = value;
+                    this.RaisePropertyChanged("UseWBU2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WBackup1 {
+            get {
+                return this.WBackup1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WBackup1Field, value) != true)) {
+                    this.WBackup1Field = value;
+                    this.RaisePropertyChanged("WBackup1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WBackup1Title {
+            get {
+                return this.WBackup1TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WBackup1TitleField, value) != true)) {
+                    this.WBackup1TitleField = value;
+                    this.RaisePropertyChanged("WBackup1Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WBackup2 {
+            get {
+                return this.WBackup2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WBackup2Field, value) != true)) {
+                    this.WBackup2Field = value;
+                    this.RaisePropertyChanged("WBackup2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WBackup2Title {
+            get {
+                return this.WBackup2TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WBackup2TitleField, value) != true)) {
+                    this.WBackup2TitleField = value;
+                    this.RaisePropertyChanged("WBackup2Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WColE {
+            get {
+                return this.WColEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WColEField, value) != true)) {
+                    this.WColEField = value;
+                    this.RaisePropertyChanged("WColE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WColS {
+            get {
+                return this.WColSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WColSField, value) != true)) {
+                    this.WColSField = value;
+                    this.RaisePropertyChanged("WColS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WCommandNum {
+            get {
+                return this.WCommandNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WCommandNumField, value) != true)) {
+                    this.WCommandNumField = value;
+                    this.RaisePropertyChanged("WCommandNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WCommandType {
+            get {
+                return this.WCommandTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WCommandTypeField, value) != true)) {
+                    this.WCommandTypeField = value;
+                    this.RaisePropertyChanged("WCommandType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WDeviceENum {
+            get {
+                return this.WDeviceENumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WDeviceENumField, value) != true)) {
+                    this.WDeviceENumField = value;
+                    this.RaisePropertyChanged("WDeviceENum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WDeviceSNum {
+            get {
+                return this.WDeviceSNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WDeviceSNumField, value) != true)) {
+                    this.WDeviceSNumField = value;
+                    this.RaisePropertyChanged("WDeviceSNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WFetchLane {
+            get {
+                return this.WFetchLaneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WFetchLaneField, value) != true)) {
+                    this.WFetchLaneField = value;
+                    this.RaisePropertyChanged("WFetchLane");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WLayerE {
+            get {
+                return this.WLayerEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WLayerEField, value) != true)) {
+                    this.WLayerEField = value;
+                    this.RaisePropertyChanged("WLayerE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WLayerS {
+            get {
+                return this.WLayerSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WLayerSField, value) != true)) {
+                    this.WLayerSField = value;
+                    this.RaisePropertyChanged("WLayerS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WRowE {
+            get {
+                return this.WRowEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WRowEField, value) != true)) {
+                    this.WRowEField = value;
+                    this.RaisePropertyChanged("WRowE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WRowS {
+            get {
+                return this.WRowSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WRowSField, value) != true)) {
+                    this.WRowSField = value;
+                    this.RaisePropertyChanged("WRowS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WSize {
+            get {
+                return this.WSizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WSizeField, value) != true)) {
+                    this.WSizeField = value;
+                    this.RaisePropertyChanged("WSize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WUnloadLane {
+            get {
+                return this.WUnloadLaneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WUnloadLaneField, value) != true)) {
+                    this.WUnloadLaneField = value;
+                    this.RaisePropertyChanged("WUnloadLane");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WWeight {
+            get {
+                return this.WWeightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WWeightField, value) != true)) {
+                    this.WWeightField = value;
+                    this.RaisePropertyChanged("WWeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WXor {
+            get {
+                return this.WXorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WXorField, value) != true)) {
+                    this.WXorField = value;
+                    this.RaisePropertyChanged("WXor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public NovaMessageSwitch.WmsServiceModel.WMS.FoldDownDevWeightFromServiceEnum WeightFrom {
+            get {
+                return this.WeightFromField;
+            }
+            set {
+                if ((this.WeightFromField.Equals(value) != true)) {
+                    this.WeightFromField = value;
+                    this.RaisePropertyChanged("WeightFrom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal X {
+            get {
+                return this.XField;
+            }
+            set {
+                if ((this.XField.Equals(value) != true)) {
+                    this.XField = value;
+                    this.RaisePropertyChanged("X");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Y {
+            get {
+                return this.YField;
+            }
+            set {
+                if ((this.YField.Equals(value) != true)) {
+                    this.YField = value;
+                    this.RaisePropertyChanged("Y");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FoldDownDevSpecificationFromServiceEnum", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    public enum FoldDownDevSpecificationFromServiceEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Electrical = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Other = 1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FoldDownDevWeightFromServiceEnum", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    public enum FoldDownDevWeightFromServiceEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Electrical = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Other = 1,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WCSShuttleCarServiceModel", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    [System.SerializableAttribute()]
+    public partial class WCSShuttleCarServiceModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ColsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DB6Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private NovaMessageSwitch.WmsServiceModel.WMS.ShuttleCarDirectorServiceEnum DirectorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool LockStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PerHeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PerWidthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RCommandNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RCurrentColField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RDeviceStatsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SQIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime UpdateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal XField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal YField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Cols {
+            get {
+                return this.ColsField;
+            }
+            set {
+                if ((this.ColsField.Equals(value) != true)) {
+                    this.ColsField = value;
+                    this.RaisePropertyChanged("Cols");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DB6 {
+            get {
+                return this.DB6Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DB6Field, value) != true)) {
+                    this.DB6Field = value;
+                    this.RaisePropertyChanged("DB6");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public NovaMessageSwitch.WmsServiceModel.WMS.ShuttleCarDirectorServiceEnum Director {
+            get {
+                return this.DirectorField;
+            }
+            set {
+                if ((this.DirectorField.Equals(value) != true)) {
+                    this.DirectorField = value;
+                    this.RaisePropertyChanged("Director");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool LockState {
+            get {
+                return this.LockStateField;
+            }
+            set {
+                if ((this.LockStateField.Equals(value) != true)) {
+                    this.LockStateField = value;
+                    this.RaisePropertyChanged("LockState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal PerHeight {
+            get {
+                return this.PerHeightField;
+            }
+            set {
+                if ((this.PerHeightField.Equals(value) != true)) {
+                    this.PerHeightField = value;
+                    this.RaisePropertyChanged("PerHeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal PerWidth {
+            get {
+                return this.PerWidthField;
+            }
+            set {
+                if ((this.PerWidthField.Equals(value) != true)) {
+                    this.PerWidthField = value;
+                    this.RaisePropertyChanged("PerWidth");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Pname {
+            get {
+                return this.PnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PnameField, value) != true)) {
+                    this.PnameField = value;
+                    this.RaisePropertyChanged("Pname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RCommandNum {
+            get {
+                return this.RCommandNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RCommandNumField, value) != true)) {
+                    this.RCommandNumField = value;
+                    this.RaisePropertyChanged("RCommandNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RCurrentCol {
+            get {
+                return this.RCurrentColField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RCurrentColField, value) != true)) {
+                    this.RCurrentColField = value;
+                    this.RaisePropertyChanged("RCurrentCol");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RDeviceStats {
+            get {
+                return this.RDeviceStatsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RDeviceStatsField, value) != true)) {
+                    this.RDeviceStatsField = value;
+                    this.RaisePropertyChanged("RDeviceStats");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SQID {
+            get {
+                return this.SQIDField;
+            }
+            set {
+                if ((this.SQIDField.Equals(value) != true)) {
+                    this.SQIDField = value;
+                    this.RaisePropertyChanged("SQID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime UpdateTime {
+            get {
+                return this.UpdateTimeField;
+            }
+            set {
+                if ((this.UpdateTimeField.Equals(value) != true)) {
+                    this.UpdateTimeField = value;
+                    this.RaisePropertyChanged("UpdateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal X {
+            get {
+                return this.XField;
+            }
+            set {
+                if ((this.XField.Equals(value) != true)) {
+                    this.XField = value;
+                    this.RaisePropertyChanged("X");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Y {
+            get {
+                return this.YField;
+            }
+            set {
+                if ((this.YField.Equals(value) != true)) {
+                    this.YField = value;
+                    this.RaisePropertyChanged("Y");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ShuttleCarDirectorServiceEnum", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    public enum ShuttleCarDirectorServiceEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Right = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Down = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Left = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Up = 3,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WCSLEDServiceModel", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    [System.SerializableAttribute()]
+    public partial class WCSLEDServiceModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int COMAddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private NovaMessageSwitch.WmsServiceModel.WMS.LEDColorTypeServiceEnum ColorTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LEDAddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LEDHeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LEDNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LEDSQIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LEDWidthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LeftMoveSpeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OptionIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RefreshLeafInterViewField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int COMAddress {
+            get {
+                return this.COMAddressField;
+            }
+            set {
+                if ((this.COMAddressField.Equals(value) != true)) {
+                    this.COMAddressField = value;
+                    this.RaisePropertyChanged("COMAddress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public NovaMessageSwitch.WmsServiceModel.WMS.LEDColorTypeServiceEnum ColorType {
+            get {
+                return this.ColorTypeField;
+            }
+            set {
+                if ((this.ColorTypeField.Equals(value) != true)) {
+                    this.ColorTypeField = value;
+                    this.RaisePropertyChanged("ColorType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LEDAddress {
+            get {
+                return this.LEDAddressField;
+            }
+            set {
+                if ((this.LEDAddressField.Equals(value) != true)) {
+                    this.LEDAddressField = value;
+                    this.RaisePropertyChanged("LEDAddress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LEDHeight {
+            get {
+                return this.LEDHeightField;
+            }
+            set {
+                if ((this.LEDHeightField.Equals(value) != true)) {
+                    this.LEDHeightField = value;
+                    this.RaisePropertyChanged("LEDHeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LEDName {
+            get {
+                return this.LEDNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LEDNameField, value) != true)) {
+                    this.LEDNameField = value;
+                    this.RaisePropertyChanged("LEDName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LEDSQID {
+            get {
+                return this.LEDSQIDField;
+            }
+            set {
+                if ((this.LEDSQIDField.Equals(value) != true)) {
+                    this.LEDSQIDField = value;
+                    this.RaisePropertyChanged("LEDSQID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LEDWidth {
+            get {
+                return this.LEDWidthField;
+            }
+            set {
+                if ((this.LEDWidthField.Equals(value) != true)) {
+                    this.LEDWidthField = value;
+                    this.RaisePropertyChanged("LEDWidth");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LeftMoveSpeed {
+            get {
+                return this.LeftMoveSpeedField;
+            }
+            set {
+                if ((this.LeftMoveSpeedField.Equals(value) != true)) {
+                    this.LeftMoveSpeedField = value;
+                    this.RaisePropertyChanged("LeftMoveSpeed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OptionID {
+            get {
+                return this.OptionIDField;
+            }
+            set {
+                if ((this.OptionIDField.Equals(value) != true)) {
+                    this.OptionIDField = value;
+                    this.RaisePropertyChanged("OptionID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int RefreshLeafInterView {
+            get {
+                return this.RefreshLeafInterViewField;
+            }
+            set {
+                if ((this.RefreshLeafInterViewField.Equals(value) != true)) {
+                    this.RefreshLeafInterViewField = value;
+                    this.RaisePropertyChanged("RefreshLeafInterView");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LEDColorTypeServiceEnum", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    public enum LEDColorTypeServiceEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UniColor = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Color = 2,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WCSCOMServiceModel", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    [System.SerializableAttribute()]
+    public partial class WCSCOMServiceModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DtrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int HwField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RtsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SwField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ibaudrateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ibytesizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int iparityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int istopbitsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int portField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Dtr {
+            get {
+                return this.DtrField;
+            }
+            set {
+                if ((this.DtrField.Equals(value) != true)) {
+                    this.DtrField = value;
+                    this.RaisePropertyChanged("Dtr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Hw {
+            get {
+                return this.HwField;
+            }
+            set {
+                if ((this.HwField.Equals(value) != true)) {
+                    this.HwField = value;
+                    this.RaisePropertyChanged("Hw");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PID {
+            get {
+                return this.PIDField;
+            }
+            set {
+                if ((this.PIDField.Equals(value) != true)) {
+                    this.PIDField = value;
+                    this.RaisePropertyChanged("PID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Rts {
+            get {
+                return this.RtsField;
+            }
+            set {
+                if ((this.RtsField.Equals(value) != true)) {
+                    this.RtsField = value;
+                    this.RaisePropertyChanged("Rts");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Sw {
+            get {
+                return this.SwField;
+            }
+            set {
+                if ((this.SwField.Equals(value) != true)) {
+                    this.SwField = value;
+                    this.RaisePropertyChanged("Sw");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ibaudrate {
+            get {
+                return this.ibaudrateField;
+            }
+            set {
+                if ((this.ibaudrateField.Equals(value) != true)) {
+                    this.ibaudrateField = value;
+                    this.RaisePropertyChanged("ibaudrate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ibytesize {
+            get {
+                return this.ibytesizeField;
+            }
+            set {
+                if ((this.ibytesizeField.Equals(value) != true)) {
+                    this.ibytesizeField = value;
+                    this.RaisePropertyChanged("ibytesize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int iparity {
+            get {
+                return this.iparityField;
+            }
+            set {
+                if ((this.iparityField.Equals(value) != true)) {
+                    this.iparityField = value;
+                    this.RaisePropertyChanged("iparity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int istopbits {
+            get {
+                return this.istopbitsField;
+            }
+            set {
+                if ((this.istopbitsField.Equals(value) != true)) {
+                    this.istopbitsField = value;
+                    this.RaisePropertyChanged("istopbits");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int port {
+            get {
+                return this.portField;
+            }
+            set {
+                if ((this.portField.Equals(value) != true)) {
+                    this.portField = value;
+                    this.RaisePropertyChanged("port");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WCSAccountPostAreaServiceModel", Namespace="http://schemas.datacontract.org/2004/07/Nova.WMS.WebSite.Services.ServiceModel")]
+    [System.SerializableAttribute()]
+    public partial class WCSAccountPostAreaServiceModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RCommandNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RWCommandStatusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PID {
+            get {
+                return this.PIDField;
+            }
+            set {
+                if ((this.PIDField.Equals(value) != true)) {
+                    this.PIDField = value;
+                    this.RaisePropertyChanged("PID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RCommandNum {
+            get {
+                return this.RCommandNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RCommandNumField, value) != true)) {
+                    this.RCommandNumField = value;
+                    this.RaisePropertyChanged("RCommandNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int RWCommandStatus {
+            get {
+                return this.RWCommandStatusField;
+            }
+            set {
+                if ((this.RWCommandStatusField.Equals(value) != true)) {
+                    this.RWCommandStatusField = value;
+                    this.RaisePropertyChanged("RWCommandStatus");
+                }
+            }
+        }
+        
+>>>>>>> origin/master
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {

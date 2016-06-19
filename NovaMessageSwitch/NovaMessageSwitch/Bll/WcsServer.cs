@@ -99,6 +99,10 @@ namespace NovaMessageSwitch.Bll
         {
             while (true)
             {
+<<<<<<< HEAD
+=======
+                Thread.Sleep(1000);
+>>>>>>> origin/master
                 try
                 {
                     var myClientSocket = (Socket)clientSocket;
@@ -148,6 +152,13 @@ namespace NovaMessageSwitch.Bll
                 {
                     AppLogger.Error($"{ex.Message} {ex.StackTrace}", ex);
                 }
+<<<<<<< HEAD
+=======
+                 catch (Exception ex)
+                 {
+                     AppLogger.Error($"{ex.Message} {ex.StackTrace}", ex);
+                 }
+>>>>>>> origin/master
 
             }
         }
@@ -165,6 +176,7 @@ namespace NovaMessageSwitch.Bll
                 {
                     ReceiveEntity messageEntity;
                     _receiveMailBox.TryDequeue(out messageEntity);
+<<<<<<< HEAD
                    
                     Action a = () =>
                     {
@@ -184,11 +196,25 @@ namespace NovaMessageSwitch.Bll
 
 
                         }));
+=======
+                    if (messageEntity == null) return;
+                    wcsReceiver.ClientId = Convert.ToString(messageEntity.Message.serial.Value);
+                    wcsReceiver.ReplyAckWcs(messageEntity.Client, wcsReceiver.ClientId);
+                    if (messageEntity.Message.infoType == 40 || messageEntity.Message.infoType == 42)
+                    {
+                        wcsReceiver.ReplyBrowser(messageEntity.Message);
+                        continue;
+                    }
+                       
+                    wcsReceiver.RecieiveRequest(messageEntity.Message, new Action(delegate
+                    {
+>>>>>>> origin/master
                         _sendMailBox.Enqueue(new ReceiveEntity
                         {
                             Client = messageEntity.Client,
                             Message = wcsReceiver.Message
                         });
+<<<<<<< HEAD
 
                     };
                     a.BeginInvoke(new AsyncCallback(Callback), null);
@@ -197,6 +223,9 @@ namespace NovaMessageSwitch.Bll
                         _receiveMailBox=new ConcurrentQueue<ReceiveEntity>();
                         ClearMemory();
                     }
+=======
+                    }));
+>>>>>>> origin/master
                 }
                 catch (Exception ex)
                 {
@@ -543,13 +572,18 @@ namespace NovaMessageSwitch.Bll
             infoDisplay.CustomColor = Color.DodgerBlue;
             socketTool.PrintInfoConsole($"{sendStr}", ConsoleColor.Green, infoDisplay, PostMessageInfo);
         }
+<<<<<<< HEAD
 
+=======
+        //接收wcs请求
+>>>>>>> origin/master
         public void RecieiveRequest(dynamic message, Action f)
         {
             _helpAsk.MessageFactory = _messageFactory;
             _helpAsk.Analysis(message.content.objectID.ToString());
             _message = _helpAsk.HandleRequesFromWcs(message);
             Debug.Assert((object)_message != null, "请求转换为报文时_message==null");
+<<<<<<< HEAD
             //同步数据转发给wms且缓存 待定义完成此处修改
             if (_message.GetType().GetProperty("YesReturnWms") != null)
             {
@@ -558,6 +592,9 @@ namespace NovaMessageSwitch.Bll
                 return;
             }
             f.Invoke();
+=======
+            f();
+>>>>>>> origin/master
         }
 
         public void ReplyResponseToWcs(Socket socket/*, string oriSerial*/)

@@ -16,7 +16,11 @@ namespace NovaMessageSwitch.Bll
         private int? _devTypeId;
         private int? _devRealId;
         private MessageFactory _messageFactory;
+<<<<<<< HEAD
         private readonly IDictionary<string, Func<dynamic, dynamic>> _routeFunc = new Dictionary<string, Func<dynamic, dynamic>>();
+=======
+        private readonly IDictionary<string, Func<dynamic, dynamic>> _routeFunc=new Dictionary<string, Func<dynamic, dynamic>>();
+>>>>>>> origin/master
 
         public int? DevRealId
         {
@@ -35,7 +39,11 @@ namespace NovaMessageSwitch.Bll
         void InitRoute()
         {
             //库区定义
+<<<<<<< HEAD
             _routeFunc.Add("0", messageParam =>
+=======
+            _routeFunc.Add("0", messageParam=>
+>>>>>>> origin/master
             {
                 using (var browser = new ServiceForWCSClient())
                 {
@@ -45,9 +53,15 @@ namespace NovaMessageSwitch.Bll
                     if (_devRealId != null)
                     {
                         accountPostListLocal = accountPostListLocal.Where(x => _devRealId.ToString().Equals(x.Zone_Code));
+<<<<<<< HEAD
                     }*/
                     
                     var postMesssage = (MessageData<List<ContentRegion>>)_messageFactory.ConstructModel((int)MessageType.InfoType21, null,clientId: (int)messageParam.clientID.Value);
+=======
+                    }
+                    var postMesssage = (MessageData<List<ContentRegion>>)_messageFactory.ConstructModel((int)MessageType.InfoType21, accountPostListLocal,
+                        clientId: (int)messageParam.clientID.Value);
+>>>>>>> origin/master
                     InitZoneData(postMesssage);
                     return postMesssage;
                 }
@@ -58,9 +72,15 @@ namespace NovaMessageSwitch.Bll
                 var browser = new ServiceForWCSClient();
                 //var zoneCode = GetZoneCode(message.clientID.ToString());
                 var cacheData = GetGoodsPositionData(nameof(WCSPoistionServiceModel));
+<<<<<<< HEAD
                 var accountPostArr = (WCSPoistionServiceModel[])(cacheData ?? browser.GetPositionList(null));
 
                 var increData = (WCSPoistionServiceModel[])browser.GetPositionList((from p in accountPostArr orderby p.Update_Time descending select p).FirstOrDefault()?.Update_Time.AddHours(-0.2));
+=======
+                var accountPostArr = (WCSPoistionServiceModel[])(cacheData ?? browser.GetPositionList(zoneCode, null));
+
+                var increData = (WCSPoistionServiceModel[])browser.GetPositionList(zoneCode, (from p in accountPostArr orderby p.Update_Time descending select p).FirstOrDefault()?.Update_Time.AddHours(-0.2));
+>>>>>>> origin/master
                 var accountPostList = accountPostArr.ToList();
                 foreach (var item in increData)
                 {
@@ -191,6 +211,7 @@ namespace NovaMessageSwitch.Bll
                 var postMessage = _messageFactory.ConstructModel((int)MessageType.InfoType29, foldDownList, clientId: (int)message.clientID.Value);
                 return postMessage;
             });
+<<<<<<< HEAD
 
             //查询堆垛机 待报文定义完成
             _routeFunc.Add("101", message =>
@@ -227,6 +248,8 @@ namespace NovaMessageSwitch.Bll
             {
                 return new { YesReturnWms = true, MessageEntity = new int?() };
             });
+=======
+>>>>>>> origin/master
         }
         /// <summary>
         /// 必填字段
@@ -247,6 +270,7 @@ namespace NovaMessageSwitch.Bll
         //解析字段
         public void Analysis(string objectId)
         {
+<<<<<<< HEAD
             if (objectId.Contains("-"))
             {
                 var arr = objectId.Split(new[] { '-' }, StringSplitOptions.RemoveEmptyEntries);
@@ -266,6 +290,83 @@ namespace NovaMessageSwitch.Bll
             var func = _routeFunc[key];
             Debug.Assert(func != null, $"关键key:{key} 未找到报文处理组件");
             return func(message);
+=======
+            try
+            {
+                if (objectId.Contains("-"))
+                {
+                    var arr = objectId.Split(new[] { '-' }, StringSplitOptions.RemoveEmptyEntries);
+                    _devTypeId = int.Parse(arr[0]);
+                    _devRealId = int.Parse(arr[1]);
+                    return;
+                }
+                _devTypeId = int.Parse(objectId);
+                _devRealId = null;
+            }
+            catch (Exception)
+            {
+                AppLogger.Error("objectId 转换错误");
+                throw new Exception(objectId);
+            }
+
+        }
+        //wcs初始化数据
+        public dynamic HandleRequesFromWcs(dynamic message)
+        {
+            var key = $"{_devTypeId}";
+            if (_routeFunc.ContainsKey(key))
+            {
+                var func = _routeFunc[key];
+                Debug.Assert(func!=null,$"关键key:{key} 未找到报文处理组件");
+                return func(message);
+            }
+            return null;
+            #region zhushi
+
+            /* if (_devTypeId == 0)
+             {
+                 return _routeFunc["0"](message);
+             }
+             if (_devTypeId == 50) //新定义的关键字需要优化code
+             {
+                 return _routeFunc["50"](message);
+             }
+             if (_devTypeId == (int)MessageType.InfoType22 - 12)
+             {
+                 return _routeFunc["10"](message);
+             }
+             if (_devTypeId == (int)MessageType.InfoType23 - 12)
+             {
+                 return _routeFunc["11"](message);
+             }
+             if (_devTypeId == (int)MessageType.InfoType24 - 12)
+             {
+                 return _routeFunc["12"](message);
+             }
+             if (_devTypeId == (int)MessageType.InfoType25 - 12)
+             {
+                 return _routeFunc["13"](message);
+             }
+             if (_devTypeId == (int)MessageType.InfoType26 - 12)
+             {
+                 return _routeFunc["14"](message);
+             }
+             if (_devTypeId == (int)MessageType.InfoType27 - 12)
+             {
+                 return _routeFunc["15"](message);
+             }
+             if (_devTypeId == (int)MessageType.InfoType28 - 12)
+             {
+                 return _routeFunc["16"](message);
+             }
+             if (_devTypeId == (int)MessageType.InfoType29 - 12)
+             {
+                 return _routeFunc["17"](message);
+             }
+             return null;*/
+
+            #endregion
+>>>>>>> origin/master
         }
 
         private void InitZoneData(MessageData<List<ContentRegion>> postMesssage)

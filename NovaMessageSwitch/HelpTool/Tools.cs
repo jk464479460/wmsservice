@@ -117,7 +117,12 @@ namespace NovaMessageSwitch.Tool
         {
             var contentStr = $"{JsonConvert.SerializeObject(message.content)}";
             var result = new List<dynamic>();
+<<<<<<< HEAD
             if (!string.IsNullOrEmpty(contentStr))/*(int)message.infoType == (int)MessageType.InfoType30*/
+=======
+            if (contentStr.Length > FrameSize && !string.IsNullOrEmpty(contentStr))
+                /*(int)message.infoType == (int)MessageType.InfoType30*/
+>>>>>>> origin/master
             {
                 var data = message; /*(MessageData<ArrayList>)*/
                 var contentList = CreateFrameArray(/*data.infoType,*/ contentStr);

@@ -461,12 +461,20 @@ namespace NovaMessageSwitch.MessageHandleFactory
                         {
                             var tempLane = new ArrayList();
                             message30.content.Add(tempLane);
+<<<<<<< HEAD
+=======
+                            DebugTest.DebugVersion.RowsCnt=0;
+>>>>>>> origin/master
                             foreach (var row in (from p in goodsLocationResult  where p.Lane== lane select p.Row).Distinct().OrderBy(x=>x) /*goodsLocationResult.Where(x => x.Lane == lane.Key)*/)//找出属于该巷道的排
                             {
                                 var newRow = new ArrayList();
                                 tempLane.Add(newRow);
 
                                 //巷道---排--列
+<<<<<<< HEAD
+=======
+                                DebugTest.DebugVersion.ColCnt = 0;
+>>>>>>> origin/master
                                 foreach (var cl in (from k in goodsLocationResult where k.Lane==lane && k.Row==row  select k.Column).Distinct().OrderBy(x=>x)/* into j select j*//*goodsLocationResult.Where(x => x.Lane == lane.Key && x.Row == row.Key)*/)
                                 {
                                     var newCl = new ArrayList();
